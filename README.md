@@ -4,7 +4,7 @@ English | [简体中文](README-zh.md)
    MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The total dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as books, textbooks, academic literature, PPT to PDF conversions, and examination papers. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
    
 # Dataset Source
-The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc., with reference to the corpus proportion of Llama. The sources and composition of different subsets are as follows:
+The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc.The sources and composition of different subsets are as follows:
 
 | Category                  | Tag                 | File Count | Total Pages | Description                                                                                    |
 |---------------------------|---------------------|-------------|--------------|------------------------------------------------------------------------------------------------|
