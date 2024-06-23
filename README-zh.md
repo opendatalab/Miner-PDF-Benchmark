@@ -71,7 +71,7 @@ cd Miner-PDF-Benchmark
 python -m pip install -r requirements.txt
 ```
 
-3. 评测集准备
+3. 下载评测集
 
 请从[OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main)下载评测集，并将评测集解压到`datasets`目录下，确保`datasets`目录下为`pdf`和`annotations`。
 准备的评测集，经过组织后目录如下：
@@ -99,7 +99,7 @@ cd evaluate_tool
 python clean_photo.py --tool_name annotations --download_dir ../datasets
 ```
 
-5. 待评估工具的数据集准备
+5. 待评估工具的评测结果准备
 
 请将您需要评估工具生成的`Markdown`文件按照类型复制到`datasets/document_types/tool_name`目录中,`document_types`为11种类别对应的标签,`tool_name`为您的工具名称。
 复制后的目录结构如下：

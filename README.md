@@ -76,7 +76,7 @@ cd Miner-PDF-Benchmark
 python -m pip install -r requirements.txt
 ```
 
-3. Prepare Evaluation Set
+3. Download the evaluation set
 
 Download the evaluation set from [OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main), and unzip the evaluation set into the `datasets` directory, ensuring the datasets directory contains `pdf` and `annotations`.
 After downloading all of them, organize the data as follows:
