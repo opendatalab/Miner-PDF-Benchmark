@@ -136,7 +136,7 @@ Please execute the following command to calculate the score, `--tool_name` is th
 
 ```
 cd evaluate_tool
-python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ --results xx.json
+python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ --document_types <document_types> --results xx.json
 ```
 
 # Demo
@@ -148,6 +148,7 @@ python clean_photo.py --tool_name annotations --download_dir ../datasets/
 python clean_photo.py --tool_name marker --download_dir ../datasets/
 python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --results result.json --document_types academic_literature 
 ```
+Here [result.json](evaluate_tool/result.json) are the results: The result.json file contains scores for each PDF file, scores for the selected document_types, and the overall average score.
 
 # Contact
 For any questions about the dataset, please contact the authors by WeChat opendatalab_yunying.

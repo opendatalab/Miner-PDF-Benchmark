@@ -8,18 +8,18 @@ import scoring
 import argparse
 
 parser = argparse.ArgumentParser(description="get directory")
-parser.add_argument('--types', 
+parser.add_argument('--document_types', 
     nargs='+',
     choices=["academic_literature", "atlas", "courseware", "colorful_textbok", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"], 
-    help='Choose one or more types',
+    help='Choose one or more document_types',
     default=["academic_literature", "atlas", "courseware", "colorful_textbok", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
 )
 
 parser.add_argument(
-    "--tool_type",
+    "--tool_name",
     type=str,
     required=True,
-    help="tool type",
+    help="tool name",
 )
 parser.add_argument(
     "--download_dir",
@@ -129,11 +129,11 @@ class Scoring:
 
 if __name__ == "__main__":  
   file_types = list()
-  tool_type =args.tool_type
+  tool_type =args.tool_name
   download_dir = args.download_dir
-  if args.types:
-    print("Selected types:", args.types)
-    for type_ in args.types:
+  if args.document_types:
+    print("Selected types:", args.document_types)
+    for type_ in args.document_types:
         file_types.append(type_)
   else:
       print("No types selected")

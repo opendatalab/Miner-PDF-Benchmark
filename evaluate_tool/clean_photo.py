@@ -5,10 +5,10 @@ import os
 import argparse
 parser = argparse.ArgumentParser(description="get tool type")
 parser.add_argument(
-    "--tool_type",
+    "--tool_name",
     type=str,
     required=True,
-    help="input tool type",
+    help="input tool name",
 )
 parser.add_argument(
     "--download_dir",
@@ -105,6 +105,6 @@ def clean_data(prod_type, download_dir):
 
 
 if __name__ == '__main__':
-    tool_type = args.tool_type
+    tool_type = args.tool_name
     download_dir = args.download_dir
     clean_data(tool_type, download_dir)

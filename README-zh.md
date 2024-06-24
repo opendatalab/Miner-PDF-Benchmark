@@ -129,7 +129,7 @@ python clean_photo.py --tool_name tool_name --download_dir ../datasets/
 请执行以下命令计算分数, 其中 `--tool_name`为您待评估的工具名称, `--document_types`为可选的11种类型对应标签，默认包含所有类型，您也可以指定需要评估的某个或多个类型，多个类型请用空格分开; `--download_dir`指定json文件保存的路径。
 ```
 cd evaluate_tool
-python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ --results xx.json
+python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ --document_types <document_types> --results xx.json
 ```
 
 # 使用示例
@@ -141,6 +141,7 @@ python clean_photo.py --tool_name annotations --download_dir ../datasets/
 python clean_photo.py --tool_name marker --download_dir ../datasets/
 python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --results result.json --document_types academic_literature 
 ```
+结果文件见[result.json](evaluate_tool/result.json), 结果包含了每个PDF文件对应的分数，以及所选`document_types`的分数，以及整体平均分数。
 
 # 联系方式
 
