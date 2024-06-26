@@ -31,7 +31,7 @@ $$ \text{Score}(T_H, T_R) = \text{Mean}\left(\max_{R_{\text{chunk}} \in R} \left
 ### 引用
 [Levenshtein, V.I., et al.: Binary codes capable of correcting deletions, insertions,
 and reversals. In: Soviet physics doklady. vol. 10, pp. 707–710. Soviet Union (1966)]
-https://nymity.ch/sybilhunting/pdf/Levenshtein1966a.pdf
+http://www.lrec-conf.org/proceedings/lrec2006/pdf/168_pdf.pdf
 
 
 ## BLEU

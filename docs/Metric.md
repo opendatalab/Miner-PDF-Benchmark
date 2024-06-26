@@ -52,7 +52,7 @@ To mitigate the impact of line breaks and spaces on the score, we calculate the 
   
 [Levenshtein, V.I., et al.: Binary codes capable of correcting deletions, insertions,
 and reversals. In: Soviet physics doklady. vol. 10, pp. 707–710. Soviet Union (1966)]
-https://nymity.ch/sybilhunting/pdf/Levenshtein1966a.pdf
+http://www.lrec-conf.org/proceedings/lrec2006/pdf/168_pdf.pdf
 
 ## BLEU
 

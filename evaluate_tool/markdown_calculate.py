@@ -10,9 +10,9 @@ import argparse
 parser = argparse.ArgumentParser(description="get directory")
 parser.add_argument('--document_types', 
     nargs='+',
-    choices=["academic_literature", "atlas", "courseware", "colorful_textbok", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"], 
+    choices=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"], 
     help='Choose one or more document_types',
-    default=["academic_literature", "atlas", "courseware", "colorful_textbok", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
+    default=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
 )
 
 parser.add_argument(

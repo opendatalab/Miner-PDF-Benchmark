@@ -83,7 +83,7 @@ def convert_htmltale_to_md(content):
     return new_content
 
 def clean_data(prod_type, download_dir):
-    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbok", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
+    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
     for filetype in file_type:
         tgt_dir = os.path.join(download_dir, filetype, prod_type, "cleaned")
         if not os.path.exists(tgt_dir):  

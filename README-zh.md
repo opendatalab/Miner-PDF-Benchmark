@@ -40,11 +40,11 @@ MPB 数据集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 ### 总体平均得分
 | 方案         | 抽取率（↑） | sim_score(↑) | 编辑距离(↓) | bleu(↑) |
 |--------------|--------------|--------------|--------------|----------|
-| nogout       | 100%         | 0.35         | 0.57         | 0.33     |
-| marker       | 99.4%        | 0.47         | 0.42         | 0.386    |
-| doc2x（商业工具） | 99%          | 0.67         | 0.189        | 0.611    |
-| ocrmath（商业工具） | 92%          | 0.56         | 0.38         | 0.39     |
-| mathpix（商业工具） | 100%         | 0.83         | 0.08         | 0.91     |
+| [nogout](https://github.com/facebookresearch/nougat)       | 100%         | 0.35         | 0.57         | 0.33     |
+| [marker](https://github.com/VikParuchuri/marker)       | 99.4%        | 0.47         | 0.42         | 0.386    |
+| [doc2x（商业工具）](https://doc2x.com/) | 99%          | 0.67         | 0.189        | 0.611    |
+| [ocrmath（商业工具）](https://open.ocrmath.com/) | 92%          | 0.56         | 0.38         | 0.39     |
+| [mathpix（商业工具）](https://mathpix.com/) | 100%         | 0.83         | 0.08         | 0.91     |
 
 ### 11种类型的得分
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/473223d0-fee9-4158-8b79-52c09066d8e1" width="350" height="200" alt="The distribution of sim_socre">  

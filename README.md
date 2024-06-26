@@ -42,11 +42,11 @@ We have evaluated extraction tools, including nogout, marker, doc2x, ocrmath, an
 ### Overall Average Score
 | Solution               | Extraction Rate (↑) | Similarity Score (↑) | Edit Distance (↓) | BLEU Score (↑) |
 |------------------------|----------------------|----------------------|------------------|------------------|
-| nogout (Open-Source Tool)                 | 100%                 | 0.35                 | 0.57             | 0.33             |
-| marker (Open-Source Tool)                 | 99.4%                | 0.47                 | 0.42             | 0.386            |
-| doc2x (Commercial Tool)| 99%                  | 0.67                 | 0.189            | 0.611            |
-| ocrmath (Commercial Tool) | 92%                 | 0.56                 | 0.38             | 0.39             |
-| **mathpix (Commercial Tool)** | **100%**                | **0.83**                 | **0.08**             | **0.91**         |
+| [nogout (Open-Source Tool)](https://github.com/facebookresearch/nougat)                 | 100%                 | 0.35                 | 0.57             | 0.33             |
+| [marker (Open-Source Tool)](https://github.com/VikParuchuri/marker)                 | 99.4%                | 0.47                 | 0.42             | 0.386            |
+| [doc2x (Commercial Tool)](https://doc2x.com/)| 99%                  | 0.67                 | 0.189            | 0.611            |
+| [ocrmath (Commercial Tool)](https://open.ocrmath.com/) | 92%                 | 0.56                 | 0.38             | 0.39             |
+| [**mathpix (Commercial Tool)**](https://mathpix.com/) | **100%**                | **0.83**                 | **0.08**             | **0.91**         |
 
 ### Scores of 11 Types
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/473223d0-fee9-4158-8b79-52c09066d8e1" width="350" height="200" alt="The distribution of sim_socre">  
