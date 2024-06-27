@@ -51,11 +51,11 @@ We have evaluated extraction tools, including nogout, marker, MinerU, doc2x, ocr
 
 ### Scores of 11 Types
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/8e9cc26a-d2b1-4f15-9c4c-bc2de00cc3fc" width="350" height="200" alt="The distribution of sim_socre">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/5443b916-510a-4fdd-aee2-c4d19e2fdeca" width="350" height="200" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/f6b74bd0-a38f-4f07-b14d-4423d966080b" width="350" height="200" alt="The distribution of edit distance">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/1db1ad2a-9716-40e5-8144-ecf982bdfe3b" width="350" height="200" alt="The distribution of edit distance">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/486b6bf6-d0d8-46ed-a1d0-8170b1f7d6d2" width="350" height="200" alt="The distribution of bleu">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/66d69c43-9622-4707-9245-b89e20415913" width="350" height="200" alt="The distribution of bleu">  
 
 notes:
 - marker's test version is v0.2.8;
