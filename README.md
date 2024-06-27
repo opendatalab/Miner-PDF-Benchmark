@@ -37,11 +37,12 @@ We use [metrics](docs/Metric.md) to evaluate the extraction tools.
 
 # Results
 
-We have evaluated extraction tools, including nogout, marker, doc2x, ocrmath, and mathpix. The results are as follows.
+We have evaluated extraction tools, including nogout, marker, MinerU, doc2x, ocrmath, and mathpix. The results are as follows.
 
 ### Overall Average Score
 | Solution               | Extraction Rate (↑) | Similarity Score (↑) | Edit Distance (↓) | BLEU Score (↑) |
 |------------------------|----------------------|----------------------|------------------|------------------|
+| [MinerU (Open-Source Tool)](https://github.com/magicpdf/Magic-PDF)                 | 98.4%                 | 0.61                 | 0.3             |0.47             |
 | [nogout (Open-Source Tool)](https://github.com/facebookresearch/nougat)                 | 100%                 | 0.35                 | 0.57             | 0.33             |
 | [marker (Open-Source Tool)](https://github.com/VikParuchuri/marker)                 | 99.4%                | 0.47                 | 0.42             | 0.386            |
 | [doc2x (Commercial Tool)](https://doc2x.com/)| 99%                  | 0.67                 | 0.189            | 0.611            |
@@ -49,15 +50,18 @@ We have evaluated extraction tools, including nogout, marker, doc2x, ocrmath, an
 | [**mathpix (Commercial Tool)**](https://mathpix.com/) | **100%**                | **0.83**                 | **0.08**             | **0.91**         |
 
 ### Scores of 11 Types
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/473223d0-fee9-4158-8b79-52c09066d8e1" width="350" height="200" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/eb537cf8-f8d0-4815-b1c4-0494d72aa9ae" width="350" height="200" alt="The distribution of edit distance">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/8e9cc26a-d2b1-4f15-9c4c-bc2de00cc3fc" width="350" height="200" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/f358d113-72fd-4cea-9f68-d46f01249219" width="350" height="200" alt="The distribution of bleu">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/f6b74bd0-a38f-4f07-b14d-4423d966080b" width="350" height="200" alt="The distribution of edit distance">  
+
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/486b6bf6-d0d8-46ed-a1d0-8170b1f7d6d2" width="350" height="200" alt="The distribution of bleu">  
 
 notes:
 - marker's test version is v0.2.8;
 - nogout's test version is v0.1.0 small;
+- MinerU's test version is v0.5.11;
+- Ocrmath may encounter a 500 error when parsing individual pages.
   
 # Get Data
 Datasets can be downloaded from [OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main);
