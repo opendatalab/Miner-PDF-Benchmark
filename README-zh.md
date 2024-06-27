@@ -72,7 +72,7 @@ git clone https://github.com/opendatalab/Miner-PDF-Benchmark
 cd Miner-PDF-Benchmark
 ```
 
-2. 安装依赖
+2. 安装依赖(推荐使用Python 3.9)
 
 ```
 python -m pip install -r requirements.txt
@@ -80,7 +80,7 @@ python -m pip install -r requirements.txt
 
 3. 下载评测集
 
-请从[OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main)下载评测集，并将评测集解压到`datasets`目录下，确保`datasets`目录下为`pdf`和`annotations`。
+请从[OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main)（推荐使用cli/sdk下载）下载评测集，并将评测集解压到`datasets`目录下，确保`datasets`目录下为`pdf`和`annotations`。
 准备的评测集，经过组织后目录如下：
 
 ```
