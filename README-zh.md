@@ -35,23 +35,30 @@ MPB 数据集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 
 # 结果
 
-我们对nogout、marker、doc2x、ocrmath、mathpix几个抽取工具进行了评估，评估结果如下。
+我们对nogout、marker、MinerU、doc2x、ocrmath、mathpix几个抽取工具进行了评估，评估结果如下。
 
 ### 总体平均得分
 | 方案         | 抽取率（↑） | sim_score(↑) | 编辑距离(↓) | bleu(↑) |
 |--------------|--------------|--------------|--------------|----------|
-| [nogout](https://github.com/facebookresearch/nougat)       | 100%         | 0.35         | 0.57         | 0.33     |
-| [marker](https://github.com/VikParuchuri/marker)       | 99.4%        | 0.47         | 0.42         | 0.386    |
+| [MinerU (开源工具)](https://github.com/magicpdf/Magic-PDF)                 | 98.4%                 | 0.61                 | 0.3             |0.47             |
+| [nogout (开源工具)](https://github.com/facebookresearch/nougat)       | 100%         | 0.35         | 0.57         | 0.33     |
+| [marker(开源工具)](https://github.com/VikParuchuri/marker)       | 99.4%        | 0.47         | 0.42         | 0.386    |
 | [doc2x（商业工具）](https://doc2x.com/) | 99%          | 0.67         | 0.189        | 0.611    |
 | [ocrmath（商业工具）](https://open.ocrmath.com/) | 92%          | 0.56         | 0.38         | 0.39     |
 | [mathpix（商业工具）](https://mathpix.com/) | 100%         | 0.83         | 0.08         | 0.91     |
 
 ### 11种类型的得分
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/473223d0-fee9-4158-8b79-52c09066d8e1" width="350" height="200" alt="The distribution of sim_socre">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/8e9cc26a-d2b1-4f15-9c4c-bc2de00cc3fc" width="350" height="200" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/eb537cf8-f8d0-4815-b1c4-0494d72aa9ae" width="350" height="200" alt="The distribution of edit distance">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/f6b74bd0-a38f-4f07-b14d-4423d966080b" width="350" height="200" alt="The distribution of edit distance">  
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/f358d113-72fd-4cea-9f68-d46f01249219" width="350" height="200" alt="The distribution of bleu">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/486b6bf6-d0d8-46ed-a1d0-8170b1f7d6d2" width="350" height="200" alt="The distribution of bleu">  
+
+notes:
+- marker's test version is v0.2.8;
+- nogout's test version is v0.1.0 small;
+- MinerU's test version is v0.5.11;
+- ocrmath在解析过程中会遇到个别页面返回500错误
 
 # 获取数据
 数据集可以从[OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main)下载；
