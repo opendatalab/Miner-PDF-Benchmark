@@ -14,8 +14,8 @@ The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, 
 | Atlas                     | atlas               | 3           | 269          | Characterized by a single page containing large area images.                                 |
 | Courseware (PPT to PDF)   | courseware         | 7           | 383          | Includes subjects such as Biology, Chinese, English, and Physics.                              |
 | Special Exam Paper      | special_exam_paper  | 3           | 80           | Includes watermarks, text within graphics, primary school Pinyin, and math problems.         |
-| Historical Document       | historical_documents | 1           | 3            | The Layout is vertical, and the reading order is from right to left.                                     |
-| Notes                      | notes               | 3           | 293          | Includes handwritten notes from three junior high school students.                            |
+| Historical Document       | historical_document | 1           | 3            | The Layout is vertical, and the reading order is from right to left.                                     |
+| Notes                      | note               | 3           | 293          | Includes handwritten notes from three junior high school students.                            |
 | Ordinary Exam Paper       | ordinary_exam_paper | 27          | 372          | Includes subjects such as Computer Science, Mathematics, and Chinese, covering primary school, junior high school, high school, and industry question banks, mainly in black and white. |
 | Colorful Textbook        | colorful_textbook   | 3           | 144          | Includes subjects such as English, Mathematics, and Chinese (including Pinyin), containing colorful graphic information. |
 | Ordinary Book             | ordinary_book      | 10          | 2280         | Single-column layout, black and white background books.                                       |
