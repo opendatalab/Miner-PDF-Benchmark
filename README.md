@@ -8,17 +8,17 @@ The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, 
 
 | Document Type             | Tag                 | File Count | Total Pages | Description                                                                                    |
 |---------------------------|---------------------|-------------|--------------|------------------------------------------------------------------------------------------------|
-| Research Reports           | research_report     | 70          | 875          | Contains rich tabular information with single-column, double-column, and complex layouts.       |
-| Ordinary Textbooks        | ordinary_textbook   | 40          | 388          | Single-column layout, black and white, includes a wealth of formulas.                         |
+| Research Report           | research_report     | 70          | 875          | Contains rich tabular information with single-column, double-column, and complex layouts.       |
+| Ordinary Textbook        | ordinary_textbook   | 40          | 388          | Single-column layout, black and white, includes a wealth of formulas.                         |
 | Academic Literature        | academic_literature | 183         | 3323         | Data sourced from arXiv and Sci-Hub, includes single-column, double-column, charts, formulas, and other complex formats. |
 | Atlas                     | atlas               | 3           | 269          | Characterized by a single page containing large area images.                                 |
 | Courseware (PPT to PDF)   | courseware         | 7           | 383          | Includes subjects such as Biology, Chinese, English, and Physics.                              |
-| Special Exam Papers       | special_exam_paper  | 3           | 80           | Includes watermarks, text within graphics, primary school Pinyin, and math problems.         |
-| Historical Documents       | historical_documents | 1           | 3            | The Layout is vertical, and the reading order is from right to left.                                     |
+| Special Exam Paper      | special_exam_paper  | 3           | 80           | Includes watermarks, text within graphics, primary school Pinyin, and math problems.         |
+| Historical Document       | historical_documents | 1           | 3            | The Layout is vertical, and the reading order is from right to left.                                     |
 | Notes                      | notes               | 3           | 293          | Includes handwritten notes from three junior high school students.                            |
-| Ordinary Exam Papers       | ordinary_exam_paper | 27          | 372          | Includes subjects such as Computer Science, Mathematics, and Chinese, covering primary school, junior high school, high school, and industry question banks, mainly in black and white. |
-| Colorful Textbooks        | colorful_textbook   | 3           | 144          | Includes subjects such as English, Mathematics, and Chinese (including Pinyin), containing colorful graphic information. |
-| Ordinary Books             | ordinary_books      | 10          | 2280         | Single-column layout, black and white background books.                                       |
+| Ordinary Exam Paper       | ordinary_exam_paper | 27          | 372          | Includes subjects such as Computer Science, Mathematics, and Chinese, covering primary school, junior high school, high school, and industry question banks, mainly in black and white. |
+| Colorful Textbook        | colorful_textbook   | 3           | 144          | Includes subjects such as English, Mathematics, and Chinese (including Pinyin), containing colorful graphic information. |
+| Ordinary Book             | ordinary_book      | 10          | 2280         | Single-column layout, black and white background books.                                       |
 
 Note: All our data comes from the internet.
 
