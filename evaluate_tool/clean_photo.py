@@ -1,8 +1,11 @@
-import pypandoc
-import re  
-import htmltabletomd
-import os  
+"""
+预处理数据
+"""
+import re
+import os
 import argparse
+import htmltabletomd
+import pypandoc
 parser = argparse.ArgumentParser(description="get tool type")
 parser.add_argument(
     "--tool_name",
@@ -18,74 +21,88 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-def clean_markdown_images(content):  
-    pattern = re.compile(r'!\[[^\]]*\]\([^)]*\)', re.IGNORECASE)  
-    cleaned_content = pattern.sub('', content)   
+def clean_markdown_images(content):
+    """
+    清理md图片
+    """
+    pattern = re.compile(r'!\[[^\]]*\]\([^)]*\)', re.IGNORECASE)
+    cleaned_content = pattern.sub('', content)
     return cleaned_content
-   
 def clean_ocrmath_photo(content):
-    pattern = re.compile(r'\\includegraphics\[.*?\]\{.*?\}', re.IGNORECASE)  
-    cleaned_content = pattern.sub('', content)   
+    """
+    清理latex图片
+    """
+    pattern = re.compile(r'\\includegraphics\[.*?\]\{.*?\}', re.IGNORECASE)
+    cleaned_content = pattern.sub('', content)
     return cleaned_content
 
-def convert_html_table_to_md(html_table):  
-    lines = html_table.strip().split('\n')  
-    md_table = ''  
-    if lines and '<tr>' in lines[0]:  
-        in_thead = True  
-        for line in lines:  
-            if '<th>' in line:  
-                cells = re.findall(r'<th>(.*?)</th>', line)  
-                md_table += '| ' + ' | '.join(cells) + ' |\n'  
-                in_thead = False  
-            elif '<td>' in line and not in_thead:  
-                cells = re.findall(r'<td>(.*?)</td>', line)  
-                md_table += '| ' + ' | '.join(cells) + ' |\n'  
-        md_table = md_table.rstrip() + '\n'    
-    return md_table  
- 
-def convert_latext_to_md(content):  
-    tables = re.findall(r'\\begin\{tabular\}(.*?)\\end\{tabular\}', content, re.DOTALL)  
-    placeholders = []  
-    for table in tables:  
-        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"  
+def convert_html_table_to_md(html_table):
+    """
+    将HTML表格转换为Markdown表格
+    """
+    lines = html_table.strip().split('\n')
+    md_table = ''
+    if lines and '<tr>' in lines[0]:
+        in_thead = True
+        for line in lines:
+            if '<th>' in line:
+                cells = re.findall(r'<th>(.*?)</th>', line)
+                md_table += '| ' + ' | '.join(cells) + ' |\n'
+                in_thead = False
+            elif '<td>' in line and not in_thead:
+                cells = re.findall(r'<td>(.*?)</td>', line)
+                md_table += '| ' + ' | '.join(cells) + ' |\n'
+        md_table = md_table.rstrip() + '\n'
+    return md_table
+def convert_latext_to_md(content):
+    """
+    将latex表格转换为markdown表格
+    """
+    tables = re.findall(r'\\begin\{tabular\}(.*?)\\end\{tabular\}', content, re.DOTALL)
+    placeholders = []
+    for table in tables:
+        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"
         replace_str = f"\\begin{{tabular}}{table}cl\\end{{tabular}}"
-        content = content.replace(replace_str, placeholder)  
+        content = content.replace(replace_str, placeholder)
         try:
             pypandoc.convert_text(replace_str,  format="latex", to="md", outputfile="output.md", encoding="utf-8")
-        except:
+        except Exception:
             markdown_string = replace_str
         else: 
             markdown_string = open('output.md', 'r', encoding='utf-8').read()
-        placeholders.append((placeholder, markdown_string)) 
-    new_content = content  
-    for placeholder, md_table in placeholders:  
-        new_content = new_content.replace(placeholder, md_table)  
+        placeholders.append((placeholder, markdown_string))
+    new_content = content
+    for placeholder, md_table in placeholders:
+        new_content = new_content.replace(placeholder, md_table)
     return new_content
-
- 
-def convert_htmltale_to_md(content):  
-    tables = re.findall(r'<table>(.*?)</table>', content, re.DOTALL)  
-    placeholders = []  
-    for table in tables:  
-        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"  
-        content = content.replace(f"<table>{table}</table>", placeholder)  
+def convert_htmltale_to_md(content):
+    """
+    将htmltable转换为markdown表格
+    """
+    tables = re.findall(r'<table>(.*?)</table>', content, re.DOTALL)
+    placeholders = []
+    for table in tables:
+        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"
+        content = content.replace(f"<table>{table}</table>", placeholder)
         try:
             convert_table = htmltabletomd.convert_table(table)
-        except:
+        except Exception:
             convert_table = table
-        placeholders.append((placeholder,convert_table)) 
-    new_content = content  
-    for placeholder, md_table in placeholders:  
-        new_content = new_content.replace(placeholder, md_table)   
+        placeholders.append((placeholder,convert_table))
+    new_content = content
+    for placeholder, md_table in placeholders:
+        new_content = new_content.replace(placeholder, md_table)
     return new_content
 
 def clean_data(prod_type, download_dir):
+    """
+    清理数据
+    """
     file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_document", "note", "ordinary_book", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
     for filetype in file_type:
         tgt_dir = os.path.join(download_dir, filetype, prod_type, "cleaned")
-        if not os.path.exists(tgt_dir):  
-            os.makedirs(tgt_dir) 
+        if not os.path.exists(tgt_dir):
+            os.makedirs(tgt_dir)
         source_dir = os.path.join(download_dir, filetype, prod_type)
         filenames = os.listdir(source_dir)
         for filename in filenames:
