@@ -1,15 +1,15 @@
 English | [简体中文](README-zh.md)
 
 # Introduction
-   MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as book, textbook, academic literature, PPT to PDF, and examination paper. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
+   MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as books, textbooks, academic literature, PPT to PDF, and examination papers. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
    
 # Dataset Source
-The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbook, examination paper, historical document, etc. The source and composition of different subsets are as follows:
+The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc. The source and composition of different subsets are as follows:
 
-| Document Type             | Tag                 | File Count | Total Pages | Description                                                                                    |
+| Document Type             | Tag                 | Total Files | Total Pages | Description                                                                                    |
 |---------------------------|---------------------|-------------|--------------|------------------------------------------------------------------------------------------------|
-| Research Report           | research_report     | 70          | 875          | Research reports are from the Internet, with large tables, complex merged tables, horizontal tables mixed with text, single-column, double-column and complex layouts       |
-| Ordinary Textbook        | ordinary_textbook   | 40          | 388          | The textbooks are from the Internet, with a single-column layout, black and white colors, nested complex formulas and containing complex large matrices.               |
+| Research Report           | research_report     | 70          | 875          | Research reports are from the Internet, with large tables, complex merged tables, horizontal tables mixed with text, single-column, double-column, and complex layouts       |
+| Ordinary Textbook        | ordinary_textbook   | 40          | 388          | The textbooks are from the Internet, with a single-column layout, black and white colors, nested complex formulas, and containing complex matrices.               |
 | Academic Literature        | academic_literature | 183         | 3323         | Academic documents are from arXiv and SCIHUB, and have complex layouts including single-column, double-column, charts, formulas, etc. |
 | Atlas                     | atlas               | 3           | 269          | Atlas is from the Internet, with the characteristic of a single page containing a large area of ​​pictures |
 | Courseware (PPT to PDF)   | courseware         | 7           | 383          | The PDF files are converted from PPT on the Internet, have background color, and contain four subjects: biology, Chinese, English, and physics;|
@@ -24,9 +24,9 @@ Note: All our data comes from the internet.
 
 # Statistics of MPB
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/43176747-4f03-42ad-b48b-a4448fc0dc0e" width="350" height="200" alt="The distribution of pages">  
 
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/fb06f784-f22f-4897-9b7e-00cf7f622e38" width="350" height="200" alt="The distribution of PDF file"> 
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/cb538c40-d4da-4b21-9367-26e9bb192cee" width="350" height="200" alt="The distribution of pages">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/a41dc7b7-831d-4642-a8bc-01ddd26dece7" width="350" height="200" alt="The distribution of PDF file"> 
 
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/d233a4ca-c54a-41f3-be96-8b80b1b0b740" width="350" height="200" alt="The distribution of md language">  
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/5ff056a7-6094-420b-8a93-a31585da9451" width="350" height="200" alt="The distribution of PDF  Type">  
@@ -51,11 +51,11 @@ We have evaluated extraction tools, including nogout, marker, MinerU, doc2x, ocr
 
 ### Scores of 11 Types
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/5443b916-510a-4fdd-aee2-c4d19e2fdeca" width="350" height="200" alt="The distribution of sim_socre">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/da7d62c6-b255-4a83-873c-b36979d82126" width="400" height="350" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/1db1ad2a-9716-40e5-8144-ecf982bdfe3b" width="350" height="200" alt="The distribution of edit distance">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/8c113adc-214e-43c0-9448-d5be750695d1" width="400" height="350" alt="The distribution of edit distance">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/66d69c43-9622-4707-9245-b89e20415913" width="350" height="200" alt="The distribution of bleu">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/e37753c6-1d07-4834-8220-c78377917886" width="400" height="350" alt="The distribution of bleu">  
 
 notes:
 - marker's test version is v0.2.8;
@@ -63,7 +63,7 @@ notes:
 - MinerU's test version is v0.5.11;
 - Ocrmath's test time is about Early June;
 - Doc2x's test time is about May;
-- Mathpix's test time is about Early May;
+- Mathpix's test time is in Early May;
   
 # Get Data
 Datasets can be downloaded from [OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main);
