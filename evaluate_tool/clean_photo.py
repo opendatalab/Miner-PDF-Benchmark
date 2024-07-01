@@ -61,7 +61,6 @@ def convert_latext_to_md(content):
     new_content = content  
     for placeholder, md_table in placeholders:  
         new_content = new_content.replace(placeholder, md_table)  
-        # 写入文件  
     return new_content
 
  
@@ -78,12 +77,11 @@ def convert_htmltale_to_md(content):
         placeholders.append((placeholder,convert_table)) 
     new_content = content  
     for placeholder, md_table in placeholders:  
-        new_content = new_content.replace(placeholder, md_table)  
-        # 写入文件  
+        new_content = new_content.replace(placeholder, md_table)   
     return new_content
 
 def clean_data(prod_type, download_dir):
-    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
+    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_document", "note", "ordinary_book", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
     for filetype in file_type:
         tgt_dir = os.path.join(download_dir, filetype, prod_type, "cleaned")
         if not os.path.exists(tgt_dir):  

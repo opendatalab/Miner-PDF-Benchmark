@@ -1,24 +1,24 @@
 English | [简体中文](README-zh.md)
 
 # Introduction
-   MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The total dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as books, textbooks, academic literature, PPT to PDF conversions, and examination papers. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
+   MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as book, textbook, academic literature, PPT to PDF, and examination paper. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
    
 # Dataset Source
-The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc. The sources and composition of different subsets are as follows:
+The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbook, examination paper, historical document, etc. The source and composition of different subsets are as follows:
 
 | Document Type             | Tag                 | File Count | Total Pages | Description                                                                                    |
 |---------------------------|---------------------|-------------|--------------|------------------------------------------------------------------------------------------------|
-| Research Reports           | research_report     | 70          | 875          | Contains rich tabular information with single-column, double-column, and complex layouts.       |
-| Ordinary Textbooks        | ordinary_textbook   | 40          | 388          | Single-column layout, black and white, includes a wealth of formulas.                         |
-| Academic Literature        | academic_literature | 183         | 3323         | Data sourced from arXiv and Sci-Hub, includes single-column, double-column, charts, formulas, and other complex formats. |
-| Atlas                     | atlas               | 3           | 269          | Characterized by a single page containing large area images.                                 |
-| Courseware (PPT to PDF)   | courseware         | 7           | 383          | Includes subjects such as Biology, Chinese, English, and Physics.                              |
-| Special Exam Papers       | special_exam_paper  | 3           | 80           | Includes watermarks, text within graphics, primary school Pinyin, and math problems.         |
-| Historical Documents       | historical_documents | 1           | 3            | The Layout is vertical, and the reading order is from right to left.                                     |
-| Notes                      | notes               | 3           | 293          | Includes handwritten notes from three junior high school students.                            |
-| Ordinary Exam Papers       | ordinary_exam_paper | 27          | 372          | Includes subjects such as Computer Science, Mathematics, and Chinese, covering primary school, junior high school, high school, and industry question banks, mainly in black and white. |
-| Colorful Textbooks        | colorful_textbook   | 3           | 144          | Includes subjects such as English, Mathematics, and Chinese (including Pinyin), containing colorful graphic information. |
-| Ordinary Books             | ordinary_books      | 10          | 2280         | Single-column layout, black and white background books.                                       |
+| Research Report           | research_report     | 70          | 875          | Research reports are from the Internet, with large tables, complex merged tables, horizontal tables mixed with text, single-column, double-column and complex layouts       |
+| Ordinary Textbook        | ordinary_textbook   | 40          | 388          | The textbooks are from the Internet, with a single-column layout, black and white colors, nested complex formulas and containing complex large matrices.               |
+| Academic Literature        | academic_literature | 183         | 3323         | Academic documents are from arXiv and SCIHUB, and have complex layouts including single-column, double-column, charts, formulas, etc. |
+| Atlas                     | atlas               | 3           | 269          | Atlas is from the Internet, with the characteristic of a single page containing a large area of ​​pictures |
+| Courseware (PPT to PDF)   | courseware         | 7           | 383          | The PDF files are converted from PPT on the Internet, have background color, and contain four subjects: biology, Chinese, English, and physics;|
+| Special Exam Paper       | special_exam_paper  | 3           | 80           | Special Exam Papers are from the Internet, have the characteristics of test paper layout, watermark, and text in graphics, and the content includes elementary school pinyin questions and math test questions;         |
+| Historical Document       | historical_document | 1           | 3            |  Historical documents are from the Internet, have the characteristics of vertical layout, reading order from right to left, and traditional Chinese font;   |
+| Note                     | note               | 3           | 293          | The notes are from the Internet and are handwritten. They include handwritten notes from 3 junior high school students.  |
+| Ordinary Exam Paper      | ordinary_exam_paper | 27          | 372          | Ordinary test papers are from the Internet, with the characteristics of a test paper layout and a mainly black and white background. They include subjects such as computer science, mathematics, and Chinese, covering elementary school, junior high school, high school, and industry question banks. |
+| Colorful Textbook        | colorful_textbook   | 3           | 144          | The colorful textbooks are from the Internet and have the characteristics of containing special graphic information. The contents include subjects such as English, mathematics, Chinese (including pinyin), etc. |
+| Ordinary Book             | ordinary_book     | 10          | 2280         | Ordinary books come from Internet books, characterized by a single-column layout and a black and white background. |
 
 Note: All our data comes from the internet.
 
@@ -61,7 +61,9 @@ notes:
 - marker's test version is v0.2.8;
 - nogout's test version is v0.1.0 small;
 - MinerU's test version is v0.5.11;
-- Ocrmath may encounter a 500 error when parsing individual pages.
+- Ocrmath's test time is about Early June;
+- Doc2x's test time is about May;
+- Mathpix's test time is about Early May;
   
 # Get Data
 Datasets can be downloaded from [OpenDataLab](https://opendatalab.com/OpenDataLab/Miner-PDF-Benchmark/tree/main);

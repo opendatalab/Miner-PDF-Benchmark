@@ -45,4 +45,3 @@ def score_text(hypothesis, reference):
         return mean_score
     else:
         return 0
-    #return mean(chunk_scores)

@@ -10,9 +10,9 @@ import argparse
 parser = argparse.ArgumentParser(description="get directory")
 parser.add_argument('--document_types', 
     nargs='+',
-    choices=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"], 
+    choices=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_document", "note", "ordinary_book", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"], 
     help='Choose one or more document_types',
-    default=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_documents", "notes", "ordinary_books", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
+    default=["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_document", "note", "ordinary_book", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
 )
 
 parser.add_argument(
@@ -35,7 +35,6 @@ parser.add_argument(
 )
 args = parser.parse_args()
 fw = open(args.results, 'w+', encoding='utf-8')
-# 初始化列表来存储编辑距离和BLEU分数  
 class Scoring:
     def __init__(self):
         self.edit_distances = []
@@ -63,8 +62,7 @@ class Scoring:
         total_file = 0
         for filename in os.listdir(annotion):  
             if filename.endswith('.md') and not filename.startswith('.'):  # 忽略隐藏文件  
-                total_file = total_file + 1
-                # 读取A目录中的文件  
+                total_file = total_file + 1 
                 with open(os.path.join(annotion, filename), 'r', encoding='utf-8') as file_a:  
                     content_a = file_a.read()
                 self.anntion_cnt = self.anntion_cnt + 1
@@ -81,7 +79,7 @@ class Scoring:
                         bleu_score = self.simple_bleu_score(content_b, content_a)  
                         bleu_scores.append(bleu_score)
                         self.bleu_scores.append(bleu_score)  
-                        #计算marker分数
+                        #计算marker分数, 参考(https://github.com/VikParuchuri/marker?tab=readme-ov-file)
                         score = scoring.score_text(content_b, content_a)
                         sim_scores.append(score)
                         self.sim_scores.append(score)
@@ -110,7 +108,6 @@ class Scoring:
         average_edit_distance = sum(self.edit_distances) / len(self.edit_distances) if self.edit_distances else 0  
         average_bleu_score = sum(self.bleu_scores) / len(self.bleu_scores) if self.bleu_scores else 0  
         average_sim_score = sum(self.sim_scores) / len(self.sim_scores) if self.sim_scores else 0
-        #self.fw.write(json.dumps(self.score_dict, ensure_ascii=False) + "\n")
         fw.write(f"Overall extract cnt: {len(self.score_dict)/self.anntion_cnt}" + "\n")
         fw.write(f"Overall Average Levenshtein Distance: {average_edit_distance}" + "\n")
         fw.write(f"Overall Average BLEU Score: {average_bleu_score}" + "\n")
