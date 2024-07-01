@@ -22,9 +22,8 @@ MPB 数据集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 说明：我们的数据均来自于互联网。
 
 # 统计信息
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/43176747-4f03-42ad-b48b-a4448fc0dc0e" width="350" height="200" alt="The distribution of pages">  
-
-<img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/fb06f784-f22f-4897-9b7e-00cf7f622e38" width="350" height="200" alt="The distribution of PDF file"> 
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/cb538c40-d4da-4b21-9367-26e9bb192cee" width="350" height="200" alt="The distribution of pages">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/a41dc7b7-831d-4642-a8bc-01ddd26dece7" width="350" height="200" alt="The distribution of PDF file"> 
 
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/d233a4ca-c54a-41f3-be96-8b80b1b0b740" width="350" height="200" alt="The distribution of md language">  
 <img src="https://github.com/quyuan01/pdf-extract-bench/assets/102640628/5ff056a7-6094-420b-8a93-a31585da9451" width="350" height="200" alt="The distribution of PDF  Type">  
@@ -48,11 +47,11 @@ MPB 数据集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 | [mathpix（商业工具）](https://mathpix.com/) | 100%         | 0.83         | 0.08         | 0.91     |
 
 ### 11种类型的得分
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/5443b916-510a-4fdd-aee2-c4d19e2fdeca" width="350" height="200" alt="The distribution of sim_socre">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/da7d62c6-b255-4a83-873c-b36979d82126" width="400" height="350" alt="The distribution of sim_socre">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/1db1ad2a-9716-40e5-8144-ecf982bdfe3b" width="350" height="200" alt="The distribution of edit distance">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/8c113adc-214e-43c0-9448-d5be750695d1" width="400" height="350" alt="The distribution of edit distance">  
 
-<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/66d69c43-9622-4707-9245-b89e20415913" width="350" height="200" alt="The distribution of bleu">  
+<img src="https://github.com/opendatalab/Miner-PDF-Benchmark/assets/102640628/e37753c6-1d07-4834-8220-c78377917886" width="400" height="350" alt="The distribution of bleu">  
 
 notes:
 - marker's test version is v0.2.8;
