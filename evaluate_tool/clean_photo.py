@@ -66,9 +66,9 @@ def convert_latext_to_md(content):
         content = content.replace(replace_str, placeholder)
         try:
             pypandoc.convert_text(replace_str,  format="latex", to="md", outputfile="output.md", encoding="utf-8")
-        except Exception:
+        except ValueError:
             markdown_string = replace_str
-        else: 
+        else:
             markdown_string = open('output.md', 'r', encoding='utf-8').read()
         placeholders.append((placeholder, markdown_string))
     new_content = content
@@ -86,7 +86,7 @@ def convert_htmltale_to_md(content):
         content = content.replace(f"<table>{table}</table>", placeholder)
         try:
             convert_table = htmltabletomd.convert_table(table)
-        except Exception:
+        except ValueError:
             convert_table = table
         placeholders.append((placeholder,convert_table))
     new_content = content

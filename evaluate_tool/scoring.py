@@ -1,19 +1,24 @@
-import math
-
-from rapidfuzz import fuzz
-import re
-import regex
+"""
+计算simscore
+"""
 from statistics import mean
+from rapidfuzz import fuzz
 
 CHUNK_MIN_CHARS = 25
 
 def chunk_text(text, chunk_len=500):
+    """
+    Chunk text into chunks of a given length.
+    """
     chunks = [text[i:i+chunk_len] for i in range(0, len(text), chunk_len)]
     chunks = [c for c in chunks if c.strip() and len(c) > CHUNK_MIN_CHARS]
     return chunks
 
 
 def overlap_score(hypothesis_chunks, reference_chunks):
+    """
+    Compute an overlap score for each chunk in the hypothesis.
+    """
     if len(reference_chunks) > 0:
         length_modifier = len(hypothesis_chunks) / len(reference_chunks)
     else:
@@ -36,7 +41,9 @@ def overlap_score(hypothesis_chunks, reference_chunks):
 
 
 def score_text(hypothesis, reference):
-    # Returns a 0-1 alignment score
+    """
+    Compute a score for the hypothesis text compared to the reference text.
+    """
     hypothesis_chunks = chunk_text(hypothesis)
     reference_chunks = chunk_text(reference)
     chunk_scores = overlap_score(hypothesis_chunks, reference_chunks)
