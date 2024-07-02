@@ -156,5 +156,9 @@ python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --re
 ```
 Here [result.json](evaluate_tool/result.json) are the results: The result.json file contains scores for each PDF file, scores for the selected document_types, and the overall average score.
 
+# Acknowledgments
+- [marker](https://github.com/VikParuchuri/marker?tab=readme-ov-file)
+
+
 # Contact
 For any questions about the dataset, please contact the authors by WeChat opendatalab_yunying.

@@ -1,7 +1,8 @@
 """
-计算simscore
+计算simscore, 参考(https://github.com/VikParuchuri/marker?tab=readme-ov-file)
 """
 from statistics import mean
+
 from rapidfuzz import fuzz
 
 CHUNK_MIN_CHARS = 25

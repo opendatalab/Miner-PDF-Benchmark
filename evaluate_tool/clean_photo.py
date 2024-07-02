@@ -1,12 +1,14 @@
 """
 预处理数据
 """
-import re
-import os
 import argparse
+import os
+import re
+
 import htmltabletomd
 import pypandoc
-parser = argparse.ArgumentParser(description="get tool type")
+
+parser = argparse.ArgumentParser(description="get tool name, download_dir")
 parser.add_argument(
     "--tool_name",
     type=str,
@@ -21,6 +23,7 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
+
 def clean_markdown_images(content):
     """
     清理md图片
@@ -28,6 +31,7 @@ def clean_markdown_images(content):
     pattern = re.compile(r'!\[[^\]]*\]\([^)]*\)', re.IGNORECASE)
     cleaned_content = pattern.sub('', content)
     return cleaned_content
+
 def clean_ocrmath_photo(content):
     """
     清理latex图片
@@ -35,6 +39,7 @@ def clean_ocrmath_photo(content):
     pattern = re.compile(r'\\includegraphics\[.*?\]\{.*?\}', re.IGNORECASE)
     cleaned_content = pattern.sub('', content)
     return cleaned_content
+
 
 def convert_html_table_to_md(html_table):
     """
@@ -54,6 +59,8 @@ def convert_html_table_to_md(html_table):
                 md_table += '| ' + ' | '.join(cells) + ' |\n'
         md_table = md_table.rstrip() + '\n'
     return md_table
+
+
 def convert_latext_to_md(content):
     """
     将latex表格转换为markdown表格
@@ -65,7 +72,8 @@ def convert_latext_to_md(content):
         replace_str = f"\\begin{{tabular}}{table}cl\\end{{tabular}}"
         content = content.replace(replace_str, placeholder)
         try:
-            pypandoc.convert_text(replace_str,  format="latex", to="md", outputfile="output.md", encoding="utf-8")
+            pypandoc.convert_text(replace_str, format="latex", to="md", \
+                                  outputfile="output.md", encoding="utf-8")
         except ValueError:
             markdown_string = replace_str
         else:
@@ -75,6 +83,8 @@ def convert_latext_to_md(content):
     for placeholder, md_table in placeholders:
         new_content = new_content.replace(placeholder, md_table)
     return new_content
+
+
 def convert_htmltale_to_md(content):
     """
     将htmltable转换为markdown表格
@@ -88,22 +98,25 @@ def convert_htmltale_to_md(content):
             convert_table = htmltabletomd.convert_table(table)
         except ValueError:
             convert_table = table
-        placeholders.append((placeholder,convert_table))
+        placeholders.append((placeholder, convert_table))
     new_content = content
     for placeholder, md_table in placeholders:
         new_content = new_content.replace(placeholder, md_table)
     return new_content
 
-def clean_data(prod_type, download_dir):
+
+def clean_data(prod_type, data_dir):
     """
     清理数据
     """
-    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", "historical_document", "note", "ordinary_book", "ordinary_exam_paper", "ordinary_textbook", "research_report", "special_exam_paper"]
+    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook", \
+                 "historical_document", "note", "ordinary_book", "ordinary_exam_paper", \
+                 "ordinary_textbook", "research_report", "special_exam_paper"]
     for filetype in file_type:
-        tgt_dir = os.path.join(download_dir, filetype, prod_type, "cleaned")
+        tgt_dir = os.path.join(data_dir, filetype, prod_type, "cleaned")
         if not os.path.exists(tgt_dir):
             os.makedirs(tgt_dir)
-        source_dir = os.path.join(download_dir, filetype, prod_type)
+        source_dir = os.path.join(data_dir, filetype, prod_type)
         filenames = os.listdir(source_dir)
         for filename in filenames:
             if filename.endswith('.md'):

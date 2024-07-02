@@ -151,6 +151,10 @@ python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --re
 ```
 结果文件见[result.json](evaluate_tool/result.json), 结果包含了每个PDF文件对应的分数，以及所选`document_types`的分数，以及整体平均分数。
 
+
+# 致谢
+- [marker](https://github.com/VikParuchuri/marker?tab=readme-ov-file)
+  
 # 联系方式
 
 关于数据集的任何问题，请通过微信联系作者：opendatalab_yunying。

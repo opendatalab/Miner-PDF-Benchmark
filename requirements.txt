@@ -2,7 +2,7 @@ Levenshtein
 nltk
 rapidfuzz
 statistics
-openxlab #安装opendatalab
+openxlab
 pandas
 numpy
 matplotlib

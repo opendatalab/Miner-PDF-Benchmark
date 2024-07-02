@@ -1,0 +1,8 @@
+[MASTER]
+max-line-length=80
+
+[MESSAGES CONTROL]
+disable = C0330, C0326
+
+[FORMAT]
+max-line-length=120
