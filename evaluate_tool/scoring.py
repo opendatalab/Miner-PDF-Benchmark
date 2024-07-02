@@ -1,17 +1,17 @@
 """
-计算simscore, 参考(https://github.com/VikParuchuri/marker?tab=readme-ov-file)
-"""
+Calculate simscore, refer to (https://github.com/VikParuchuri/marker?tab=readme-ov-file)"""
 from statistics import mean
 
 from rapidfuzz import fuzz
 
 CHUNK_MIN_CHARS = 25
 
+
 def chunk_text(text, chunk_len=500):
     """
     Chunk text into chunks of a given length.
     """
-    chunks = [text[i:i+chunk_len] for i in range(0, len(text), chunk_len)]
+    chunks = [text[i:i + chunk_len] for i in range(0, len(text), chunk_len)]
     chunks = [c for c in chunks if c.strip() and len(c) > CHUNK_MIN_CHARS]
     return chunks
 
@@ -30,7 +30,7 @@ def overlap_score(hypothesis_chunks, reference_chunks):
         max_score = 0
         total_len = 0
         i_offset = int(i * length_modifier)
-        chunk_range = range(max(0, i_offset-search_distance), min(len(reference_chunks), i_offset+search_distance))
+        chunk_range = range(max(0, i_offset - search_distance), min(len(reference_chunks), i_offset + search_distance))
         for j in chunk_range:
             ref_chunk = reference_chunks[j]
             score = fuzz.ratio(hyp_chunk, ref_chunk, score_cutoff=30) / 100
