@@ -113,7 +113,6 @@ class Scoring:
                                                      "bleu_score": bleu_score, "sim_score": simscore}
                 else:
                     print(f"File {filename} not found in actual directory.")
-        # 计算每类平均值
         class_average_edit_distance = sum(edit_distances) / len(edit_distances) \
             if edit_distances else 0
         class_average_bleu_score = sum(bleu_scores) / len(bleu_scores) if bleu_scores else 0
