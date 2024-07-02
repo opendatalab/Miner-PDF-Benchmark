@@ -4,7 +4,7 @@ English | [简体中文](README-zh.md)
    MPB (Miner-PDF-Benchmark) is an end-to-end PDF document comprehension evaluation suite designed for large-scale model data scenarios. It ensures human readability at the file granularity and provides PDF categorization tags. The dataset comprises 350 PDF files and 8410 pages of PDFs, including 11 types of datasets such as books, textbooks, academic literature, PPT to PDF, and examination papers. It serves as a reference for evaluating PDF document comprehension capabilities for developers of large-scale model data and tool developers.
    
 # Dataset Source
-The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc. The source and composition of different subsets are as follows:
+The MPB dataset is sourced from various origins, including arXiv, Sci-Hub, textbooks, examination papers, historical documents, etc. The source and composition of different subsets are as follows:
 
 | Document Type             | Tag                 | Total Files | Total Pages | Description                                                                                    |
 |---------------------------|---------------------|-------------|--------------|------------------------------------------------------------------------------------------------|
@@ -15,7 +15,7 @@ The MPB dataset is sourced from a variety of origins, including arXiv, Sci-Hub, 
 | Courseware (PPT to PDF)   | courseware         | 7           | 383          | The PDF files are converted from PPT on the Internet, have background color, and contain four subjects: biology, Chinese, English, and physics;|
 | Special Exam Paper       | special_exam_paper  | 3           | 80           | Special Exam Papers are from the Internet, have the characteristics of test paper layout, watermark, and text in graphics, and the content includes elementary school pinyin questions and math test questions;         |
 | Historical Document       | historical_document | 1           | 3            |  Historical documents are from the Internet, have the characteristics of vertical layout, reading order from right to left, and traditional Chinese font;   |
-| Note                     | note               | 3           | 293          | The notes are from the Internet and are handwritten. They include handwritten notes from 3 junior high school students.  |
+| Note                     | note               | 3           | 293          | The notes are handwritten from the Internet. They include handwritten notes from 3 junior high school students.  |
 | Ordinary Exam Paper      | ordinary_exam_paper | 27          | 372          | Ordinary test papers are from the Internet, with the characteristics of a test paper layout and a mainly black and white background. They include subjects such as computer science, mathematics, and Chinese, covering elementary school, junior high school, high school, and industry question banks. |
 | Colorful Textbook        | colorful_textbook   | 3           | 144          | The colorful textbooks are from the Internet and have the characteristics of containing special graphic information. The contents include subjects such as English, mathematics, Chinese (including pinyin), etc. |
 | Ordinary Book             | ordinary_book     | 10          | 2280         | Ordinary books come from Internet books, characterized by a single-column layout and a black and white background. |
