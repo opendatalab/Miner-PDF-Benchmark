@@ -1,5 +1,6 @@
 """
-Calculate simscore, refer to (https://github.com/VikParuchuri/marker?tab=readme-ov-file)"""
+Calculate simscore, refer to (https://github.com/VikParuchuri/marker?tab=readme-ov-file)
+"""
 from statistics import mean
 
 from rapidfuzz import fuzz
