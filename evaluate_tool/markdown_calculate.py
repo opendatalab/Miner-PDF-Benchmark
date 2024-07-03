@@ -1,5 +1,5 @@
 """
-计算效果指标
+Calculating performance indicators
 """
 import argparse
 import json
@@ -9,7 +9,8 @@ import re
 from Levenshtein import distance
 from nltk.tokenize import word_tokenize
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-
+import nltk
+nltk.download('punkt')
 import scoring
 
 parser = argparse.ArgumentParser(description="get directory")
