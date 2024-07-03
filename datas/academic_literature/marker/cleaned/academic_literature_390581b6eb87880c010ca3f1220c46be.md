@@ -1,0 +1,2048 @@
+# Predictive Enforcement Yeon-Koo Che, Jinwoo Kim, Konrad Mierendorff∗
+
+May 9, 2024
+
+## Abstract
+
+We study law enforcement guided by data-informed predictions of "hot spots" for likely criminal offenses. Such "predictive" enforcement could lead to data being selectively and disproportionately collected from neighborhoods targeted for enforcement by the prediction. Predictive enforcement that fails to account for this endogenous "datafication" may lead to the over-policing of traditionally high-crime neighborhoods and performs poorly, in particular, in some cases as poorly as if no data were used. Endogenizing the incentives for criminal offenses identifies additional deterrence benefits from the informationally efficient use of data.
+
+Keywords: Data-driven enforcement, one-armed bandit with changing world, hidden Markov-chain, a bandit with endogenously-valued arm
+
+## 1 Introduction
+
+Data-guided prediction algorithms are becoming increasingly common in law enforcement. Predictive algorithms such as Risk Terrain Modeling, Spatio-Temporal, Near Repeat Modeling, have become standard crime-fighting tools for police departments in major US cities (See Pearsall (2010); Perry, McInnis, Price, Smith, and Hollywood (2013); Brayne (2020)).1 These
+∗Che: Department of Economics, Columbia University (email: yeonkooche@gmail.com); Kim: Department of Economics, Seoul National University (email: jikim72@gmail.com); Mierendorff: Department of Economics, University College London.
+
+1Police departments have used in-house algorithms as well as commercially developed algorithms such as PredPol, Palantir, Hunchlabs and IBM.
+
+arXiv:2405.04764v1 [econ.TH] 8 May 2024 algorithms forecast "hot spots" for criminal activity and recommend allocation of enforcement resources accordingly. Credit card companies also use data to flag suspicious transactions, while municipal governments are using data to enforce a multitude of rules and regulations. For example, New York City has a special analytic team that applies big-data analytics to solve problems related to enforcement. One famously-cited anecdote is the inspection of "illegal conversions"—a practice of dividing a dwelling into many smaller units for extra rental income; they are major fire hazards, among other issues. By linking numerous data and using them to predict the likely violations and the severity of fire hazards, the team was able to steer its 200 inspectors to select among 25,000 complaints received each year, leading to a five-fold improvement in the effectiveness of its inspection.2 While there are many success stories of *predictive enforcement*, there are also criticisms.
+
+Critics argue that prediction algorithms are often unreliable and tend to over-police certain communities, particularly non-white and low-income groups. They claim that these algorithms are trained on biased data that reflects historical biases made by humans, perpetuating these biases. Additionally, a positive feedback loop between enforcement and crime detection can arise: concentrating police patrol on a high-crime neighborhoods leads to more arrests being made and more crimes being detected in that neighborhood, leading to further concentration of police patrol in those neighborhoods and perpetuating the cycle.3 In this paper, we develop a theoretical framework for understanding predictive enforcement, with a focus on the endogenous nature of data collection or "datafication." Crime data is rarely random or representative, but rather a result of past enforcement and surveillance activities. The feedback loop between enforcement and information gathering is a crucial feature of this framework, particularly for so-called "victimless crimes" such as drugs, gambling, and prostitution, the detection of which requires enforcement/surveillance by the police.
+
+To capture the link between enforcement and data collection, we adopt a *bandit* model.
+
+At each time t ∈ (−∞,∞), a policymaker (PM) allocates yt ∈ [0, 1] of enforcement resources
+(such as police patrol units) to a single neighborhood at (flow) marginal cost c > 0. The
+"neighborhood" is a metaphor for any observable characteristics such as geographic locations, groups of individuals, types of credit card transactions, and types of housing (in the context of illegal conversions) that PM may target for enforcement. The "cost" reflects the opportunity cost of diverting enforcement resources away from other neighborhoods or covariates.
+
+Given allocation yt, a crime attempted at t is intervened in, and harm is avoided, with probability yt. Whether a crime is attempted in the neighborhood depends on its underlying crime condition, which we model as the arrival of a crime opportunity. The arrival rate of crime opportunities, denoted by λ˜, is random and depends on the underlying state: λ˜ equals λ > 0 in state H (or "high crime") and 0 in state L ("safe"). The unknown state constitutes the main uncertainty faced by the PM, and the crime data generated by past enforcement can help resolve this uncertainty.
+
+Our model is similar to that of Keller, Rady, and Cripps (2005) (henceforth, KRC), but we depart from KRC in two crucial ways. First, unlike KRC, the state is not fixed but rather changes according to a continuous-time Markov chain with a long-run probability π0 that the state is H. We adopt this "changing world" model for two reasons. Firstly, criminal conditions, as represented by λ˜, are often not fixed but rather change stochastically over time. Various factors such as foot traffic, weather conditions, and socioeconomic variables, can influence the susceptibility of a neighborhood to crimes, and these factors change over time in a way not entirely captured by observed data. Secondly, the "changing world" serves a crucial analytical purpose. With a fixed state, the PM will eventually learn the true state, so the value of learning is transient and short-lived. However, with the changing world, the need for learning never vanishes, allowing us to study the value of learning, which is the crucial element of predictive enforcement, even in the long run.
+
+In addition to the exogenous crime opportunities, the commission of crime in our model also depends on the criminal's incentives, which are endogenously determined by the expected enforcement decision. In the second part of our model, we endogenize crime activity by analyzing the incentives of the criminals. This feature makes the value of the "arm" endogenously dependent on the likelihood of that arm being chosen. Analytically, this means that the value of enforcement resources allocated to a particular neighborhood depends not only on the underlying crime condition but also on the incentives of the criminals, which are in turn influenced by the expected enforcement decision.
+
+In our study, we analyze the optimal predictive (OP) policy under two environments, each taking into consideration the link between enforcement and information collection. We compare OP against two benchmarks: (i) the non-predictive (NP) policy, which does not use past crime data for enforcement decisions, and (ii) the greedy predictive (GP) policy, which uses the prediction but ignores its implications for datafication by only using it for enforcement in a myopically optimal way. We view these benchmarks as representing the traditional and current approaches to predictive enforcement, respectively. Specifically, GP
+aligns well with the standard account of predictive enforcement being adopted in practice, where the prediction is used to achieve immediate enforcement goals without considering the future implications for data collection.
+
+Our results can be summarized as follows. First, we consider the case of exogenous crime, where a potential criminal commits a crime with a fixed probability x ∈ (0, 1] upon receiving a crime opportunity, and the social loss of an unintervened-in/unmitigated crime is $1. Under the non-predictive (NP) policy, the PM chooses optimal enforcement policy without consulting crime data, so she chooses yt = 1 for all t if the long-run crime rate xλπ0 [i.e., evaluated at the long-run prior π0] exceeds the per-unit cost c, or if the long-run prior π0 exceeds the myopic cutoff, pˆM := *c/xλ*, and she chooses yt = 0 if π0 < pˆM. In particular, if the alternative neighborhood is traditionally crime-prone, the opportunity cost, or the myopic cutoff, will be high, and the policy will call for no enforcement of the reference neighborhood.
+
+In both the greedy predictive (GP) and optimal predictive (OP) policies, the PM forms her posterior belief p on the state based on the crime data, specifically the timing of the last detected crime, and adjusts her enforcement level based on that belief. Under GP, the PM
+follows a cutoff policy with the myopic cutoff pˆM as a threshold: y(p) = 1 if p > pˆM and y(p) = 0 if p < pˆM. The OP also has a cutoff structure but its cutoff pˆ may not coincide with the myopic cutoff pˆM. The cutoff level pˆ depends on the opportunity cost of enforcement c. If the cost is sufficiently high, then the cutoff is so high that OP eventually calls for no enforcement. If the cost is sufficiently low, then the cutoff is so low that OP eventually calls for full enforcement. In these two cases, NP and GP lead to the same long-run outcome as OP. Intuitively, when the cost is too high or too low, there is little uncertainty about the optimal policy, so prediction has no value.
+
+When the cost is at an intermediate level, prediction is potentially valuable, and its use for enforcement decisions matters. In this case, the optimal cutoff pˆ is set strictly below the myopic cutoff pˆM to allow for more exploration than GP, which focuses only on exploitation.
+
+Hence, when GP departs from OP, the former enforces too little relative to OP. In fact, GP departs from OP when the opportunity cost c tends to be either high or intermediate, i.e.,
+when the alternative neighborhoods are traditionally crime-prone. This result is consistent with the complaint that predictive enforcement over-polices past high-crime neighborhoods.
+
+Note that this result is obtained without any systemic bias in the prediction against such neighborhoods and is attributed entirely to an insufficient exploration on the part of GP.
+
+Is predictive enforcement effective? The answer depends on how prediction is used for the enforcement decision. If the PM can learn only from enforcement, as is assumed in the baseline model, GP does not perform better than NP in the long run, despite the fact that GP makes use of prediction whereas NP does not. This result echoes the complaint about its lack of reliability in current predictive enforcement practices. It suggests that prediction can have no value unless the PM uses it informationally optimally. It also suggests that the feedback loop between enforcement and exploration is responsible for the poor performance of the myopically optimal use of prediction.
+
+More generally, GP does better than NP if the PM can also learn without enforcement, for example, from community reporting of crimes. Its performance converges to that of NP
+in payoff as the background learning vanishes and to that of OP if the background learning becomes so effective that enforcement yields no extra learning.
+
+In Section 4, we endogenize the crime rate through the potential criminal's incentives to commit a crime. We assume that there exists a critical enforcement level yˆ ∈ (0, 1) such that a criminal will commit a crime with probability x = 1 if he expects the enforcement level to be y > yˆ, and with probability x = 0 if he expects y < yˆ, and with any probability x ∈ [0, 1] if he expects y = ˆy. We also assume that potential criminals are non-predictive, meaning they do not have access to the crime data, so their crime decision can only depend on their prior expected enforcement rate. We then look for a Markov perfect equilibrium where the strategy of the PM may only depend on p, the belief about the state being H.
+
+Under NP, neither criminal's strategy nor the PM's strategy depends on the prediction p informed by the crime data. What ensues then is the classic *inspection game:* both PM and criminals randomize if c is not too large. PM chooses an interior enforcement level y = ˆy that keeps the criminals indifferent, and criminals choose an interior crime probability xˆ = c/(λπ0)
+that keeps the PM indifferent with regard to her enforcement.
+
+Under GP and NP, the PM's strategies must form the best responses against the equilibrium crime behavior chosen by potential criminals. Therefore, the PM's strategies under these regimes follow the characterizations in the exogenous crime case, given the criminals' behavior
+(which is now endogenous). Recall that, holding the crime rate fixed, the PM is willing to enforce more under OP than under GP. This feature makes enforcement more credible and generates more deterrence under OP than under GP, resulting in a lower crime rate under OP than under GP in equilibrium. When c is sufficiently small, GP and OP prescribe the same cutoff policy, making them observationally equivalent. However, the crime rate is lower under OP than under GP.
+
+Finally, we consider the possibility of the criminals accessing the crime data and harnessing the same predictive power as the PM. The GP and OP then entail the outcome of the inspection game equilibrium for each prediction about the state. This gives rise to a three-way tie across the alternative regimes. This limit benchmark illustrates that the value of prediction hinges on the PM having an upper hand in the predictive "arms race," which may vanish as the superiority PM enjoys in her prediction power erodes.
+
+Related Literature. The current paper is part of the enforcement literature initiated by by Becker (1968),4 and the inspection games that studies the equilibrium interplay between an enforcer and an enforced,5 Our model considers a dynamic version of these models. Several recent papers consider dynamic inspection models studying optimal frequency of inspection; see Dilmé and Garrett (2019), Varas, Marinovic, and Skrzypacz (2020); Wagner and Knoepfle
+(2021); Ball and Knoepfle (2023). The current paper differs in its focus on the endogenous datafication process through a bandit framework. In particular, the current model can be seen as generalizing the planner's problem in Keller, Rady, and Cripps (2005) by introducing a "changing world" and by introducing an endogenously-valued arm. Endogenous datafication is also featured in different contexts by Che and Hörner (2018) and Che, Kim, and Zhong
+(2020).
+
+Ichihashi (2023) studies predictive policing from the information design perspective. He finds that suppressing information about criminals' types leads to a more efficient allocation of enforcement resources and thus more effective deterrence. His model does not consider the dynamic feedback between enforcement and information acquisition, the main focus of the current paper. Lum and Isaac (2016) and Ensign, Friedler, Neville, Scheidegger, and Venkatasubramanian (2018) consider the dynamic feedback and point out the possible misinference and mis-prediction of true crime activities. The PM in our model is fully Bayesian and avoids such inference errors. Mohler, Short, Malinowski, Johnson, Tita, Bertozzi, and Brantingham (2015) study the performance of PredPol algorithm, a leading predictive policy algorithm deployed by several police departments. Remarkably, the predictive policies, OP
+and GP, in our model match the qualitative feature of the PredPol algorithm, namely the "earthquake model," which predicts the crime rate to decay exponentially as time progresses without experiencing another crime incidence. In our model, this feature arises from the Bayesian updating about underlying changing state, whereas the PredPol model assumes this feature directly through a self-exciting point process.
+
+The current paper also intersects with the literature on racial profiling and the recent literature on algorithmic fairness.6 We do not consider fairness as part of the PM's objective in our analysis. Rather, we draw fairness implications of the failure to account for endogenous datafication.
+
+## 2 Preliminaries 2.1 Setup
+
+A "neighborhood" that has a unit mass of potential "criminals." These labels should be interpreted generally: criminals are potential violators of any law, safety, health regulations, city ordinance, zoning, and housing code, and not just those who may commit violent crimes, and a neighborhood means *any observable characteristics* such as a geographic location, types of financial transactions, and types of regulated housing units, that the enforcement authority, we call policymaker (PM), may track and target for intervention.
+
+The time is continuous with t ∈ (−∞,∞). At each point t in time, crime opportunity arrives to an individual in the neighborhood at an uncertain Poisson rate λ˜ that depends on the state of the world, or simply "state." The state ωt could be either "high" (ωt = H)
+interpreted as crime-susceptible, or "low" (ωt = L) interpreted as safe. In state ωt = L, λ˜ = 0, so no opportunity for crime exists. In state ωt = H an individual receives a crime opportunity at the rate of λ > 0.
+
+The state is not fixed but rather follows a continuous-time Markov chain. Specifically, state ωt = L switches to ωt = H at rate ρL > 0 and state ωt = H switches to ωt = L at rate ρH > 0.
+
+
+
+6See Knowles, Persico, and Todd (2001); Bjerk (2007); Persico (2002, 2009); Curry and Klumpp (2009);
+Eeckhout, Persico, and Todd (2010) for the former, and Rambachan, Kleinberg, Ludwig, and Mullainathan (2020); Kleinberg, Ludwig, Mullainathan, and Sunstein (2018); Angwin, Larson, Mattu, and Kirchner (2022); Dressel and Farid (2021); Liang, Lu, and Mu (2022) for the latter.
+
+The *stationary* probability of the state being ωt = H is then:7
+
+$$\pi_{0}:=\frac{\rho_{L}}{\rho_{H}+\rho_{L}}.$$
+
+A useful interpretation/observation is that π0 is the long-run average fraction of the time that the world is in state ωt = H.
+
+Upon receiving the crime opportunity, the individual commits a crime with probability x > 0. From now on, we simply call x the crime level. In the sequel, we consider two different scenarios. In the case of exogenous crime, the crime level is fixed. In the case of endogenous crime, the crime level depends on the individual's incentive, which in turn depends on the expected level of enforcement by PM. We will later model this dependence.
+
+We begin with the former both for analytical clarity as well as realism: this assumption approximates the situation in which the elasticity of the crime level to actual enforcement is rather low.
+
+At each time t, PM chooses a level of enforcement yt ∈ [0, 1] at cost c > 0 per unit enforcement. One can interpret c as the direct (say monetary) cost of increasing enforcement, e.g.,
+hiring inspectors/police personnel or equipment. Alternatively, the cost can be interpreted as the *opportunity cost* of diverting enforcement resources away from other neighborhoods under the PM's jurisdiction. Indeed, it is useful to flesh out this interpretation.
+
+Two neighborhood model. Suppose there are two neighborhoods: neighborhood A is one mentioned above with a uncertain crime condition, and neighborhood B is the other neighborhood under the PM's jurisdiction. Neighborhood B has a known crime condition; crime opportunity arrives to an individual in B at a known rate λB ∈ (0, λ). If λB > π0λ, one might characterize B as a traditionally "high-crime" area. The PM allocates a unit budget of resource allocation at zero cost between the two neighborhoods. A high λB means a high opportunity cost from pulling resources away from B, so it corresponds to a high c in our model. Given this mapping, our results translate into the two-neighborhood model. The reader should keep two neighborhood model in mind, as it facilitates interpreting our results with regard to how the policy treats a traditionally high-crime neighborhood.
+
+The PM never directly observes the state ωt, and we let pt denote the PM's belief that the state is ωt = H at time t. The enforcement serves two functions. Specifically, suppose PM
+chooses yt at any time t ≥ 0. Then, it incurs a flow cost cyt at that instant. But, if the crime 7The probability π0 simply solves the balance equation: π0ρH = (1 − π0)ρL.
+
+is attempted at that point, with probability yt the PM
+
+1. *intervenes* in the crime and mitigates its harm; mitigation can involve either foiling a crime or arresting a criminal after the crime.
+2. *learns* that the state is ωt = H (since this crime can only be attempted in state H).
+
+We assume that unmitigated harm costs $1 to society.8 Both functions of enforcement accord well with the common practice of law and regulatory enforcement. The primary roles of inspectors are to both redress violations and mitigate the associated harms and to collect information about crime conditions for future predictions. In particular, the information collection role of enforcement is growing in prominence in recent years in the context of predictive policing. PM's payoff. The PM's payoff is given by the losses she incurs on the infinite horizon. The loss arises from two sources: the unmitigated harm and the cost of enforcement. Suppose that at each time t the state is ωt = H with probability pt, PM chooses an enforcement level yt, and the crime probability (given the opportunity) is x. Then, PM's *flow* loss at t is
+
+$$p_{t}\lambda x(1-y_{t})+c y_{t},$$
+
+so her (discounted) total loss is
+
+$$\int_{0}^{\infty}(p_{t}\lambda x(1-y_{t})+c y_{t})e^{-r t}d t,$$
+
+where r > 0 is PM's discounted rate. We assume that *λx > c* since otherwise, it would be trivially optimal to set yt = 0 always.
+
+Prediction. Predictive enforcement utilizes the prediction of future crime based on the observed history of past crimes. In our model, this boils down to forming a posterior belief p based on the detected incidences of crimes. We now formalize the law of motion that governs the belief updating. To see how the belief evolves, suppose a crime is detected at any point.
+
+Then, the posterior belief jumps to 1 since crime can only occur in ωt = H. If no crime is detected, then either the state is ωt = L or ωt = H but either crime has not occurred or has 8Again, the harm can be interpreted by the harm that has been committed irrevocably, or the social harm from unfulfilled justice—i.e., a failure to arrest the violator after the harm is committed.
+
+not been detected. Bayes rule suggests that
+
+$$p_{t+dt}=\frac{p_{t}(1-\rho_{H}dt)(1-\lambda xydt)+(1-p_{t})\rho_{L}dt(1-\lambda xydt)}{p_{t}(1-\rho_{H}dt)(1-\lambda xydt)+(1-p_{t})(1-\rho_{L}dt)+(1-p_{t})\rho_{L}dt(1-\lambda xydt)+p_{t}\rho_{H}dt}+o(dt)$$ $$=\frac{p_{t}(1-\rho_{H}dt-\lambda xydt)+(1-p_{t})\rho_{L}dt}{1-p_{t}\lambda xydt}+o(dt).$$
+Hence, $$\frac{p_{t+dt}-p_t}{dt}=\frac{\rho_L(1-p_t)-\rho_H p_t-p_t(1-p_t)\lambda xy}{1-p_t\lambda x dt}+O(dt),$$ so ... 
+$${\dot{p}}=\underbrace{\rho_{L}(1-p)-\rho_{H}p}_{\mathrm{natural~rate}}\underbrace{-p(1-p)\lambda x y}_{\mathrm{updating~from~"no~detection"}}=:f(p,y).$$
+$$\left(1\right)$$
+
+It is instructive to unpack the rate at which PM's belief changes. There are two terms. The first term, ρL(1−p)−ρHp, is the "natural rate" due to the underlying Markov chain governing the state of the world. If the PM (policymaker) chooses yt = 0, there is no way to learn the state, so PM's belief simply follows the natural rate. Naturally, if her prior is pt > π0, then the belief drifts down toward π0, and if pt < π0, then the belief drifts up toward π0 over time.
+
+If the PM chooses some enforcement yt > 0, however, then she expects to detect state ωt = H (assuming x > 0) occasionally. Not detecting any crime (even with enforcement) then pushes her posterior toward state ωt = L. The second term captures this downward pressure that "tampers" with the natural rate. In particular, the downward pressure is strongest when yt = 1. Let π1 be such that f(π1, 1) = 0. Then, if PM chooses yt = 1 always, her belief drifts down for pt > π1 and drifts up for pt < π1, as long as enforcement yields no detection of crime. Not surprisingly, π1 < π0. The belief dynamics is depicted in Figure 1.
+
+0
+$f(p,y)>0$$f(y,p)\leqq0$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$ depends on $y$$\pi_{0}$$f(p,y)<0$$\pi_{1}$
+Figure 1: PM's belief updating given no detection.
+
+Given no detection, PM's belief drifts up if pt < π1 and drifts down if *p > π*0. How the belief evolves within pt ∈ (π1, π0) depends on y. In general, the higher ytis, the belief will settle closer toward π1, absent any jump.
+
+Remark 1 (Fixed state model). In the KRC bandit model, the state is non-changing, so the natural rate is absent, and the only the second term is active. Hence, the belief in case of
+"no news" always drifts down and tends to 0 if no crime is detected. This is not the case in our model with changing world: the belief can never permanently fall below π1 and never permanently stay above π0.
+
+Admissibility. Throughout, we will focus on the Markovian strategy by the PM that depends on the payoff-relevant state pt. As is clear, this is without a loss for the exogenous crime case and natural for the endogenous crime case. Hence, we often suppress the dependence on the calendar time t. Obviously, the law of motion (1) must be well defined along such a strategy. This imposes an admissibility restriction on the strategy p 7→ y(p). Admissibility will not be an issue for most the part except for the following situation. Suppose p is such that f(p
+′*, y(p*
+′)) > 0 for all p
+′ > p (close to p say) and f(p
+′′*, y(p*
+′′)) < 0 for all p
+′′ < p (close to p).
+
+In this case, admissibility requires that y(p) = z(p), where z(p) satisfies 0 = f(*p, z(p*)) = ˙p.
+
+This simply means that a belief p must be stationary if it attracts drifts from opposite directions since in that case p must be an absorbing state. Suppose this condition is violated, say f(p, y(p)) < 0. Then, the law of motion is not well-defined at p since the strategy calls for arbitrarily frequent movement back and forth between p and arbitrarily lower belief. Admissibility will play some role in our enforcement policies below, and more discussion will follow on its economic content. Importantly, although admissibility may appear to be a technical condition, it does capture a substantive property of a dynamic system. If one considers a discrete-time approximation of our continuous time model, then the absorbing state corresponds to frequent switching between y(p
+′′) = 1 for p
+′′ > p and y(p
+′) = 0 for p
+′ < p, and the stationarity-inducing policy z(p) ∈ (0, 1) approximates the fraction of time that y = 1 is chosen while the system is in the neighborhood of p.
+
+## 2.2 Alternative Enforcement Regimes
+
+We consider the three plausible scenarios in terms of whether and how data is used to inform PM's enforcement decision. To what extent each of these scenarios corresponds to real-world practice is debatable. Nevertheless, they will serve as three useful benchmarks that facilitate our understanding of the value and the implications of using data.
+
+Non-predictive enforcement (NP). As a benchmark for a situation in which crime data is not used to inform the enforcement policy, we assume that the PM never updates her belief about the likelihood of crime based on the crime data. Since such a PM would never learn from past history, her enforcement policy y will be constant in p, depending only on her prior.
+
+We assume that the prior matches the fundamental ground truth, namely, the long-run rate of crime, π0λx. Such a prior may be formed based on the PM's long-term memory or aggregate past crime record.9 Given such a prior, the optimal non-predictive enforcement policy is to enforce fully if and only if π0λx ≥ c. More formally, we define the non-predictive enforcement policy to be:
+
+$$y_{\mathrm{NP}}(p)={\left\{\begin{array}{l l}{1}\\ {0}\end{array}\right.}$$
+yNP(p) = (1 for π0 > pˆM
+$$\left(2\right)$$
+for $\pi_{0}>\hat{p}_{M}$  for $\pi_{0}<\hat{p}_{M}$,
+where pˆM := *c/(λx*) is the *myopic* cutoff. Note that yNP(p) is a constant function taking either 0 or 1.
+
+Greedy predictive enforcement (GP). We next consider a benchmark in which the PM updated the posterior p accurately based on the crime history but acts myopically on her enforcement decision, without taking into consideration the informational value of enforcement.
+
+This scenario accurately describes the standard practice of predictive enforcement. What data-driven enforcement does is to predict the likelihood of crime at each time and make an optimal decision for that time. We assume that the PM chooses the myopically optimal
+
+enforcement decision:  $$y_{ov}(p)=\left\{\begin{array}{ll}1&\mbox{for$p>\hat{p}_{M}$}\\ 0&\mbox{for$p<\hat{p}_{M}$},\end{array}\right.\tag{3}$$  where $p$ is updated according to (1). Note that the PM here uses the full force of predic
+$$\left({\boldsymbol{3}}\right)$$
+tion afforded by the crime data. Where GP may fall short of its failure to account for the informational value of her enforcement decision.
+
+Again, the greedy nature of GP is consistent with the current enforcement practice, which makes no reference to the informational value of enforcement.
+
+9For instance, the PM may initially run a full enforcement campaign, choosing y = 1 at each instant, for a duration T of time. Let N(T) denote the number of crimes. Then, the empirical crime rate is:
+
+$${\frac{N(T)}{T}}={\frac{\int_{0}^{T}1_{\{{\mathrm{crime~at~}}t\}}d t}{T}},$$
+
+which converges to E[1{crime at t}] = π0λx almost surely, by Ergodic Theorem for (irreducible) Markov chains.
+
+If one takes this scenario, one interpretation of non-predictive enforcement is to use data but in a very aggregate fashion.
+
+Optimal predictive enforcement (OP). This regime captures the ideal situation in which PM makes her enforcement choice in a dynamically optimal manner. This means that, just as in GP, the PM forms her posterior pt accurately from the crime data, but she uses that prediction to make an enforcement decision that is long-term optimal, i.e., one that takes into account the informational value of the enforcement decision.
+
+In what follows, the NP and GP will serve as benchmarks against OP. It is important to note that the point of the comparison will not to establish the superiority of OP relative to these benchmarks. These benchmarks are defined to "turn off" some aspect of decision-making that is relevant for the optimal policy, so their inferiority is unsurprising. Rather, the aim is to understand the roles played by the turned-off elements in shaping the optimal policy and to decompose and account for the values that they will contribute toward the optimal policy.
+
+## 3 Exogenous Crime
+
+In this section, we assume that the crime probability is fixed exogenously at some level x ∈
+(0, 1]. We first analyze OP and will compare its outcome with those of NP and GP.
+
+## 3.1 Optimal Predictive Enforcement
+
+The decision problem facing the PM does not depend on the calendar time, depending only on the belief p. Hence, the problem reduces to a Markov Decision Problem (MDP) with state variable p, and the optimal policy rule is given by p 7→ y(p), and the subscript t is dropped henceforth. We employ a dynamic programming technique to characterize the optimal policy.
+
+To this end, let Ly(p) denote the total discounted loss of PM with belief pt = p who chooses any enforcement policy y : [0, 1] → [0, 1]. For a short duration *dt >* 0, we can write
+
+$L_{y}(p)=\big{[}p\lambda x(1-y(p))+cy(p)\big{]}dt+p\lambda xy(p)dt(1-rdt)L_{y}(1)$  $$+(1-rdt)(1-p\lambda xy(p)dt)L_{y}(p_{t+dt})+o(dt).$$
+The first terms in square brackets represent the flow loss, which consists of the unmitigated harm and the enforcement cost for a length dt; the second term corresponds to the event in which crime is observed, in which case (1 − *rdt)L*y(1) accrues as continuation loss; and the last term accounts for the event of non-detection, in which case a discounted continuation loss (1 − *rdt)L*y(pt+dt) accrues under updated belief pt+dt. By taking a limit as dt → 0 and applying (1), we obtain:
+
+$$r L_{y}(p)=p\lambda x(1-y(p))+c y(p)+p\lambda x y(p)(L_{y}(1)-L_{y}(p))+L_{y}^{\prime}(p)f(p,y(p)).$$
+
+If we let L denote the minimized loss, where y is chosen optimally, we obtain the following HJB equation:
+
+$$r L(p)=\operatorname*{min}_{y\in[0,1]}p\lambda x(1-y)+c y+p\lambda x y(L(1)-L(p))+L^{\prime}(p)f(p,y).$$
+′(*p)f(p, y*). (5)
+In what follows, instead of solving (5), we solve for the value function which maximizes the present discounted value of *intervened crimes net of enforcement costs*, which can be shown to satisfy an HJB equation:10
+
+$$r V(p)=\operatorname*{max}_{y}\underbrace{(p\lambda x-c)\,y+p\lambda x y[V(1)-V(p)]+f(p,y)V^{\prime}(p)}_{=:W(p,y)}.$$
+$$\left({4\atop4}\right)$$
+$$\left({\mathfrak{h}}\right)$$
+$$(6)$$
+
+This approach can be justified:
+Lemma 1. Any policy y(·) *solves* (6) *if and only if it solves* (5).
+
+Proof. See Appendix A.
+
+The HJB in (6) is intuitive and permits an easy comparison with Keller, Rady, and Cripps
+(2005) (henceforth, KRC), specifically in their planner's problem. In fact, this HJB equation resembles its counterpart in the planner's problem studied by KRC, except that the changing-world feature introduces two differences. First, as discussed earlier, the law of motion governing belief evolution differs from that in KRC. Second and more important, the changing state of the world means that the value function is not pinned down even for p = 0 or p = 1, since reaching these extreme states does not mean a permanent resolution of uncertainty. Instead, the value at each belief p, including p = 1 or p = 0, depends on what the PM
+does for different beliefs p, or its value. Hence, the value function has a fixed point character 10The HJB equation can be derived in the same way, namely by taking the limit of V (p) = max y(pλx − c) ydt + (*pλxydt*)(1 − rdt)V (1) + (1 − rdt)(1 − *pλxydt*)V (pt+dt) + o(dt)
+
+$$=\max_{y}^{y}\left(p\lambda x-c\right)ydt+p\lambda xyV(1)dt+(1-rdt)(1-p\lambda xydt)(V(p)+V^{\prime}(p)\dot{p}dt)+o(dt)$$ $$=\max_{y}\left(p\lambda x-c\right)ydt+p\lambda xyV(1)dt+(1-rdt)(1-p\lambda xydt)[V(p)+V^{\prime}(p)f(p,y)dt]+o(dt),$$
+
+as dt → 0.
+
+in our model. This presents a new analytical challenge absent in the bandit model with a non-changing state.11 Similar to the KRC model, the optimal policy that solves (6) takes a *cutoff* form: for some pˆ ∈ [0, 1],
+
+$$y(p)=\left\{\begin{array}{l l}{{1,}}&{{\mathrm{for~}p>\hat{p}}}\\ {{0,}}&{{\mathrm{for~}p<\hat{p}.}}\end{array}\right.$$
+
+$$[e_{f}]_{*}$$
+$${\mathrm{-~-~}}\left(\mathbb{C}\right)$$
+
+$\frac{1}{2}$ 2. 
+$$\left(7\right)$$
+
+This policy is intuitive since the RHS of (6) is linear in the policy variable y (recall f is linear in y), which renders a bang bang solution. The following characterizes OP. Theorem 1. For each c > 0*, there exist* Λ
++(c) > Λ
+−(c) > 0 such that the optimal enforcement policy denoted y
+∗(p) *is of the form in* (7) *where the cutoff is*
+
+$=\;\frac{1}{2}$ . 
+Case 1: π0 ≤ p <ˆ pˆM if xλ ≤ Λ
+−(c) *("low" crime rate);*
+
+_Case 2: $\hat{p}=\hat{p}_{M}\leq\pi_{1}$ if $x\lambda\geq\Lambda^{+}(c)$ ("high" crime rate);_
+
+$$c\lambda\in(\Lambda^{-}(c),\Lambda^{+}(c))$$
+$\Rightarrow\quad\square$
+
+$\mathcal{L}$. 
+
+Case 3: pˆ ∈ (π1, π0) and p <ˆ pˆM if xλ ∈ (Λ−(c),Λ
++(c)) ("intermediate" crime rate).
+
+The policy at the cutoff belief, y
+∗(ˆp), is arbitrary in Case 1 and Case 2, but in *Case 3*, y
+∗(ˆp) =
+z(ˆp), where z(p) satisfies *f(p, z(p*)) = 0*. Moreover,* Λ
++(c) and Λ
+−(c) *are increasing in* c.
+
+Finally, pˆ is continuously decreasing in λx *and increasing in* c. Proof. See Appendix B.
+
+$\lim\limits_{n\to\infty}$ B. 
+See $\Lambda$. 
+As stated in Theorem 1, there are three cases, depending on where the optimal cutoff pˆ
+lands in relationship with the "landmarks," π1 and π0, depicted in Figure 1.
+
+Case 1: low crime rates. Here, the crime rate xλ is so low that the optimal cutoff is higher than π0. In this case, the cutoff is lower than the myopic level pˆM := *c/(xλ*), for a reason familiar from the logic of exploitation and exploration trade-off. See Figure 2. While it would be optimal to enforce (fully) if and only if p > pˆM from the exploitation perspective, there is a long-term benefit in exploration from enforcing even when p is slightly below the myopic cutoff pˆM. Hence, if the initial prior is above the cutoff pˆ, then the PM starts by enforcing 11By contrast, the state of the world is fixed in the KRC model. In that case, once the state is learned, the associated value can be directly computed. This value then serves as a boundary value of an ODE, which one can solve in closed form. This is no longer possible with the changing world. Instead, we set V (1) = K as a variable, and characterize the value function as a functional of K, under the cutoff policy with threshold pˆ
+chosen to maximize the RHS of (6).
+
+$\square$
+fully as long as p remains above the cutoff pˆ. Along the way, if the crime is detected, then the belief jumps to 1; otherwise, the belief drifts down.
+
+Eventually, however, the belief will fall below the cutoff after a long enough period of no detection, and the PM will then stop enforcement altogether permanently. Indeed, it is this prospect of irreversible abandonment that causes PM to enforce and try to "explore" even below the myopic cutoff since otherwise there will be no future learning opportunity.
+
+Despite the similarity to the standard bandit analysis, this last implication—the eventual cease of enforcement—presents a fundamental departure from its prediction. In that model, once the PM learns the breakthrough news and updates her belief to 1, the state is fully revealed and never changes. Hence, with a positive probability, PM will enforce fully forever. With the changing world, PM will eventually cease enforcement, and the belief converges eventually to the stationary probability π0. Belief is fully absorbed in π0 in the sense that once the level is reached, it never moves.
+
+
+
+Case 2: high crime rates. In this case, the crime rate xλ is so high that the optimal enforcement cutoff falls below π1. Recall that π1 is the lowest possible stationary belief that PM can entertain under any policy. Here, the PM perceives a sufficiently high value of intervention so that she is willing to enforce fully even when *p < π*1.
+
+This has interesting implications for belief and enforcement dynamics. Regardless of the initial prior by the PM, the belief eventually goes above π1. Since it is still within the full enforcement region, she *always* enforces fully. Whenever enforcement results in detection
+(and deterrence), the belief jumps to 1. Without any crime being detected, the belief drifts downward; it drifts down to π1 unless interrupted by another detection (which will trigger a jump to 1). Eventually, the belief cycles within the region [π1, 1]. See Figure 3. The belief π1 is partially absorbing in the sense that once it is reached, the belief stays there with positive probability until the next crime is detected (which will trigger a jump to 1).
+
+Importantly, enforcement never lets up; there is no ceasing of enforcement, so the PM
+always explores. This means that there is no exploration to forego once pˆ is reached, so there is no need for trading exploitation off for exploration. Hence, we have pˆ = ˆpM. This feature is new, arising from the changing world feature of our model. By comparison, the optimal policy in the fixed-state bandit model calls for irreversible abandonment of exploration with positive probability, and this prospect calls for the PM to lower her cutoff below the myopic one. This does not happen since the knowledge (or "wisdom") that the neighborhood can never be permanently crime-free makes the PM vigilant enough to maintain enforcement even when no crime has been detected for a long period of time.
+
+λ ≥ λ
+
+
+
+Case 3: intermediate crime rates. In this case, the enforcement cutoff falls between π1 and π0. As before for any belief p > pˆ, the PM enforces fully, and she either detects a crime, in which case the belief jumps to 1, or else her belief drifts down. It may ultimately reach the cutoff pˆ, and when it does, the PM enforces partially at an interior level y = *z(ˆp*) ∈ (0, 1).
+
+See Figure 4.
+
+Recall that *z(ˆp*) is the enforcement level that partially "freezes" the belief at pˆ in two senses: once it is reached, the belief never drifts away from it (by definition, f(ˆ*p, z(ˆp*) = 0), and even though exploration continues and can result in detection and trigger a jump to p = 1, its likelihood is suppressed by the fact that less than full enforcement is employed.
+
+Even though partial enforcement is employed only at one belief pˆ, the partially-absorbing character gives this possibility an "outsized" importance. The system will typically spend a significant amount of time this belief.
+
+λ *< λ <* λ
+
+
+
+In fact, as the cutoff pˆ increases toward π0, which occurs as λ falls toward Λ
+−, the stationarity-inducing enforcement cutoff z(ˆp) decreases toward 0, which means that the suppressed enforcement becomes increasingly common—a norm rather than an exception.12 This entails a significant sacrifice on the exploration front once the cutoff is reached. The standard exploitation-exploration logic then calls for the cutoff to be pushed below the myopic level, which explains *p <ˆ* pˆM.
+
+In summary, the belief cycles around within [ˆp, 1] and stays at pˆ for a significant amount of time spent once it is reached. The PM's enforcement level alternates between two levels:
+full enforcement and partial enforcement. Any detection of crime triggers full enforcement, and it lasts for a duration of time. After spending a sufficient amount of time without further detection, the PM switches to a suppressed enforcement level and stays there until the next detection of crime. This pattern of enforcement presents a particularly interesting departure from the standard prescription of the bandit literature. As mentioned there, in the setting of KRC, eventually the PM either fully enforces or never enforces. Instead, the enforcement is never ceased completely, albeit significantly suppressed at pˆ. This feature arises from the changing world feature of our model, which causes the PM to "hedge" against the changing world. On one hand, with the memory of the last crime fading, the crime is sufficiently unlikely to warrant enforcement. However, the wisdom that the world can again become crime-susceptible is never far from the PM's mind, compelling her to maintain some level of enforcement. Remark 2 (The role of admissibility). The admissibility condition (required for the belief dynamics to be well-defined) pins down the interior enforcement level at pˆ. Optimality means that the derivative of the RHS of the HJB equation vanishes at pˆ. While this means that 12Note the limiting case pˆ = π0 is (reassuringly) consistent with the eventual ceasing of enforcement prescribed for the low crime case.
+
+the PM is indifferent at pˆ, the optimal policy is still unique: no other level of enforcement is consistent with optimality and admissibility. It is worth noting that admissibility is not of a purely technical nature. This can be seen by imagining a discrete-time model that converges to the current continuous-time model as the time length vanishes. In such a model, the PM
+is never (generically) indifferent around pˆ and thus never (generically) chooses an interior enforcement level. Instead, she switches back and forth between full enforcement and no enforcement, absent detection of crime. The interior solution z(ˆp) in our continuous-time model then corresponds to the relative fraction of time the PM chooses full enforcement in the limit as the time length goes to zero. It is useful, and perhaps more intuitive, for the reader to have this as the interpretation of z(ˆp).
+
+## 3.2 Comparison With Benchmarks
+
+It is trivial that the optimal policy will do at least weakly better than either (suboptimal)
+benchmark. The interesting questions are: When will the optimal policy do strictly better, and how the GP performs relative to OP and NP, to the extent that it represents the current practice?
+
+Of particular interest is the comparison of alternative regimes in a sufficiently "long" run.
+
+More precisely, we will focus on the irreducible set of beliefs such that the belief moves from any one element to any other in the set in finite time with probability one. For example, when considering the optimal policy, we focus on the prior p = π0 in Case 1, p ∈ [ˆp, 1] in Case 2, and p ∈ [π1, 1] in Case 3. We simply call such a prior a long-run prior.
+
+We first begin by observing the cases in which predictive enforcement makes no difference in the long run.
+
+Proposition 1. In Case 1 and *Case 2*, y
+∗(p) = yNP(p) = yGP(p) *at any long-run prior* p.
+
+This proposition, whose proof is omitted, is clear by simply inspecting Figure 2 and Figure 3. First consider Case 1. In this case, the belief eventually falls below pˆ and thus below pˆM, so both OP and GP eventually abandon all enforcement. And since π0 < pˆM the same holds under NP. Next in Case 2, the belief eventually rises above π1, and since this is above pˆ = ˆpM, both OP and GP always prescribe full enforcement. Again the same holds under NP, since π0 > pˆM. This is not surprising, since in these cases, the prediction problem is sufficiently easy, so the past data does not add much value.
+
+Therefore, more interesting is Case 3, where one expects prediction to be valuable. Indeed, OP prescribes different actions depending on whether p > pˆ or p = ˆp. There are two possible
+
+
+
+sub-cases. First, consider pˆM ≥ π0, a case labeled Case 3-(a). Under GP, the belief will converge to π0, so the PM will eventually cease enforcement and thus exploration; the belief will stay at π0 just like NP; GP is thus the same as NP in this case. Hence, NP and GP
+under-enforce relative to OP, which prescribes positive enforcement even in the long run (in Case 3).
+
+Next consider pˆM < π0, a case labeled Case 3-(b). In this case, even though the PM will always enforce fully under NP, this is not the case under GP. If *p > π*0, the PM's belief will drift down past π0 toward pˆM, absent detection. If p < pˆM, the PM chooses no enforcement under GP, so the belief drifts up. At p = ˆpM, the admissibility condition dictates that the PM
+chooses an interior enforcement level z(ˆpM), which one may recall satisfies f(ˆpM*, z(ˆp*M)) = 0.
+
+This means just like OP, the GP alternates between full enforcement (when p > pˆM) and partial enforcement z(ˆpM) (when p = ˆp).
+
+For comparison with the optimal policy, recall that *p <ˆ* pˆM in Case 3. One can show, and it is intuitive, that z(ˆp) > z(ˆpM), and that the belief stays longer at z(ˆpM) under GP than at *z(ˆp*) under OP. It follows that GP leads to under-enforcement compared with OP. Recall that NP calls for full enforcement, so it involves over-enforcement relative to OP.
+
+Proposition 2. In Case 3-(a), both NP and GP lead to no enforcement, which is too little compared with OP. In Case 3-(b), NP leads to full, and thus excessive, enforcement, whereas GP leads to insufficient enforcement, compared with OP.
+
+In sum, the NP may under- or over-enforce relative to OP, whereas the GP can only under-enforce relative to OP. Note also that a shift from NP (the pre-AI regime) to GP (the current-AI regime) always results in reduced enforcement in Case 3.
+
+Two-neighborhood model interpretation: In the *two-neighborhood model*, an underenforcement of the reference neighbor corresponds to the over-enforcement of an alternative neighborhood with known crime conditions. From Proposition 2, this situation occurs when the prediction is valuable (Case 3), where xλ is not too high, which corresponds to the case in which the alternative neighborhood is "high-crime." In other words, the data-driven prediction as presently practiced leads to the over-enforcement of the traditional high-crime neighborhood; further, a shift from non-predictive to the greedy-predictive policy always leads to more enforcement of the alternative neighborhood, consistent with the prevailing criticism.
+
+Payoff comparison. An interesting question is how GP compares with NP in total expected loss. In particular, to what extent does the predictive power enabled by data improve the efficiency of enforcement? Namely, can the myopic use of data be still valuable, or equivalently, does all its value reside with the ability to harness the informational value of enforcement?
+
+While NP and GP lead to the same outcome Case 1, Case 2, and Case 3-(a), they don't in Case 3-(b). In the latter case, GP makes use of the data to prescribe distinct enforcement decisions based on the prediction, while NP obviously can't. Surprisingly, however, they entail the same losses in the long run:
+Proposition 3 (Payoff comparison). *The expected loss from GP is always identical to that of* NP in the long run. The expected loss is strictly lower under OP in Case 3.
+
+Proof. It suffices to show the equivalence for Case 3-(b), in which π1 < p <ˆ pˆM < π0. In particular, we show that at any long-run prior p ∈ [0, 1] in the support of PM's belief under yGP, Ly(p) = c r with y = yGP. This will prove the equivalence with NP since NP involves full enforcement in Case 3-(b).
+
+Let y = yGP. Note that under yGP, PM's belief stays in the interval [ˆpM, 1] with some mass at pˆM. Applying (5) at any p > pˆM with y(p) = 1, we obtain
+
+$$r L_{y}(p)=c+p\lambda x(L_{y}(1)-L_{y}(p))+L_{y}^{\prime}(p)f(p,1).$$
+(p)f(p, 1). (8)
+At p = ˆpM with y(p) = *z(ˆp*M), (5) gives us rLy(ˆpM) = ˆpMλx(1 − z(ˆpM)) + cz(ˆpM) + ˆpMλxz(ˆpM)(Ly(1) − Ly(ˆpM)) + L
+′ y
+(ˆpM)f(ˆpM, z(ˆpM))
+= c + cz(ˆpM)(Ly(1) − Ly(ˆpM)), (9)
+where the equality holds since pˆM =c λx and f(ˆpM*, z(ˆp*M)) = 0. It is straightforward to check
+
+$$\left({\boldsymbol{\delta}}\right)$$
+
+that Ly(p) = c r
+, ∀p ≥ pˆM solves both (8) and (9). The last statement follows from the fact that OP, which is optimal, prescribes a different action than GP in Case 3.
+
+The intuition is explained as follows. Again consider Case 3-(b), the only case GP diverges from NP in long-run enforcement. In that case, GP differs from NP only when the posterior p = ˆpM, where the GP prescribes an interior enforcement level *z(ˆp*M) < 1 whereas NP always prescribes full enforcement. However, at p = ˆpM, the PM is indifferent, so the enforcement is payoff-irrelevant! Payoff-wise, therefore, it is as if the PM is fully enforcing, just the same as NP.
+
+The implication is rather striking. The equivalence suggests that prediction, and thus data, has no value if it is used in a myopically optimal manner, as currently practiced. That is, data-driven prediction has value only when its use makes an optimal account of endogenous data collection.
+
+However, we do not wish to overstate the case for equivalence, which after all rests on the stylized model. Later, we present one extension that will break the equivalence in favor of GP over NP: community reporting of crimes not allowed in the baseline model. This suggests that the pessimistic view of GP is limited to victimless crimes where there is little community reporting.
+
+More fundamentally, we view the equivalence as a conceptually illuminating implication of the link between enforcement and data collection. To see this at a deeper level, recall Case 3-(b). GP prescribes no enforcement when p < pˆM, whereas NP always prescribes full enforcement; and in this case, no enforcement is *strictly* better than full enforcement. Why doesn't GP then strictly outperform NP? The answer is: no such p < pˆM is part of the support of the PM's beliefs. That is, prediction arises *only* as a result of enforcement, but enforcement never occurs when it is not desirable under GP! This is why GP can't make any value out of prediction.
+
+As will be seen in our extension (to be added), a community reporting of crimes makes a difference since the PM then updates her beliefs even when she has stopped enforcement.
+
+Hence, beliefs p < pˆM can and will be observed under GP. Hence, GP outperforms NP. This suggests the crucial role played by community reporting in rationalizing predictive enforcement.
+
+## 4 Endogenous Crime
+
+In this section, we consider the case in which the criminals endogenously respond to PM's enforcement choice. Specifically, the crime level x is a decreasing function of the enforcement rate y. While one can debate about the actual elasticity of x to y, we consider an extreme case in which the criminals are fully rational so their behavior is totally elastic: namely, there exists yˆ ∈ (0, 1) such that a criminal finds it optimal to choose x(y) = 0 if y > yˆ, x(y) = 1 if y < yˆ, and any x(y) ∈ [0, 1] if y = ˆy. This behavior can be easily micro-founded.13 We assume that criminals do not access past crime data, except they share the long-run average statistics of the aggregate level of crime. This means that, like in the previous section, the crime level x is a constant (rather than a function of p), importantly except now that it is determined endogenously by the equilibrium incentive of the criminals. We will later discuss the implications of the criminals gaining access to the same amount of data as PM.
+
+Unlike the previous analysis, it is more convenient to begin with NP regime first.
+
+## 4.1 Non-Predictive Enforcement
+
+In this case, neither the criminals nor the PM updates the belief based on past history. Hence, both crime x and enforcement y are constant, determined based solely on the long-run prior π0. The outcome then depends on whether λ is large enough relative to c for enforcement to be worthwhile for the PM.
+
+Suppose first λπ0 ≤ c. Then, the crime opportunity is so rare that even if the criminals choose x = 1, it is not worth allocating any positive y. So the only equilibrium is x = 1 and y = 0.
+
+Suppose next λπ0 > c. In this case, a classic *inspection game* ensues. It is well known that there is no pure strategy equilibrium. If criminals choose x = 1, then PM will choose y = 1.
+
+But in this case, criminals will deviate to x = 0. But the latter cannot be an equilibrium either, since then the PM will respond by choosing y = 0. The only equilibrium is in mixed strategies. A potential criminal must choose x so that which makes PM indifferent in her enforcement. In turn, PM chooses y = ˆy, justifying the criminal's randomization.
+
+We summarize the results.
+
+Proposition 4. Let the equilibrium be denoted by (xNP, yNP)*. If* λ ≤c π0
+, then (xNP, yNP) =
+(1, 0). If λ > c π0
+, then (xNP, yNP) = ( c π0λ
+, yˆ).
+
+## 4.2 Criminals' Belief Formation Under Predictive Policies
+
+We next turn to GP and OP. Given an equilibrium crime level x, it follows from our analysis from Section 3 that the PM's best response is a cutoff policy in each regime. Hence, fix a cutoff policy with arbitrary threshold pˆ, denoted by ypˆ(p) := 1{p>pˆ} + *z(ˆp*) · 1{p=ˆp}.
+
+To understand criminals' incentives under such a policy, we must first study their beliefs about the enforcement level Ep[ypˆ(p)]. To form a belief about the enforcement probability, however, a potential criminal must form a belief about PM's posterior belief p. The belief is given by the long-run distribution, or invariant distribution, of p *conditional* on the state being ω = H, since an individual forms his belief conditional on receiving a crime opportunity, which occurs only in ω = H. Let Φpˆ : [ˆp, 1] → [0, 1] denote the conditional invariant distribution in the CDF form.
+
+We characterize Φ in Appendix C. Here, we derive a few implications necessary for analyzing equilibria for GP and OP. Suppose the cutoff threshold pˆ lies in (π1, π0). Then, the PM's belief stays at pˆ for a positive fraction of any long time interval. This means that Φpˆ
+has point mass at pˆ, as illustrated by Figure 6. From now on, we use m(ˆp) to denote the point mass.
+
+
+
+Suppose the PM lowers the threshold say from pˆ
+′to *p <ˆ* pˆ
+′. Then, the point mass at the threshold shrinks, i.e., m(ˆp) *< m(ˆp*
+′). In other words, the PM's belief spends less time at its cutoff when the cutoff is lower. There are two reasons for this. Imagine that the beliefs under two cutoff policies are "coupled" at some level p > pˆ
+′. Then, absent detection, the PM's belief under both policies drifts down at the same rate until it reaches pˆ
+′. When it does, the belief stops moving under the policy with cutoff pˆ
+′, but it continues its downward march under the policy with cutoff pˆ. Only when it reaches pˆ, does the belief stop moving under the latter policy. Namely, it takes a longer time to reach the lower cutoff when the cutoff is lower.
+
+Second, once the belief has reached its cutoff, the learning is slowed since the PM lowers its enforcement to a level, but more so when the cutoff is higher, since z(ˆp) > z(ˆp
+′) when *p <ˆ* pˆ
+′.
+
+This means that the belief leaves, in fact, jumps out of, the cutoff at a faster rate when the cutoff is lower. This means that it takes less time for the belief to leave the cutoff when it is lower. Combining the two effects, the belief spends less time at the lower cutoff than at the higher cutoff, so m(ˆp) < m(ˆp
+′), as shown in Figure 6. The figure also shows the sense in which the belief distribution is more dispersed when the cutoff is lower, suggesting that more enforcement, implied by a lower cutoff, entails more "learning." 14 Ultimately, what a potential criminal cares about is the expected enforcement
+
+## Ep[Ypˆ(P)] = M(ˆP)Z(ˆP) + (1 − M(ˆP)) · 1.
+
+Since m(ˆp) is increasing and z(ˆp) < 1 is decreasing in pˆ, the (conditional) expected enforcement faced by a potential criminal is decreasing in pˆ. This conforms to the intuition that a lower cutoff policy involves a higher expected enforcement level.
+
+Lemma 2. Given any cutoff policy ypˆ(·) with pˆ ∈ [π1, π0],
+
+(i) *the point mass* m(ˆp) is strictly decreasing in pˆ*, and* m(ˆp) → 0 as pˆ → π1 and m(ˆp) → 1 as pˆ → π0.
+
+(ii) the (conditional) expected enforcement Ep[ypˆ(p)] is strictly decreasing in pˆ*, and* Ep[ypˆ(p)] →
+1 as pˆ → π1 and Ep[ypˆ(p)] → 0 as pˆ → π0.
+(iii) *therefore, there exists a unique* pˆ
+∗ ∈ (π1, π0) *such that* Ep[ypˆ
+∗ (p)] = ˆy.
+
+Proof. See Appendix C.1.
+
+14Note, however, that Φpˆ is not a mean-preserving spread of Φpˆ
+′ since both are conditional on ω = H. The The last observation (iii) will be particularly useful for our equilibrium analysis for GP
+and OP. It means that if the PM uses a policy with cutoff pˆ
+∗, then potential criminals will face the expected enforcement level of yˆ, so they will become indifferent to committing a crime.
+
+## 4.3 Greedy Predictive Enforcement
+
+We are now ready to study the PM's behavior under GP. Suppose first π0*λ < c*. Then, much like NP, eventually, no enforcement will be chosen since the benefit of enforcement is not worth the cost. Hence, the unique equilibrium is (xGP, yGP) = (1, 0).
+
+Suppose next π0λ ≥ c. One can easily see that there is no pure strategy equilibrium. Hence, consider a mixed strategy equilibrium in which a potential crime with a crime opportunity commits a crime with probability xGP ∈ (0, 1).
+
+Meanwhile, under GP, PM chooses an enforcement policy yGP(p) which equals 1 if p > pˆM
+and *z(ˆp*M) if p = ˆpM, where the myopic cutoff is pˆM = *c/(x*GPλ). For a criminal to randomize, his expected enforcement level must be yˆ. By Lemma 2-(iii), this requires that
+
+$${\hat{p}}_{M}={\hat{p}}^{*},$$
+$$(10)$$
+$$x_{\mathrm{GP}}={\frac{c}{\hat{p}^{*}\lambda}}.$$
+
+. (10)
+With this construction, the PM uses her greedy policy with cutoff pˆM = ˆp
+∗, which then yields the expected enforcement level of yˆ, so a potential criminal is indifferent and commits a crime with probability xGP.
+
+Proposition 5. (i) If λ < c π0
+, then GP admits a unique equilibrium (xGP, yGP) = (1, 0);
+(ii) If λ ≥c π0
+, then GP admits a unique equilibrium in which xGP = min{
+c pˆ
+∗λ
+, 1}*, and*
+
+$\leq\frac{9}{\pi}$
+yGP(p) = 1 for p > max{pˆ
+∗,
+c λ
+} and yGP(p) = z(p) for p = max{pˆ
+∗,
+c λ
+}.
+
+## 4.4 Optimal Predictive Enforcement
+
+We now study the Markov perfect equilibrium under OP. Recall from Theorem 1 that the PM's best response to a crime level x depends on where the optimal cutoff *pˆ(λx*) lies in the relationship with thresholds, π1 and π0, where we make the dependence of pˆ on xλ explicit now that x is endogenous.
+
+## Or
+
+Suppose first that λ < Λ
+−(c). Then, for any x ∈ [0, 1], we have pˆ(λx) > π0, which means that the enforcement only occurs at p ≥ pˆ(λx) > π0. Thus, the long-run belief will be at π0, so no enforcement will be chosen in the long run. Given this, each criminal's best response is to choose x = 1. Hence, the unique equilibrium is (xOP , yOP ) = (1, 0).
+
+Suppose next that λ ≥ Λ
+−(c). There are two cases to consider depending on whether λ ≥ Λ
+∗(c), where Λ
+∗(c) is the crime rate that incentivizes the PM to choose the cutoff pˆ
+∗
+under OP, or pˆ(Λ∗(c)) = ˆp
+∗.
+
+Note that Λ
+−(c) < Λ
+∗(c) < Λ
++(c). If λ ∈ (Λ−(c),Λ
+∗(c)), then even with x = 1, the cutoff for PM's OP cutoff will be above pˆ
+∗, which implies that the enforcement level Ep[ypˆ(λ)(p)] will fall short of yˆ. Thus, each criminal will choose x = 1, to which PM best responds by adopting cutoff *pˆ(λ*) as cutoff: that is, y = 1 at p > *pˆ(λ*) and y = z(p) at p = ˆp(λ).
+
+If λ ≥ Λ
+∗(c), then criminals must randomize. This requires the OP cutoff pˆ(λx) to equal pˆ
+∗so that the associated enforcement level equals yˆ. This in turn requires λx = Λ∗(c), which pins down x = Λ∗(c)/λ.
+
+Given this policy, the equilibrium enforcement level is equal to yˆ, to which criminals best respond by randomization with probability x = Λ∗(c)/λ. Hence, we obtain the following result:
+Proposition 6. (i) If λ < Λ
+−(c), then OP admits a unique equilibrium (xOP, yOP) = (1, 0);
+(ii) If λ ≥ Λ
+−(c)*, then OP admits a unique equilibrium in which* xOP = min{
+Λ∗(c)
+λ, 1}*, and* yOP(p) = 1 for p > max{pˆ
+∗, pˆ(λ)} and yOP(p) = z(p) for p = max{pˆ
+∗, pˆ(λ)}.
+
+Similar to NP and GP, if λ is sufficiently low, then crime is unlikely even with x = 1, so the PM chooses no enforcement in OP. If λ is not so low, then the PM employs a cutoff pˆ = max{pˆ
+∗, *pˆ(λ*)}. If λ is sufficiently large, then the cutoff equals pˆ
+∗. In particular, for λ ≥ c/π0, the PM would adopt the same enforcement in GP (see Proposition 5). Then, the enforcement level is the same between OP and GP! This may appear puzzling in light of Proposition 2, which suggests that, *facing the same* x, the PM chooses a strictly lower cutoff under OP than under GP, whenever her OP cutoff pˆ lies in (π1, π0). The answer to the puzzle is that criminals do not behave the same in both regimes. Indeed, for the PM to be willing to choose the same enforcement policy, it must be that she faces a lower crime rate under OP than under GP. This is precisely the case. As will be formally stated later, one can show that xOP < xGP, whenever xOP < 1. In other words, facing the PM with a stronger desire to enforce (due to her informational motive) under OP, a potential criminal adjusts his crime level below what he would choose under GP; in equilibrium he does so to a level that leads the PM to choose the same enforcement level in OP as in GP.
+
+## 4.5 Comparing Regimes
+
+We are now ready to compare the performances of alternative regimes. The endogenous crimes case bring a new important purpose of law enforcement: deterrence. The threat of enforcement can now discourage criminals from committing crimes. If the PM can commit to its enforcement level, then he could eliminate all crimes. Our PM does not have such a commitment power even in OP; she can only react optimally to the steady state equilibrium level of crime rate. Hence, unlike the exogenous crimes case, OP is no longer trivially superior to the other regimes with endogenous crimes. Nevertheless, as will be seen, the OP leads to more deterrence and lower expected losses, compared with NP and GP. The comparison follows: Proposition 7. *With endogenous enforcement, the three regimes are compared as follows:*
+Case (i): If λ ≤ Λ
+−(c)*, then all three regimes lead to the identical equilibrium in which* x = 1 and the PM never enforces (i.e., y = 0).
+
+Case (ii): If Λ
+−(c) < λ ≤c π0
+, then x = 1 *in all three regimes; the PM never enforces under* NP and GP, but employs a cutoff policy cutoff pˆ(λ) *under OP.*
+Case (iii): If c π0
+< λ ≤ Λ
+∗(c)*, then* xGP = xOP = 1 > xNP =c π0λ
+; the PM enforces with yˆ under NP, but employs cutoff policies with cutoffs pˆM =
+c λ and pˆ(λ) <
+c λ under GP and OP,
+respectively.
+
+Case (iv): If Λ
+∗(c) < λ < c pˆ
+∗ *, then* xGP = 1 > xOP =
+Λ∗(c)
+λ > xNP =c π0λ
+, and the PM enforces with yˆ *under NP, but follows cutoff policies with cutoffs* pˆM =
+c λ and pˆ
+∗ <
+c λ under GP
+and OP, respectively.
+
+Case (v): If λ ≥c pˆ
+∗ *, then* xGP =c pˆ
+∗λ > xOP =
+Λ∗(c)
+λ > xNP =c π0λ
+; yNP = ˆy, and both yGP(·) and yOP(·) *involves the identical cutoff* pˆ
+∗.
+
+In all cases, the total loss is the same between NP and GP. OP entails the same total loss in Case (i)*. In other cases, OP entails a strictly smaller loss.*
+Several remarks are in order. First, the alternative regimes entail differing levels of enforcement. When λ is large enough to be in cases (iii)-(v), the PM enforces most under NP,
+followed by OP, and then GP. Firstly, it takes a larger value of λ for the PM to be willing to enforce under OP than under NP, and under GP than under OP. Second, conditional on enforcing, the PM also uses less resources due to the targeted nature of predictive enforcement.
+
+When the PM enforces under NP, she chooses the "marginally deterring" level of enforcement yˆ regardless of the state. For λ high enough, the PM again chooses a marginally deterring level yˆ but conditional on ω = H. She enforces strictly less in state ω = L. In other words, prediction allows the PM to be more targeted in her allocation of enforcement resources toward state ω = H.
+
+Second, the equilibrium deterrence levels also differ across the regimes. The deterrence is highest under NP, followed by OP, and the lowest under GP. This is explained by the PM's incentive for enforcement. Under either GP or OP, the PM must have incentives for enforcement at the respective cutoff beliefs, pˆ, which by the martingale property are lower than π0, the belief at which the PM must be incentivized to enforce. Hence, it takes higher crime rates to motivate the PM to enforce under either GP or OP than under NP. Next, between GP and OP, facing the same crime rate, the PM has stronger incentives to enforce under OP than under GP. Hence, it takes a lower crime rate to incentivize the PM to enforce under OP than under GP.
+
+Most important is the welfare comparison. Firstly, the equivalence between NP and GP
+carries over to the endogenous crime case. This is obvious in cases (i) and (ii). In cases (iii)-(v), NP and GP differ both in enforcement and deterrence levels: the PM enforces and deters more in NP than in GP, where enforcement is more targeted toward the criminal state ω = H. Despite the differences, the two policies entail the same loss the same because, when the GP calls for reduced enforcement, the belief is at pˆM = c/(xGPλ), so the enforcement is payoff-irrelevant: the total loss is the same as if the PM always enforces.
+
+Finally, OP entails strictly lower expected loss than the other regime for all cases except
+(i), where all three regimes are equivalent. In cases (ii) and (iii), the PM faces the same crime rate but acts optimally under OP but not under GP, according to Proposition 3. In cases (iv)
+and (v(, the OP picks an optimal enforcement level against a crime rate strictly lower than is induced by GP. Since GP's choice of the enforcement level is not optimal against the crime rate, OP performs strictly better GP.
+
+The intuition behind the superior performance for OP except for Case (i) can be traced to what we may regard as an unintended benefit of informational sophistication on the part of PM. The informational acquisition motive leads the PM to explore more under OP than under GP, which results in the PM enforcing more aggressively. Essentially, Proposition 7 suggests that this has the added benefit of helping PM to credibly commit to deter crime.
+
+## 4.6 Predictive Crime
+
+So far, we have assumed that the PM can enforce predictively in a way criminals cannot in their crime decisions. This assumption is realistic in many regulatory contexts where enforcement agencies collect crime data privately and have an option not to publicly disclose that data. But in some other context, for instance, in the case of common crimes (e.g., street robbery, and drug-related offenses), the crime data may be widely available and may be updated reasonably frequently, and news media could also make the information more widely available. Even in other cases, potential offenders may become as savvy as enforcement agencies in making use of data.
+
+In this subsection, we assume that the crime decision is as informed by the past crime data as the PM's enforcement decision. Independently of the plausibility of this scenario, considering it will help us understand to role of informational advantage PM has over potential criminals.
+
+In the case of NP, since PM has no information other than π0, criminals access no more information, so the analysis remains unchanged.
+
+In the case of GP and OP, the results do change except for case (i) of Proposition 7. Assume λ > Λ
+−(c), and let (y(p)*, x(p*)) denote the enforcement and crime levels in equilibrium for any posterior p in the support. In both regimes, it is a Markov perfect equilibrium for the PM to enforce at y(p) = ˆy if and only if p ≥ pˆ =
+c λ
+. In response, potential criminals choose
+
+$$x(p)={\frac{c}{p\lambda}},$$
+
+which keeps the PM indifferent, for each p ≥ pˆ. Essentially, criminals and the PM play the "inspection game" equilibrium for each p ≥ pˆ. Consequently, the expected total loss is the same across all three regimes. Proposition 8. If potential criminals base their decision on the posterior that PM accesses, all three regimes result in the same total expected loss.
+
+Proof. See Appendix D.
+
+This result, together with Proposition 7, suggests that the PM's informational advantage is important for her to realize the value of predictive enforcement.
+
+## 5 Conclusion
+
+We have developed a model of predictive enforcement that accounts for the feedback between enforcement and data collection. The analysis demonstrates the potential for the prediction to improve enforcement decisions and deter crimes. At the same time, it highlights the importance of how prediction should guide enforcement. Using prediction to achieve the current enforcement objective without accounting for the future informational implications performs poorly. It can perform as poorly as if no prediction and data were used, when prediction can be achieved only as a result of active surveillance/enforcement, as in the case of victimless crimes. Further, such a myopic use of data can lead to over-enforcement of the traditionally high-crime neighborhood. Our analysis is thus consistent with the prevailing criticism about the discriminatory nature of predictive policing and provides a theoretical mechanism for it. We also find that the information acquisition motive by the enforcement authority can enhance the credibility of enforcement and increase deterrence.
+
+## References
+
+Angwin, J., J. Larson, S. Mattu, and L. Kirchner (2022): "Machine bias," in Ethics of data and analytics, pp. 254–264. Auerbach Publications. 7 Avenhaus, R., B. Von Stengel, and S. Zamir (2002): "Inspection games," *Handbook of* game theory with economic applications, 3, 1947–1987. 6 Ball, I., and J. Knoepfle (2023): "Should the Timing of Inspections be Predictable?,"
+arXiv preprint arXiv:2304.01385. 6 Becker, G. S. (1968): "Crime and punishment: An economic approach," Journal of political economy, 76(2), 169–217. 6 Bjerk, D. (2007): "Racial profiling, statistical discrimination, and the effect of a colorblind policy on the crime rate," *Journal of Public Economic Theory*, 9(3), 521–545. 7 Brayne, S. (2020): *Predict and Surveil: Data, discretion, and the future of policing*. Oxford University Press, USA. 1 Che, Y.-K., and J. Hörner (2018): "Recommender systems as mechanisms for social learning," *The Quarterly Journal of Economics*, 133(2), 871–925. 6 Che, Y.-K., K. Kim, and W. Zhong (2020): "Statistical Discrimination in Ratings-Guided Markets," . 6 Curry, P. A., and T. Klumpp (2009): "Crime, punishment, and prejudice," Journal of Public economics, 93(1-2), 73–84. 7 Dilmé, F., and D. F. Garrett (2019): "Residual deterrence," *Journal of the European* Economic Association, 17(5), 1654–1686. 6 Dressel, J., and H. Farid (2021): "The dangers of risk prediction in the criminal justice system," . 7 Eeckhout, J., N. Persico, and P. E. Todd (2010): "A theory of optimal random crackdowns," *American Economic Review*, 100(3), 1104–1135. 7 Ensign, D., S. A. Friedler, S. Neville, C. Scheidegger, and S. Venkatasubramanian (2018): "Runaway feedback loops in predictive policing," in Conference on fairness, accountability and transparency, pp. 160–171. PMLR. 6 Ichihashi, S. (2023): "Information and Policing," *Available at SSRN 4235420*. 6 Keller, G., S. Rady, and M. Cripps (2005): "Strategic Experimentation with Exponential Bandits," *Econometrica*, 73(1), 39–68. 3, 6, 14 Kleinberg, J., J. Ludwig, S. Mullainathan, and C. R. Sunstein (2018): "Discrimination in the Age of Algorithms," *Journal of Legal Analysis*, 10, 113–174. 7 Knowles, J., N. Persico, and P. Todd (2001): "Racial bias in motor vehicle searches:
+Theory and evidence," *Journal of political economy*, 109(1), 203–229. 7 Liang, A., J. Lu, and X. Mu (2022): "Algorithmic design: Fairness versus accuracy," in Proceedings of the 23rd ACM Conference on Economics and Computation, pp. 58–59. 7 Lum, K., and W. Isaac (2016): "To predict and serve?," *Significance*, 13(5), 14–19. 2, 6 Mayer-Schönberger, V., and K. Cukier (2014): *Big Data: A Revolution That Will* Transform How We Live, Work, and Think. Harper Business. 2 Mohler, G. O., M. B. Short, S. Malinowski, M. Johnson, G. E. Tita, A. L.
+
+Bertozzi, and P. J. Brantingham (2015): "Randomized controlled field trials of predictive policing," *Journal of the American statistical association*, 110(512), 1399–1411. 6 Pearsall, B. (2010): "Predictive policing: The future of law enforcement," *National Institute* of Justice Journal, 266(1), 16–19. 1 Perry, W. L., B. McInnis, C. C. Price, S. C. Smith, and J. S. Hollywood (2013):
+Predictive Policing. Rand Corporation. 1 Persico, N. (2002): "Racial profiling, fairness, and effectiveness of policing," *American Economic Review*, 92(5), 1472–1497. 7
+(2009): "Racial profiling? Detecting bias using statistical evidence," Annu. Rev.
+
+Econ., 1(1), 229–254. 7 Polinsky, A. M., and S. Shavell (2000): "The economic theory of public enforcement of law," *Journal of economic literature*, 38(1), 45–76. 6 Rambachan, A., J. Kleinberg, J. Ludwig, and S. Mullainathan (2020): "An economic perspective on algorithmic fairness," in *AEA Papers and Proceedings*, vol. 110, pp.
+
+91–95. American Economic Association 2014 Broadway, Suite 305, Nashville, TN 37203. 7 Varas, F., I. Marinovic, and A. Skrzypacz (2020): "Random inspections and periodic reviews: Optimal dynamic monitoring," *The Review of Economic Studies*, 87(6), 2893–2937.
+
+6 Wagner, P., and J. Knoepfle (2021): "Relational enforcement," Available at SSRN
+3832863. 6
+
+## A Proof Of Lemma 1
+
+Let us first derive an ODE for the total (expected) discounted amount of both deterred and undeterred crimes, denoted C(p), when the probability of ω = I at t is p. Since whether a crime occurs is independent of the PM's policy, we have for any y ∈ [0, 1],
+C(p) =pλxdt + pλxydt(1 − rdt)C(1) + (1 − rdt)(1 − *pλxydt*)C(pt+dt)
+=pλxdt + pλxydt(1 − *rdt)C*(1) + (1 − rdt)(1 − *pλxydt*) (C(p) + *f(p, y)C*
+′(p)dt)
+=⇒ *rC(p*) =pλx + *pλxy* (C(1) − C(p)) + f(*p, y*)C
+′(p).
+
+Thus, pλxy (C(1) − C(p)) + *f(p, y)C*
+′(p) = *f(p,* 0)C
+′(p) (11)
+Given any policy y : [0, 1] → [0, 1], let us define Vy analogously to Ly: that is, Vy is the total discounted value of deterred crimes minus enforcement costs associated with y. Note that for any policy y, we have Vy(p) + Ly(p) = C(p) at each p ∈ [0, 1] since the terms of enforcement cost in Vy and Ly cancel out so Vy(·) and Ly(·) sum to the total discounted amount of deterred and undeterred crimes.
+
+Let y
+∗ be the optimal policy that solves (6). Fix any p ∈ [0, 1] and let z
+∗ = y
+∗(p). Then, we obtain for any policy y : [0, 1] → [0, 1]
+
+rLy ∗ (p) = pλx(1 − z ∗) + cz∗ + pλxz∗[Ly ∗ (1) − Ly ∗ (p)] + f(p, z∗)L ′ y ∗ (p) = pλx(1 − z ∗) + cz∗ + pλxz∗[C(1) − Vy ∗ (1) − (C(p) − Vy ∗ (p))] + f(p, z∗)(C ′(p) − V ′ y ∗ (p)) = pλx + f(p, 0)C ′(p) − hpλxz∗ − cz∗ + pλxz∗(Vy ∗ (1) − Vy ∗ (p)) + f(p, z∗)V ′ y ∗ (p) i ≤ pλx + f(p, 0)C ′(p) − hpλxy(p) − cy(p) + pλxy(p)(Vy(1) − Vy(p)) + f(p, y(p))V ′ y (p) i = rLy(p),
+where the third equality follows from (11) while the inequality from the optimality of y
+∗. The last equality holds for the same reason that the first three equalities hold. Hence, y
+∗solves
+(5).
+
+The proof that any optimal policy y
+∗solves (5) solves (6) as well is analogous and hence omitted.
+
+## B Proof Of Theorem 1 B.1 Preliminary Results For The Analysis Of Hjb Equation
+
+This section provides the analysis of HJB equation (6), leading to the proof of Theorem 1.
+
+Throughout our analysis in this section, we use τ to denote a vector of parameters (*λ, x, c*).
+
+As noted earlier, an important element in our model is the evolution of PM's belief given by f(*p, y*). We let g(p) := f(p, 1) and h(p) := f(p, 0), that is,
+
+$$\begin{array}{l}{{g(p)=\rho_{L}(1-p)-\rho_{H}p-p(1-p)\lambda x}}\\ {{h(p)=\rho_{L}(1-p)-\rho_{H}p.}}\end{array}$$
+
+Observe that h(π0) = 0 and that h(p) is strictly decreasing so h(p) > (<)0 for p < (>)π0. Meanwhile, π1 is a unique root of g(p) in the interval [0, 1]. Also, g is single crossing, namely, g(p) > (<)0 for p < (>)π1. It is straightforward to prove the following result:
+Lemma 3. π1 < π0 while π1 decreases from π0 to 0 as λx *increases from 0 to* ∞.
+
+Given the cutoff policy and the definitions of g(p) and h(p), (6) becomes
+
+$$r V(p)=h(p)V^{\prime}(p){\mathrm{~for~}}p<{\hat{p}}$$
+$$(12)$$
+$$V(p)]+g(p)V^{\prime}(p)\mathrm{~for~}$$
+$$-\,c+p\lambda x\,[V(1)-$$
+$$\mathbf{\partial}\cdot p\geq{\hat{p}}.$$
+$\left(13\right)$. 
+′(p) for p < pˆ (12)
+while it becomes rV (p) = pλx − c + pλx [V (1) − V (p)] + g(p)V
+′(p) for p ≥ p. ˆ (13)
+To tackle the problem of endogenous boundary value V (1), we parametrize the ODE in
+(13) as follows: V (1) = K and rV (p) = pλx − c + pλx [K − V (p)] + g(p)V
+′(p). (14)
+Letting D[K] denote the parametrized ODE, the following result provides a set of properties for the solution to D[K], which will prove useful throughout our analysis.
+
+Lemma 4. For any given ε > 0,
+(i) D[K] has a unique solution over [π1 +ε, 1]*, denoted* V [p; K]*. Also,* V [p; K] and V
+′[p; K]
+are continuous in λ, x, and c as well as p and K;
+(ii) *With* K = K(τ ) := (λx−c)(r+ρL)−cρH
+r(r+ρL+ρH), V [p; K] *is linear with the slope equal to* λx r+ρL+ρH
+;
+(iii) V
+′(p; K) is strictly decreasing in K *while* V (p; K) *is strictly increasing in* K;
+(iv) For *p > π*1, V
+′′(p; K) is strictly increasing in K *while* V
+′′(p; K) ⪌ 0 if K ⪌ K(τ );
+(v) As K → ∞, V
+′′(p; K) → ∞ for all p > π1 *while* V
+′(p; K) < 0 for all p > π1 if K is sufficiently large.
+
+Proof. Part (i) follows from the standard result in differential equations, provided that the coefficient for V
+′(i.e., g(p)) is bounded away from zero over [π1 + ε, 1] (recall that g(p) < 0 for any *p > π*1).
+
+Part (ii) is established by finding a linear solution for D[K] constructively. To do so, let V (p) = K + a(p − 1) for p ∈ [ˆp, 1]. Then, the RHS of (14) becomes pλx − c + *pλxa*(1 − p) + [ρL(1 − p) − ρHp − p(1 − p)λx]a
+= − c + ρLa + [λx − (ρL + ρH*)a]p,*
+which must equal the LHS of (14), rV (p) = r(K + a(p − 1)) = r(K − a) + *rap.* We must thus have ρLa = r(K − a) and λx − (ρL + ρH)a = ra, which can be solved to yield a =λx r+ρL+ρH
+and K =
+(λx−c)(r+ρL)−cρH
+r(r+ρL+ρH), as desired.
+
+To prove Part (iii), let us consider any K2 > K1. For simplicity, let Vi(·) denote V (·; Ki)
+for i = 1, 2. To begin, let us substitute p = 1 and Vi(1) = Kiinto (14) to obtain
+
+$$rK_{i}=\lambda x-c-\rho_{H}V_{i}^{\prime}(1)\ \ \mbox{or}\ \ V_{i}^{\prime\prime}(1)=\frac{\lambda x-c-rK_{i}}{\rho_{H}},\tag{15}$$
+
+implying V
+′
+1
+(1) > V ′
+2
+(1). Suppose now for contradiction that there is some p < 1 such that V
+′
+1
+(p) ≤ V
+′
+2
+(p). One can then find some p
+′ < 1 such that V
+′
+1
+(p
+′) = V
+′
+2
+(p
+′) and V
+′
+1
+(p) >
+V
+′
+2
+(p), ∀*p > p*′. Note first that
+
+$$V_{1}(p^{\prime})=V_{1}(1)-\int_{p^{\prime}}^{1}V^{\prime}_{1}(p)dp<V_{2}(1)-\int_{p^{\prime}}^{1}V^{\prime}_{2}(p)dp=V_{2}(p^{\prime})\tag{16}$$
+
+since V1(1) = K1 < K2 = V2(1) and V
+′
+1
+(p) < V ′
+2
+(p), ∀p ∈ [p
+′, 1]. We then rewrite (14) with p = p
+′, V = Vi, and K = Vi(1) as
+
+$$g(p^{\prime})V_{i}^{\prime}(p^{\prime})+p^{\prime}\lambda x-c=r V_{i}(p^{\prime})-p^{\prime}\lambda x[V_{i}(1)-V_{i}(p^{\prime})].$$
+
+With V
+′
+1
+(p
+′) = V
+′
+2
+(p
+′), the LHS of this equation remains unchanged across i = 1, 2, so must be the RHS. However,
+
+$$rV_{1}(p^{\prime})-p^{\prime}\lambda x[V_{1}(1)-V_{1}(p^{\prime})]=rV_{1}(p^{\prime})-p^{\prime}\lambda x\int_{p^{\prime}}^{1}V_{1}^{\prime}(p)d p$$ $$<rV_{2}(p^{\prime})-p^{\prime}\lambda x\int_{p^{\prime}}^{1}V_{2}^{\prime}(p)d p$$ $$=rV_{2}(p^{\prime})-p^{\prime}\lambda x[V_{2}(1)-V_{2}(p^{\prime})],$$
+
+where the inequality holds since V2(p
+′) > V1(p
+′) from (16) and V
+′
+2
+(p) < V ′
+1
+(p), ∀*p > p*′. We have thus obtained a contradiction. That V (p; K) is strictly increasing in K can be established by an analogous argument, so its proof is omitted.
+
+For Part (iv), let us differentiate both sides of (14) to obtain rV ′(p; K) = λx(1 + K) − λxV (p; K) + (g
+′(p) − pλx) V
+′(p; K) + g(p)V
+′′(p; K),
+which can be combined with (14) to remove V (p) and obtain
+
+$$V^{\prime\prime}(p;K)=\frac{\left[r^{2}+r(\lambda x+\rho_{H}+\rho_{L})+\lambda x\rho_{L}\right]V^{\prime}(p;K)-\lambda x(c+r+rK)}{(r+\lambda p x)g(p)}.\tag{17}$$
+
+Since the numerator is strictly decreasing in K and the denominator is negative (recall g(p) < 0 for *p > π*1), V
+′′(p; K) is strictly increasing in K. Combining this with Part (ii) proves the rest of Part (iv).
+
+To prove Part (v), observe first that the numerator in (17) goes to −∞ for all *p > π*1 as K → ∞ while the denominator is negative and bounded (from below), from which the first result follows. Also, by (15) and Part (iv), V
+′(1; K) < 0 and V
+′′(p; K) > 0 for sufficiently large K, which implies V
+′(p; K) < 0 for p ∈ (π1, 1), proving the second result.
+
+## B.2 Necessary Conditions For The Solution Of Hjb Equation
+
+This section provides a set of conditions that must be satisfied by any solution of HJB equation.
+
+First of all, we require the value matching and smooth pasting: that is, V (ˆp−) = V (ˆp+)
+and V
+′(ˆp−) = V
+′(ˆp+), respectively. The these conditions are related to the function ∆ as follows:
+Lemma 5. (i) *If the value matching holds, then the smooth pasting is equivalent to* ∆(ˆp+) =
+0 *unless* pˆ = π0;
+(ii) *If the smooth pasting holds, then the value matching is equivalent to* ∆(ˆp+) = 0.
+
+Proof. Note first that using g(p) = h(p) − λpx(1 − p), we can rewrite (13) as
+
+$$r V(p)=h(p)V^{\prime}(p)+x\Delta(p){\mathrm{~for~}}p\geq{\hat{p}}.$$
+′(p) + *x∆(p*) for p ≥ p. ˆ (18)
+To prove Part (i), suppose that the value matching holds. Then, by (12) and (18),
+
+$${\mathcal{I}}$$
+
+h(ˆp)V
+′(ˆp+) + *x∆(ˆp*+) = rV (ˆp+) = rV (ˆp−) = *h(ˆp*)V
+′(ˆp−)
+or
+
+$$h(\hat{p})V^{\prime}(\hat{p}_{+})+x\Delta(\hat{p}_{+})=h(\hat{p})V^{\prime}(\hat{p}_{-}).$$
+
+Thus, ∆(ˆp+) = 0 is equivalent to V
+′(ˆp+) = V
+′(ˆp−) unless pˆ = π0. The proof of Part (ii) is analogous and hence omitted.
+
+$$(18)$$
+$\frac{1}{2}$ ......................... $\frac{1}{2}$ ......................... 
+37 The optimality of cutoff policy y(p) = 1{p≥pˆ} also requires that ∂W(p,y)
+∂y be 'single-crossing' at p = ˆp: that is, ∂W(p,y)
+∂y ≤ (≥)0 if p ≤ (≥)ˆp. Given that ∆(p) = 1x
+∂W(p,y)
+∂y = 0 at p = ˆp
+(as shown in Lemma 5), this requires ∆′(ˆp−) ≥ 0 and ∆′(ˆp+) ≥ 0. The next result shows an additional condition this constraint imposes on the value function V : Lemma 6. *Letting*
+
+$$\sigma(p):=\frac{h(p)c}{p^{2}(1-p)\lambda x(r+\rho_{L}+\rho_{H})},$$
+$$(19)$$
+
+we must have
+
+$$\Delta^{\prime}(\hat{p}_{-})=\frac{\hat{p}(1-\hat{p})\lambda(r+\rho_{L}+\rho_{H})}{h(\hat{p})}\left[\sigma(\hat{p})-V^{\prime}(\hat{p})\right]\geq0\,\,\mathrm{for}\,\,\hat{p}\neq\pi_{0}$$
+
+and
+
+$$\Delta^{\prime}(\hat{p}_{+})=\frac{\hat{p}(1-\hat{p})\lambda(r+\rho_{L}+\rho_{H})}{g(\hat{p})}\left[\sigma(\hat{p})-V^{\prime}(\hat{p})\right]\geq0\,\,\mathrm{for}\,\,\hat{p}\neq\pi_{1}.$$
+
+Proof. Let us first differentiate both sides of (12) to get rV ′(p) = h
+′(p)V
+′(p) + h(p)V
+′′(p),
+which can be simplified to
+
+$$(20)$$
+$$h(p)V^{\prime\prime}(p)=(r+\rho_{L}+\rho_{H})V^{\prime}(p).$$
+
+Substituting this into the differentiation of ∆(p), we obtain for p ≤ pˆ with p ̸= π0,
+
+$$\Delta^{\prime}(p)=\frac{\Delta(p)}{p}+\frac{c}{px}-p(1-p)\lambda V^{\prime\prime}(p)\tag{21}$$ $$=\frac{\Delta(p)}{p}+\frac{c}{px}-\frac{p(1-p)\lambda(r+\rho_{L}+\rho_{H})}{h(p)}V^{\prime}(p),$$ $$=\frac{\Delta(p)}{p}+\frac{p(1-p)\lambda(r+\rho_{L}+\rho_{H})}{h(p)}\left[\sigma(p)-V^{\prime}(p)\right]$$  where the first equality follows straightforwardly from the definition of $\Delta(\cdot)$. Then, (19)
+follows from observing that ∆(ˆp−) = 0 Let us next differentiate both sides of (13) to get
+
+$$r V^{\prime}(p)=\lambda x+\lambda x[V(1)-V(p)]-p\lambda x V^{\prime}(p)+g^{\prime}(p)V^{\prime}(p)+g(p)V^{\prime\prime}(p),$$
+
+where g(p) = ρL(1 − p) − ρHp − p(1 − *p)λx*. Simplifying:
+
+$$g(p)V^{\prime\prime}(p)=(r-g^{\prime}(p)+p\lambda x)V^{\prime}(p)+\lambda x[V(p)-(1+V(1))]$$ $$=(r+\rho_{L}+\rho_{H})V^{\prime}(p)+(1-p)\lambda xV^{\prime}(p)+\lambda x[V(p)-(1+V(1))]$$ $$=(r+\rho_{L}+\rho_{H})V^{\prime}(p)-\frac{c}{p}-\frac{\Delta(p)x}{p}.$$
+$$\quad(22)$$
+
+Substituting this into the differentiation of ∆(p), we obtain for p ≥ pˆ with p ̸= π1,
+
+∆ ′(p) = ∆(p) p + c px − p(1 − p)λV ′′(p) = ∆(p) p + c px − p(1 − p)λ (r + ρL + ρH)V ′(p) − c p − ∆(p)x p g(p) = 1 + p(1 − p)λx g(p)  ∆(p) p + c px− p(1 − p)λ(r + ρL + ρH) g(p) V ′(p) = h(p) g(p)  ∆(p) p + c px− p(1 − p)λ(r + ρL + ρH) g(p) V ′(p) = h(p) g(p)  ∆(p) p + p(1 − p)λ(r + ρL + ρH) g(p) [σ(p) − V ′(p)] , (23) from which (20) follows since ∆(ˆp+) = 0.
+As it turns out, the constraints in (20) and (19) are binding in the case pˆ ∈ (π1, π0) (that is, Case 3). To see it, observe that if pˆ ∈ (π1, π0), then we have g(ˆp) < 0 *< h(ˆp*). Thus, the inequalities in (19) and (20) can hold simultaneously only if the expression within the square bracket is equal to zero, i.e., V
+′(ˆp) = *σ(ˆp*). We thus obtain:
+Lemma 7. If pˆ ∈ (π1, π0)*, then*
+
+$$V^{\prime}(\hat{p})=\sigma(\hat{p})=\frac{h(\hat{p})c}{\hat{p}^{2}(1-\hat{p})\lambda x(r+\rho_{L}+\rho_{H})}$$
+$$\left(24\right)$$
+
+or equivalently ∆′(ˆp) = 0.
+
+Letting
+
+$$\Lambda^{+}(c):=\left\{\begin{array}{l l}{{\frac{c(\rho_{L}+\rho_{H}-c)}{(\rho_{L}-c)}}}&{{\mathrm{if~}\rho_{L}-c>0}}\\ {{\infty}}&{{\mathrm{otherwise,}}}\end{array}\right.$$
+$$(25)$$
+
+we establish results that are useful for our subsequent analysis:
+39 Lemma 8. (i) There exists a unique p < π0 *such that*
+
+$$\sigma(\underline{p})=\frac{\lambda x}{r+\rho_{L}+\rho_{H}}.\tag{26}$$
+
+(ii) *The following inequalities are equivalent: (a)* λx ≥ Λ
++(c); (b) π1 ≥ pˆM; (c) π1 ≥ p*; (d)*
+p ≥ pˆM.
+
+Proof. Part (i) follows from the continuity of σ and this claim:
+Claim 1. σ(p) strictly decreases from ∞ to 0 as p increases from 0 to π0.
+
+Proof. Note first that h(p)
+p 2(1−p)
+is strictly decreasing on [0, π0]:
+
+$$\frac{d}{d p}\left(\frac{h(p)}{p^{2}(1-p)}\right)=\frac{-2p^{2}(\rho_{H}+\rho_{L})+p(\rho_{H}+4\rho_{L})-2\rho_{L}}{(1-p)^{2}p^{3}}$$ $$=\frac{-2(\rho_{H}+\rho_{L})(p-\pi_{0})^{2}+\frac{2(\rho_{L})^{2}}{\rho_{H}+\rho_{L}}+p\rho_{H}-2\rho_{L}}{(1-p)^{2}p^{3}}<0,$$
+
+since the numerator is maximized at p = π0 within the range [0, π0] and the maximized value is equal to −ρLρH
+ρH+ρL
+< 0. Thus, σ(p) is strictly decreasing. Then, the result follows from observing that σ(0) = ∞ and σ(π0) = 0 since h(0) > 0 = h(π0).
+
+For Part (ii), let us first prove the following claim:
+Claim 2. λx ≥ Λ
++(c) is equivalent to
+
+$$(27)$$
+$$\lambda x(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})\geq0.$$
+
+Proof. Notice that if ρL − c > 0, then (27) is just a rearrangement of λx ≥ Λ
++(c). It thus suffices to show that (27) implies ρL > c. Otherwise, we would have
+
+$$\mathrm{LHS~of~}(27)\leq c(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})=-c\rho_{H}<0,$$
+
+where the first inequality holds since *λx > c*.
+
+To prove the equivalence between (a) and (b), observe first that solving g(p) = 0 yields
+
+To prove the equivalence between (a), $\pi_{1}=\frac{\lambda x+\rho_{L}+\rho_{H}-\sqrt{(\lambda x+\rho_{L}+\rho_{H})^{2}-4\lambda x\rho_{L}}}{2\lambda x}$. Thus,
+$${\frac{c}{\lambda x}}\leq\pi_{1}\Leftrightarrow\lambda+\rho_{L}+\rho_{H}-2c\geq{\sqrt{(\lambda x+\rho_{L}+\rho_{H})^{2}-4\lambda x\rho_{L}}}.$$
+2 − 4λxρL. (28)
+$$\quad(28)$$
+40
+
+$$\begin{array}{l}{{\Leftrightarrow\left(\lambda+\rho_{L}+\rho_{H}-2c\right)^{2}\geq\left(\lambda x+\rho_{L}+\rho_{H}\right)^{2}-4\lambda x\rho_{L}.}}\\ {{\Leftrightarrow\lambda x(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})\geq0,}}\end{array}$$
+
+if the LHS of (28) is nonnegative. Given this and Claim 2, the equivalence between π1 ≥c λx and λx ≥ Λ
++(c) will follow if (27) implies that the LHS of (28) is nonnegative. To see this, recall that (27) implies ρL > c, so λ + ρL + ρH − 2c > λ + ρH − c > 0 since λ ≥ *λx > c*.
+
+To prove the equivalence between (b) and (c), observe that since 0 = g(π1) = h(π1) −
+π1(1 − π1)λx, we have
+
+$$\sigma(\underline{p})-\sigma(\pi_{1})=\frac{\lambda x}{r+\rho_{L}+\rho_{H}}-\sigma(\pi_{1})=\frac{\lambda x}{r+\rho_{L}+\rho_{H}}-\frac{h(\pi_{1})c}{\pi_{1}^{2}(1-\pi_{1})\lambda x(r+\rho_{L}+\rho_{H})}\tag{30}$$ $$=\frac{c}{r+\rho_{L}+\rho_{H}}\left(\frac{\lambda x}{c}-\frac{1}{\pi_{1}}\right)\geq0.$$
+$$(29)$$
+
+Since σ is decreasing, we have π1 ≥ p if and only if π1 ≥ pˆM.
+
+For the equivalence between (d) and (a), observe
+
+$$\sigma(\hat{p}_{M})-\sigma(\underline{{{p}}})=\frac{\lambda x(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})}{c(\lambda x-c)\left(\rho_{H}+\rho_{L}+r\right)}.$$
+
+Thus, given that σ is decreasing, p ≥ pˆM is equivalent to *λx(ρ*L − c) + c(c − ρL − ρH) ≥ 0, which is equivalent to (a) due to Claim 2.
+
+We are now ready to provide some conditions for Case 1 and Case 2 in which the solution of HJB equation must take a simple linear form on either [0, pˆ] or [ˆp, 1] with corresponding boundary values:
+Lemma 9. (i) V (p) = 0 for all p ∈ [0, pˆ] *if and only if* pˆ ≥ π0;
+(ii) V (p) is linear on [ˆp, 1] *if and only if* pˆ ≤ π1;
+(iii) If V (p) is linear on [ˆp, 1]*, then* pˆ = ˆpM, V (1) = (λx−c)(r+ρL)−cρH
+r(r+ρL+ρH)*, and* V
+′(p) = λx r+ρL+ρH
+>
+0, ∀p ∈ [ˆp, 1].
+
+Proof. To prove the if direction of Part (i), observe first that with pˆ ≥ π0, (12) and h(π0) = 0 together imply V (π0) = 0. Suppose for contradiction that there is some *p < π*0 such that V (p) < 0. Then, we must have some pˇ ∈ (*p, π*0) such that V (ˇp) < 0 and V
+′(ˇp) > 0. Since h(ˇp) > 0 and thus *h(ˇp*)V
+′(ˇp) > 0, (12) implies V (ˇp) > 0, a contradiction. Suppose next that there is *p < π*0 such that V (p) > 0. Then, we must have some pˇ ∈ (*p, π*0) such that V (ˇp) > 0 and V
+′(ˇp) < 0. Since h(ˇp) > 0 and thus *h(ˇp)V*
+′(ˇp) < 0, (12) implies V (ˇp) < 0, a contradiction.
+
+The argument so far establishes V (p) = 0 for all p ≤ π0. An analogous argument can be used to establish the same result for the range [π0, pˆ].
+
+To prove the *only if* direction of Part (i), suppose that V (p) = 0 for all p ∈ [0, pˆ]. Then, V
+′(ˆp+) = V
+′(ˆp−) = 0, which by (20) requires that h(ˆp)
+g(ˆp) ≥ 0. This cannot hold if pˆ ∈ (π1, π0)
+since then h(ˆp) > 0 > g(ˆp). If pˆ ≤ π1, then Lemma 10 implies V
+′(p+) > 0, a contradiction.
+
+The remaining possibility is pˆ ≥ π0, as desired.
+
+Let us first prove Part (iii) before proving Part (ii). The argument for determining V (1)
+and V
+′(p) is analogous to that in the proof of Lemma 4-(ii) and hence omitted. To show pˆ =c λx , observe that the linearity of V over [ˆp, 1] implies V (1) − V (p) − V
+′(p)(1 − p) = 0 for all p ≥ pˆ, which means
+
+$$\Delta(p)=p\lambda-\frac{c}{x}.$$
+$$(31)$$
+
+$$(32)$$
+. (31)
+Thus, ∆(ˆp) = 0 requires pˆ =c λx
+= ˆpM.
+
+To prove the if direction of Part (ii), let us differentiate both sides of (13) to obtain rV ′(p) = g
+′(p)V
+′(p) + g(p)V
+′′(p) − λxV (p) − *pλxV* ′(p) + λx(1 + V (1)).
+
+We can combine this equation and (13) to remove V (p) and obtain
+
+$\mathbb{I}$    ? 
+$$V^{\prime}(p)=\frac{\lambda x(c+r+r V(1))+(r+p\lambda x)g(p)V^{\prime\prime}(p)}{r^{2}+r(\lambda x+\rho_{L}+\rho_{H})+\lambda x\rho_{L}}.$$
+. (32)
+Let us denote a =λx(c+r+rV (1))
+r 2+r(λx+ρL+ρH)+λxρL
+. We show that V
+′(p) = a, ∀p ≥ p. ˆ Note first that this is true for p = π1 since g(π1) = 0 and (32) imply V
+′(π1) = a. To first prove the linearity of V over (π1, 1], suppose not, i.e., V
+′(p) ̸= a for some p ∈ (π1, 1]. Consider first the case V
+′(p) > a. We must then have some pˇ ∈ (π1, p) such that V
+′′(ˇp) > 0 and V
+′(ˇp) > a. Since g(ˇp) < 0 and thus g(ˇp)V
+′′(ˇp) < 0, the equation (32) implies V
+′(ˇp) <λx(c+r+rV (1))
+r 2+r(λx+ρL+ρH)+λxρL
+= a, a contradiction. Consider next the case V
+′(p) < a. Then, we must have some pˇ ∈ (π1, p) such that V
+′′(ˇp) < 0 and V
+′(ˇp) < a. Since g(ˇp) < 0 and thus g(ˇp)V
+′′(ˇp) > 0, the equation (32)
+implies V
+′(ˇp) >λx(c+r+rV (1))
+r 2+r(λx+ρL+ρH)+λxρL= a, a contradiction. The argument so far establishes that V
+′(p) = a, ∀p ∈ [π1, 1]. An analogous argument can be used to show that V (p) is linear on [ˆ*p, π*1] as well.
+
+To lastly prove the *only if* direction of Part (ii), we first use Part (iii) to obtain pˆ =
+pˆM. Also, we must have pˆ ≤ π0 since, otherwise, Part (i) (and the smooth pasting) implies V
+′(ˆp) = 0, which contradicts Part (ii) that says V
+′(ˆp+) = λx r+ρL+ρH
+> 0. Let us now substitute pˆ = ˆpM =c λx , ∆(ˆp) = 0, and V
+′(p−) = V
+′(p+) = λx r+ρL+ρHinto (21) and apply Lemma 6 to obtain
+
+$$\begin{array}{c}{{\Delta^{\prime}(\hat{p})\geq0}}\\ {{\Leftrightarrow\frac{\left[\lambda x(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})\right]}{\lambda x\rho_{L}-c\left(\rho_{L}+\rho_{H}\right)}\geq0}}\\ {{\Leftrightarrow\lambda x(\rho_{L}-c)+c(c-\rho_{L}-\rho_{H})\geq0,}}\end{array}$$
+$$(33)$$
+$$(34)$$
+
+where the second equivalence holds since pˆ =c λx < π0 =ρL
+ρL+ρH
+implies xλρL−c (ρL + ρH) > 0.
+
+Then, pˆ =c λx ≥ π1 follows from combining (34) with Lemma 8-(ii) and Claim 2.
+
+The last result in this section provides a parametric condition for V to be linear on [ˆp, 1],
+or equivalently for Case 3 to hold:
+Lemma 10. V (p) *is linear on* [ˆp, 1] *if only if* λx ≥ Λ
++(c).
+
+15 Proof. The *only if* direction follows directly from the proof of Lemma 9 that shows the linearity of V over [ˆp, 1] together with the condition ∆′(p+) ≥ 0 (which is required due to Lemma 6) implies (34) or equivalently λx ≥ Λ
++(c) (according to Claim 2).
+
+To prove the if direction, it suffices to show that (27) implies pˆ ≤ π1 since Lemma 9-(ii)
+will then imply the linearity of V .
+
+Suppose now for a contradiction that *p > π* ˆ 1 and hence p >ˆ max{pˆM, p} due to Lemma 8-
+(ii).
+
+Recall from Lemma 4-(ii) that for any ε > 0, V (p; K(τ )) = λx r+ρL+ρH
+= σ(p), ∀p ∈ [π1+ε, 1].
+
+Using this, we argue that V (1) ≥ K(τ ). Else if V (1) *< K(τ* ), then we would have for all p ≥ pˆ
+
+$$V^{\prime}(\hat{p})=V^{\prime}(\hat{p};V(1))>V^{\prime}(\hat{p};\underline{{{K}}}(\tau))=\sigma(\underline{{{p}}})>\sigma(\hat{p}),$$
+
+where the first inequality follows from Lemma 4-(v) while the second inequality holds since σ is decreasing. This inequality contradicts (19) that requires V
+′(ˆp) ≤ σ(π1).
+
+That V (1) ≥ K(τ ) implies V is (weakly) convex over [ˆp, 1] due to Lemma 4-(v). Then, we have a contradiction since
+
+$$\Delta(\hat{p})=\hat{p}\lambda-\frac{c}{x}+\hat{p}\lambda\left[V(1)-V(\hat{p})-(1-\hat{p})V^{\prime}(\hat{p})\right]\geq\hat{p}\lambda-\frac{c}{x}>0,$$
+
+15Using Parts (ii) and (iii) of Lemma 9, one can verify that λx ≥ Λ
++(c) implies V
+′(ˆp) ≤ σ(ˆp), thus satisfying where the first inequality follows from the convexity of V while the second from p >ˆ pˆM.
+
+The following result shows that V must be strictly convex when the cases in Parts (i) and
+(ii) of Lemma 9 do not apply:
+Lemma 11. V
+′′(p) > 0 if either p ≤ p < π ˆ 0 or p ≥ *p > π* ˆ 1.
+
+Proof. Let us first consider the case p ≤ *p < π* ˆ 0. Note that V obtains from solving (12) in this case. Note also that V
+′(ˆp) > 0: if pˆ ∈ (π1, π0), then this follows from (24); if pˆ ≤ π1, then we have V
+′(ˆp) = λx r+ρL+ρH
+> 0 by Lemma 9-(iii). Given *h(ˆp*) > 0, we have V (ˆp) > 0 by (12).
+
+Also, (12) has a unique solution by the standard result in differential equations. Indeed,
+
+$$V(p)=\left(\frac{h(p)}{h(\hat{p})}\right)^{-\frac{r}{\rho_{L}+\rho_{H}}}V(\hat{p})$$
+$$\left(35\right)$$
+ρL+ρHV (ˆp) (35)
+solves (12), as one can easily check. It is then straightforward to see that this solution satisfies V
+′′(p) > 0.
+
+Let us next consider the case p ≥ *p > π* ˆ 1. In this case, V obtains from solving (13). By Lemma 4-(iv), V is zero, positive or negative everywhere over the interval [ˆp, 1], depending on the magnitude of K. Since we assume *p > π* ˆ 1, Lemma 9-(ii) rules out the case V
+′′(p) = 0 over [ˆp, 1]. It thus suffices to show that V
+′′(p) < 0, ∀p ∈ [ˆp, 1] cannot hold.
+
+To do so, we first observe that since V cannot be linear on [ˆp, 1], we have *λx <* Λ
++(c)
+by Lemma 8-(ii), which implies p < pˆM due to Lemma 8-(ii). To rule out that V
+′′(p) <
+0, ∀p ∈ [ˆp, 1], let us consider two subcases depending on whether pˆ ≥ π0 or pˆ ∈ (π1, π0).
+
+In the former case, Lemma 9 together with the value matching and smooth pasting implies V (ˆp) = V
+′(ˆp) = 0. Thus, if V
+′′(p) < 0, ∀p ∈ [ˆp, 1], then V (p) < 0 for p > pˆ, which cannot be true.
+
+To deal with the case pˆ ∈ (π1, π0), we first prove the following claim:
+Claim 3. If pˆ ∈ (π1, π0) and V
+′′(p) < 0, ∀p ∈ [ˆp, 1], then we must have *p < p* ˆ .
+
+Proof. By Lemma 4-(iv), V
+′′(p) < 0, ∀p ∈ [ˆp, 1] implies V (1) < K(τ ), which in turn implies V
+′(p) = V
+′(p; V (1)) > V ′(p; K(τ )), ∀p ≥ pˆ due to Lemma 4-(iii). Suppose p ≤ pˆ for contradiction. Then, for any p ≥ pˆ,
+
+$$V^{\prime}(p)>V^{\prime}(p;\underline{{{K}}}(\tau))=\sigma(\underline{{{p}}})\geq\sigma(\hat{p}),$$
+
+which contradicts Lemma 7.
+
+Suppose now for contradiction that V
+′′(p) < 0, ∀p ≥ pˆ. Then, by p < pˆM and Claim 3, we have p <ˆ pˆM =c λx . Thus, the strict concavity of V yields
+
+$$\Delta(\hat{p})=\hat{p}\lambda-\frac{c}{x}+\hat{p}\lambda\left[V(1)-V(\hat{p})-(1-\hat{p})V^{\prime}(\hat{p})\right]<\hat{p}\lambda-\frac{c}{x}<0,$$
+$$\lceil\!\!\!\perp\!\!\!\perp\!\!\!\perp\!\!\!\perp$$
+$\geq\;\hat{n}$ . 
+a contradiction. Hence, we conclude that V
+′′(p) > 0, ∀p ≥ p. ˆ
+
+## B.3 Analysis Of Hjb Equation For P ≥ Pˆ
+
+Solving for the HJB equation requires finding the value function that solves (12) and (13)
+and makes the policy function y(p) = 1{p≥pˆ} optimal. To this end, we first look for a solution for the ODE in (13) that satisfies ∆(ˆp+) = 0 as well as the necessary condition on V
+′(ˆp+)
+in Lemma 7 and Lemma 9, depending on parametric values. This solution, in particular the value of V (ˆp+), will then provide a boundary condition, V (ˆp−) = V (ˆp+), with which we can solve for the other ODE in (12). As a consequence, the value matching is automatically satisfied. Given the value matching, the smooth pasting is also satisfied due to Lemma 5 and the fact that our solution of (13) satisfies ∆(ˆp+) = 0.
+
+16 To this end, we first observe that the existence of the desired solution for (13) in the case pˆ ≤ π1 (i.e., Case 1) follows immediately from Lemma 9-(iii) and Lemma 10.
+
+Proposition 9. *Suppose that* λx ≥ Λ
++(c)*. Then, there exists a unique solution of* (13) *with* pˆ = ˆpM ≤ π1 *such that* V (1) = (λx−c)(r+ρL)−cρH
+r(r+ρL+ρH)and V
+′(p) = λx r+ρL+ρH
+, ∀p ∈ [ˆp, 1].
+
+From now, we will prove that when Case 1 fails, there exists a solution to (13) satisfying pˆ ∈ (π1, π0) and (24) (Case 2) or a solution satisfying pˆ ≥ π0 and V
+′(ˆp) = 0 (Case 3), together with the condition ∆(ˆp) = 0.
+
+## B.3.1 Case 2: Λx ∈ (Λ−(C),Λ +(C))
+
+Here we identify Λ
+−(c) < Λ
++(c) such that Case 2 arises if and only if λx ∈ (Λ−(c),Λ
++(c)).
+
+We first prove a couple of lemmas. Recall the definition of p from (26). Lemma 12. With K = K(τ ), (14) has a solution over the interval [p, 1] *that satisfies* V
+′(p; K) = λx r+ρL+ρH
+= σ(p), ∀p ∈ [p, 1]*. Also, for any* τ = (λ, x, c) satisfying *λx <* Λ
++(c)*, we* have p ∈ (π1, min{pˆM, π0}) that is decreasing in λx *and increasing in* c.
+
+16Note that this lemma cannot handle the case with pˆ = π0. In the case pˆ ≥ π0, however, the smooth pasting condition can be directly verified as Proposition 11 will give us a solution that satisfies V
+′(ˆp+) = V
+′(ˆp−) = 0.
+
+Proof. The first statement can be established by using the same argument as in the proof of Lemma 10.
+
+To prove the second statement, note that by Lemma 8-(ii), *λx <* Λ
++(c) is equivalent to π1 < p < pˆM. Thus, p ∈ (π1, min{pˆM, π0}). The monotonicity of p with respect to λ follows from the fact that σ is decreasing in p and λx and increasing in c while λx r+ρL+ρH
+is increasing in λx.
+
+Lemma 13. *Consider any* τ1 = (λ1, x1, c2) and τ2 = (λ2, x2, c2) *with* λixi < Λ
++(ci) for i = 1, 2 such that λ1x1 ≤ λ2x2 and c1 ≥ c2 *with at least one inequality being strict. Let* pi denote p (defined in Lemma 12) corresponding to τi. For any K ≥ K(τ1) and p ≥ p1
+, we have V
+′
+1
+(p; K) < V ′
+2
+(p; K) and V1(p; K) > V2(p; K), where Vi*is the solution of* (14) corresponding to τi and K.
+
+Proof. Observe first that p2
+< p1 since p is decreasing in λx and increasing in c as shown in Lemma 12.
+
+To simplify notations, let Vi(·) denote Vi(·; K). Let us first establish V
+′
+1
+(p) < V ′
+2
+(p), ∀p ≥
+p1
+. To do so, observe first that V
+′
+1
+(1) < V ′
+2
+(1) due to (15), λ1x1 ≤ λ2x2, and c1 ≥ c2 (with at least one inequality being strict). Suppose for contradiction that there is some p ∈ [p1
+, 1]
+
+```
+such that V
+           ′
+           1
+            (p) ≥ V
+                    ′
+                   2
+                    (p). Then, there must exist pˇ ∈ [p, 1] such that V
+                                                                      ′
+                                                                      1
+                                                                       (ˇp) = V
+                                                                               ′
+                                                                              2
+                                                                               (ˇp) and
+
+```
+
+V
+′
+1
+(p) < V ′
+2
+(p), ∀p > pˇ. Given this and V1(1) = V2(1) = K,
+
+$$V_{1}(\tilde{p})=V_{1}(1)-\int_{\tilde{p}}^{1}V_{1}^{\prime}(p)dp>V_{2}(1)-\int_{\tilde{p}}^{1}V_{2}^{\prime}(p)dp=V_{2}(\tilde{p}).\tag{36}$$
+$\mathsf{L}\mathsf{L}\mathsf{L}(\mathsf{x})=\mathsf{x}$. 
+Using (14) and the fact that V
+′
+1
+(ˇp) = V
+′
+2
+(ˇp), we can write r(V1(ˇp) − V2(ˇp))
+
+$=(\lambda_{2}x_{2}-\lambda_{1}x_{1})\tilde{p}(1-\tilde{p})V_{1}^{\prime}(\tilde{p})-(c_{1}-c_{2})+\tilde{p}\lambda_{1}x_{1}\left[K-V_{1}(\tilde{p})\right]-\tilde{p}\lambda_{2}x_{2}\left[K-V_{2}(\tilde{p})\right]$  $\leq(\lambda_{2}x_{2}-\lambda_{1}x_{1})\tilde{p}(1-\tilde{p})V_{1}^{\prime}(\tilde{p})+\tilde{p}(\lambda_{1}x_{1}-\lambda_{2}x_{2})\left[V_{1}(1)-V_{1}(\tilde{p})\right]$
+$\Leftarrow$ . 
+= ˇp(λ1x1 − λ2x2) [V1(1) − V1(ˇp) − (1 − *pˇ)V*
+′
+1
+(ˇp)] ≤ 0, where the first inequality follows from the fact that K = V1(1) and V1(ˇp) > V2(ˇp) while the second inequality from the fact that the convexity of V1, established in Lemma 4-(iv), implies that the expression in the square brackets is nonnegative. This inequality contradicts the inequality in (36).
+
+Then, V1(p) > V2(p), ∀p ∈ [p1
+, 1) follows from the same argument as in (36), using the fact that V
+′
+1
+(p) < V ′
+2
+(p), ∀p ∈ [p1
+, 1].
+
+Proposition 10. *There is some* Λ
+−(c) ∈ (c, c π0
+) such that for λx ∈ (Λ−(c),Λ
++(c)), there exists a unique pair K and pˆ ∈ (π1, π0) with which D[K] has a solution over [ˆp, 1] *satisfying*
+
+$$V^{\prime}(\hat{p};K)=\sigma(\hat{p})\,\,\,a n d\,\,\Delta(\hat{p};K)=0.$$
+$$(\mathbf{\hat{p}};K)=0.$$
+′(ˆp; K) = σ(ˆp) and ∆(ˆp; K) = 0. (37)
+Also, for λx ∈ (Λ−(c),Λ
++(c)), pˆ continuously increases in c while it continuously decreases from π0 to π1 as λx *increases from* Λ
+−(c) to Λ
++(c).
+
+Proof. The proof proceeds in several steps. Let K(τ ) := λx−c rand note that K(τ ) > K(τ ) =
+(λx−c)(r+ρL)−cρH
+r(r+ρL+ρH).
+
+Step 1: For any τ = (λ, x, c) satisfying *λx <* Λ
++(c), there exists K0(τ ) ∈ (K(τ ), K(τ )) such that for any K ∈ [K(τ ), K0(τ )]*, there is a unique* p(K) ∈ [p, π0] *that satisfies* V
+′(p(K); K) =
+σ(p(K)) and is continuously increasing in K*. Also,* p(K0(τ )) = π0 *and hence* V
+′(π0; K0(τ )) =
+σ(π0) = 0 while p(K(τ )) = p and V
+′(p; K(τ )) = σ(p).
+
+First, we have V
+′(1; K(τ )) = 0 by (15), which implies V
+′(p; K(τ )) < 0 for all p < 1 since V
+′(·; K(τ )) is increasing according to Lemma 4-(iv). In particular, V
+′(π0; K(τ )) < 0. Thus, V
+′(π0; K(τ )) *< σ(π*0) = 0. Observe next that we have
+
+$$V^{\prime}(\pi_{0};\underline{{{K}}}(\tau))=V^{\prime}(\underline{{{p}}};\underline{{{K}}}(\tau))=\sigma(\underline{{{p}}})>\sigma(\pi_{0}),$$
+
+where the equalities hold due to Lemma 12 and the inequality due to the fact that π0 > p and σ is decreasing. Since V
+′(π0; K(τ )) > σ(π0) > V ′(π0; K(τ )) and since V
+′is continuously and strictly decreasing in K, there exists a unique K0(τ ) ∈ (K(τ ), K(τ )) such that V
+′(π0; K0(τ )) =
+σ(π0) = 0, meaning p(K0(τ )) = π0.
+
+For any K ∈ (K(τ ), K0(τ )), we have
+
+$$\sigma(\underline{{{p}}})=V^{\prime}(\underline{{{p}}};\underline{{{K}}}(\tau))>V^{\prime}(\underline{{{p}}};K){\mathrm{~and~}}\sigma(\pi_{0})=V^{\prime}(\pi_{0};K_{0}(\tau))<V^{\prime}(\pi_{0};K),$$
+
+where the first equality follows from Lemma 12 while the inequalities holds due to Lemma 4-
+(iii). These two inequalities, together with the monotonicity of σ and V
+′ with respect to p, imply that there must be a unique p(K) ∈ (*p, π*0) such that V
+′(p(K); K) = σ(p(K)). Note that (38) also implies p(K(τ )) = p and p(K0(τ )) = π0.
+
+That p(K) is continuously increasing in K is straightforward from the fact that V
+′is continuously increasing in p and continuously decreasing in K while σ is continuously decreasing in p.
+
+$$(38)$$
+
+Step 2: No pair (ˆp, K) with K ≤ K(τ ) or K ≥ K0(τ ) can satisfy the desired property. In particular, ∆(p(K(τ )); K(τ )) < 0.
+
+First, if K ≥ K0(τ ), then for any *p < π*0, we have V
+′(p; K) < V ′(π0; K) ≤ V
+′(π0; K0(τ )) = 0 = σ(π0) < σ(p),
+where the first inequality holds since, by Lemma 4-(v), V
+′′(·; K) > 0 for K ≥ K0(τ ) > K(τ ),
+while the second inequality holds since, by Lemma 4-(iii), V
+′(p; ·) is decreasing. Thus, the desired property cannot be satisfied.
+
+Next, if K ≤ K(τ ), then Lemma 12 and Lemma 4-(iii) imply that for all *p > p*,
+
+$$V^{\prime}(t)$$
+
+V
+′(p; K) ≥ V
+′(p; K(τ )) = V
+′(p; K(τ )) = σ(p) > σ(p),
+which in turn implies that pˆ = p(K) ≤ p since V
+′(ˆp; K) = *σ(ˆp*). Thus, pˆ ≤ p <c λx . Then,
+∆(ˆp; K) = ˆpλ −
+c x + ˆpλ [V (1; K) − V (ˆp; K) − (1 − *pˆ)V*
+′(ˆp; K)]
+
+$$\begin{array}{l}{{\mathrm{()}=\hat{p}\lambda-\frac{c}{x}+\hat{p}\lambda\left[V\right]}}\\ {{\mathrm{()}<\lambda\hat{p}\left[V(1;K)-\right.}}\end{array}$$
+
+< λpˆ[V (1; K) − V (ˆp; K) − (1 − pˆ)V
+′(ˆp; K)] ≤ 0, where the second inequality follows since Lemma 4-(v) implies that V (·; K) is (weakly) concave for K ≤ K(τ ). Thus, (ˆ*p, K*) with K ≤ K(τ ) cannot satisfy ∆(ˆ*p, K*) = 0.
+
+Step 3: ∆(p(K); K) *is strictly increasing in* K ≥ K(τ ).
+
+By (18), we have
+
+$$x\Delta(p(K);K)=r V(p(K);K)-h(p(K))V^{\prime}(p(K);K)$$ $$=r V(p(K);K)-h(p(K))\sigma(p(K)),$$
+$$(39)$$
+= rV (p(K); K) − h(p(K))σ(p(K)), (39)
+where the second equality follows from the definition of p(K) in Step 3.
+
+To prove the desired result, consider any K2 > K1 ≥ K(τ ) so that p(K2) *> p(K*1). Observe that h(p(K1))σ(p(K1)) > h(p(K2*))σ(p(K*2)) since both h and σ are decreasing. Observe also that, by Lemma 4-(v), V
+′(p; K1) ≥ V
+′(p(K1); K1) = σ(p(K1)) ≥ 0, ∀p ∈ [p(K1), p(K2)], which implies that V (p(K2); K1) ≥ V (p(K1); K1). Using these observations and (39), we obtain x∆(p(K1); K1) = rV (p(K1); K1) − h(p(K1))σ(p(K1))
+< rV (p(K2); K1) − h(p(K2))σ(p(K2))
+where the second inequality follows from Lemma 4-(iv).
+
+Step 4: Fix any τ = (λ, x, c) *such that* λx ∈ [
+c π0
+,Λ
++(c)). There exists a unique pair (ˆ*p, K*)
+with pˆ ∈ (π1, π0) *such that* V
+′(ˆp; K) = σ(ˆp) and ∆(ˆp; K) = 0.
+
+From now, we will write K0 instead of K0(τ ) for simplicity. Observe first that p(K0) =
+π0 ≥c λx or λp(K0) ≥
+c x
+, so
+∆(p(K0); K0) ≥ p(K0)λ [V (1; K0) − V (π0; K0) − (1 − π0)V
+′(π0; K0)] > 0, where the inequality is due to the strict convexity of V as shown in Lemma 4-(v) given K0 > K(τ ). By this inequality and Step 2, we have ∆(p(K(τ )); K(τ )) < 0 < *∆(p(K*0); K0).
+
+Given this, the continuity and strict monotonicity of ∆(p(K), K) with respect to K imply that there exists a unique K ∈ (K(τ ), K0) such that ∆(p(*K), K*) = 0 and p(K) ∈ (*p, π*0). Note also that V
+′(p(K)) = σ(p(K)) by definition of p(K). Given Step 2, the strict monotonicity of ∆(p(K); K) for K ≥ K(λ) means that a pair (ˆ*p, K*) with the desired property is unique.
+
+That *p > π* ˆ 1 follows from Lemma 8-(ii) that implies p > π1 if *λx <* Λ
++(c).
+
+Step 5: Consider any τ1 = (λ1, x1, c2) and τ2 = (λ2, x2, c2) *with* λixi < Λ
++(ci) for i = 1, 2 such that λ1x1 ≤ λ2x2 and c1 ≥ c2 with at least one inequality being strict. If τ1 *admits a pair*
+(ˆp1, K1) *satisfying* (37), so does τ2 *with* pˆ2 < pˆ1.
+
+Let Vi(p; K), σi, and ∆i(p; K) denote the functions associated with τi. Let pi(K) denote the function p(K) (defined in Step 1) associated with τi.
+
+Consider a pair (ˆp1, K1) with the desired property under τ1. Observe first that by Lemma 13, V
+′
+2
+(ˆp1; K1) > V ′
+1
+(ˆp1; K1) = σ1(ˆp1) > σ2(ˆp1) (where the second inequality holds since σ is decreasing in λx and increasing in c). Also, V
+′
+2
+(ˆp1; K(τ2)) < 0 (recall the argument from Step 1).
+
+Thus, one can find K ∈ (K1, K(τ2)) such that V
+′
+2
+(ˆp1; K) = σ2(ˆp1), which means pˆ1 = p2(K).
+
+Note that pˆ1 > p1
+> p2
+, which implies *K > K(τ*2) since p2(K(τ2)) = p2 and p2(·) is increasing. Next, we show that ∆2(p2(K); K) = ∆2(ˆp1; K) > 0. Consider first the case in which V2(ˆp1; K) > V1(ˆp1; K1). Using (39) and the fact that σ1(ˆp1) > σ2(ˆp1), we obtain 0 = x1∆1(ˆp1; K1) = rV1(ˆp1; K1) − *h(ˆp*1)σ1(ˆp1) *< rV*2(ˆp1; K) − h(ˆp1)σ2(ˆp1) = x2∆2(ˆp1; K).
+
+Consider next the case in which V2(ˆp1; K) ≤ V1(ˆp1; K1). Using (??), we again obtain 0 = x1∆1(ˆp1; K1)
+
+= ˆp1λ1x1 − c1 + ˆp1λ1x1 [V1(1; K1) − V1(ˆp1; K1) − (1 − pˆ1)V ′ 1 (ˆp1; K1)] < pˆ1λ2x2 − c2 + ˆp1λ1x1 [V2(1; K) − V2(ˆp1; K) − (1 − pˆ1)V ′ 2 (ˆp1; K)] < pˆ1λ2x2 − c2 + ˆp1λ2x2 [V2(1; K) − V2(ˆp1; K) − (1 − pˆ1)V ′ 2 (ˆp1; K)] = x2∆2(ˆp1; K),
+where the first inequality holds due to the fact that V1(1; K1) = K1 < K = V2(1; K) and V
+′
+1
+(ˆp1; K1) = σ1(ˆp1) > σ2(ˆp1) = V
+′
+2
+(ˆp1; K). The second inequality holds since the expression in the square brackets is positive due to the convexity of V2(·; K). Recalling pˆ1 = p2(K), we have thus proven ∆2(ˆp1; K) = ∆2(p2(K); K) > 0 > ∆2(p2(K(τ2)); K(τ2)), which implies by Step 3 that there exists a unique K2 ∈ (K(τ2), K) such that ∆(p2(K2); K2) = 0. Moreover, pˆ2 = p2(K2) < p2(K) = ˆp1 by the monotonicity of p2(·).
+
+Step 6: With λx = c, there exists no pair (ˆp, K) *satisfying* (37).
+
+Given Step 2 and Step 3, it suffices to show that with λ = λ, ∆(p(K0); K0) < 0, since it will imply ∆(p(K); K) < 0, ∀K ∈ [K(τ *), K*0]. Recall that p(K0) = π0. Then, we have *σ(p(K*0)) =
+0 = V
+′(p(K0); K0). Using this and (14), we also have V *(p(K*0); K0) = π0λx(1+K0)−c r+p(K0)λx . Plugging these into the definition of ∆ and rearranging, we obtain
+
+$$\begin{split}\Delta(p(K_{0});K_{0})&=\frac{r\left(\pi_{0}\lambda x(1+K_{0})-c\right)}{x\left(r+\pi_{0}\lambda x\right)}<\frac{r\left(\lambda x\left(1+\frac{\lambda x-c}{r}\right)-c\right)}{x\left(r+\pi_{0}\lambda x\right)}\\ &=\frac{(\lambda x-c)(r+\lambda x)}{x\left(r+\pi_{0}\lambda x\right)}=0,\end{split}$$
+
+where the first inequality holds since π0 < 1 and K0 < K(τ ) = λx−c
+
+$$\textrm{e}\pi_{0}<1\text{and}K_{0}<\overline{{{K}}}(\tau)=\frac{\lambda x-c}{r}.$$
+
+Step 7: There is Λ
+−(c) ∈ (c, c π0
+) such that there exists a unique pair (ˆp, K) with pˆ ∈ (π0, π1)
+satisfying (37) *if and only if* λx ∈ (Λ−(c),Λ
++(c)).
+
+This statement follows immediately from combining Step 2 to Step 6.
+
+Step 8: For τ *satisfying* λx = Λ−(c), (ˆp, K) *satisfies* (37) if and only if (ˆ*p, K*) = (π0, K0(τ )).
+
+Also, pˆ increases to π0 as λx *decreases to* Λ
+−(c).
+
+Let (p
+−, K−) denote the limit of (ˆ*p, K*) satisfying (37) as λx decreases to Λ
+−(c). By the continuity of V and V
+′ with respect to p, K, and τ , the pair (p
+−, K−) is a unique solution at λx = Λ−(c).
+
+17 To show that p
+− = π0, suppose for a contradiction that p
+− < π0.
+
+18 Then, denoting K0 = K0(τ ), we must have K− < K0 since p
+− = p(K−) and π0 = p(K0) while p(·) is increasing. This implies ∆(p(K0); K0) > 0 = ∆(p(K−); K−) since ∆(p(·); ·) is increasing. Now let us choose some τ1 = (λ1, x1, c) such that λ1x1 = Λ−(c) − ε with small ε > 0. Let V1(·; ·), ∆1(·; ·), σ1(·), and p1(·) denote the corresponding functions. By the continuity of these functions with respect to τ , we can make ε > 0 sufficiently small that ∆1(p1(K0); K0) > 0.
+
+Let K′ be such that σ1(p
+−) = V
+′
+1
+(p
+−; K′), i.e., p1(K′) = p
+−. Then, we have K′ < K−
+since σ1(p
+−) > σ(p
+−) = V
+′(p
+−; K−) > V ′
+1
+(p
+−; K−) (where the second inequality holds due to Lemma 13) and since V
+′
+1
+(p
+−; ·) is decreasing. Also, using λ1x1 < Λ
+−(c) and derivations analogous to those in Step 5, we can show that ∆1(p
+−; K′) < ∆(p
+−; K−) = 0. Given that
+∆1(p1(K0); K0) > 0 > ∆1(p1(K′); K′), we can find some K1 ∈ (K′, K0) such that p1(K1) < π0 and ∆1(p1(K1); K1) = 0 while σ1(p1(K1)) = V
+′
+1
+(p1(K1); K1), which contradicts the definition of Λ
+−(c) (since λ1x1 < Λ
+−(c)).
+
+Step 9: pˆ decreases to π1 as λx *increases to* Λ
++(c).
+
+The monotonicity of pˆ is immediate from Step 5. To prove the convergence, let (p
++, K+)
+denote the limit of (ˆ*p, K*) satisfying (37) as λx increases to Λ
++(c). Clearly, p
++ ≥ π1. Suppose p
++ > π1 for a contradiction. Since, at λx = Λ+(c), we have π1 = p =c λx by Lemma 3, we can choose λx sufficiently close to Λ
++(c) (or sufficiently large if Λ
++(c) = ∞) that π1 is close to c λx . Letting (ˆ*p, K*) denote a pair satisfying (37) for such λx, we have *p > π* ˆ 1, which implies that p > ˆc λx and *p > p* ˆ since pˆ is close to p
++ > π1. Then, ∆(ˆp; K) = 0 requires V (1; K) − V (ˆp; K) − (1 − pˆ)V
+′(ˆp; K) < 0, which implies *K < K(τ* ) by Lemma 4-(v).
+
+Then, by Lemma 4-(iii) and Claim 1, V
+′(ˆp; K) > V ′(ˆp; K(τ )) = λx r+ρL+ρH= σ(p) > σ(ˆp), a contradiction.
+
+## B.3.2 Case 3: Λx ∈ (C,Λ −(C)]
+
+We establish the existence of the desired solution for (13) for Case 3. Proposition 11. *For any* τ = (λ, x, c) *with* λx ∈ (c,Λ
+−(c)], there exists a unique pair K and pˆ ∈ [π0, 1) with which D[K] has a solution over [ˆp, 1] *satisfying*
+
+$$V^{\prime}(\hat{p}_{+};K)=0=\Delta(\hat{p}_{+};K).$$
+′(ˆp+; K) = 0 = ∆(ˆp+; K). (40)
+$$(40)$$
+
+Also, pˆ is decreasing in λx and increasing in c.
+
+Proof. The proof proceeds in a few steps and will employ the notations and results from the proof of Proposition 10. For instance, we continue to use the notations K0(τ ) and K(τ ).
+
+Step 1: No pair (ˆp, K) with K < K0(τ ) or K ≥ K(τ ) *can satisfy* (40).
+
+Recall first that V
+′(π0; K0(τ )) = 0 by the definition of K0(τ ). We can then observe that if K < K0(τ ), then, for all p ≥ π0, V
+′(p; K) ≥ V
+′(π0; K) > V ′(π0; K0(τ )) = 0 since V
+′is decreasing in K and increasing in p. Observe also that if K ≥ K(τ ), then V
+′(p; K) < V ′(1; K) ≤ V
+′(1; K(τ )) = 0, ∀p < 1.
+
+Step 2: For any K ∈ [K0(τ ), K(τ )), there is a unique p(K) ∈ [π0, 1) *that satisfies* V
+′(p(K); K) =
+0 *and is continuously increasing in* K.
+
+For any K ∈ [K0(τ ), K(τ )),
+V
+′(π0; K) ≤ V
+′(π0; K0(τ )) = 0 < V ′(1; K),
+where the second inequality holds since V
+′(1; K) = λx−c−rK
+ρH> 0 for K < K(τ ) = λx−c r. Thus, there exists a unique p(K) ∈ (π0, 1) that satisfies the desired property, since V
+′(·; K) is strictly increasing.
+
+The monotonicity of p(K) follows easily from the fact that V
+′is increasing in p and decreasing in K.
+
+Step 3: For each λx ∈ (c,Λ
+−(c)], there exists a unique pair (ˆp, K) *satisfying* (40) *with* pˆ ∈
+[π0, 1) and K ∈ [K0(τ ), K(τ )).
+
+Let us first show that K0(τ ) is increasing in λx. Consider τi = (λi, xi, c), i = 1, 2 such that λ2x2 > λ1x1. Let Vi(p; K), σi(p), ∆i(p; K), and pi(K) denote the functions associated with τi, i = 1, 2. By Lemma 13, V
+′
+2
+(π0; K0(τ1)) > V ′
+1
+(π0; K0(τ1)) = 0 = V
+′
+2
+(π0; K0(τ2)), which implies K0(τ1) < K0(τ2) since V
+′
+2 is decreasing in K by Lemma 4-(iii).
+
+Consider any λ1x1 ∈ (c,Λ
+−(c)] and let λ2x2 = Λ−(c). Let Ki = K0(τi*), i* = 1, 2 and note that K2 > K1 by the above observation. By Step 8 in the proof of Proposition 10, we have p2(K2) = π0 and ∆2(p2(K2); K2) = 0. Thus, using (18), we obtain
+
+$$0=\Delta_{2}(p_{2}(K_{2});K_{2})=\frac{rV_{2}(\pi_{0};K_{2})}{x}$$ $$\geq\frac{rV_{1}(\pi_{0};K_{2})}{x}>\frac{rV_{1}(\pi_{0};K_{1})}{x}=\Delta_{1}(p_{1}(K_{1});K_{1}),\tag{41}$$
+
+where the first inequality follows from Lemma 13 while the second inequality from Lemma 4-
+(iv) and K2 > K1.
+
+Observe next that p1*(K(τ*1)) = 1 since V
+′
+1
+(1; K(τ1)) = 0. Thus, using (??), we obtain
+
+$$\Delta_{1}(p_{1}(\overline{{{K}}}(\tau_{1}));\overline{{{K}}}(\tau_{1}))=\Delta_{1}(1;\overline{{{K}}}(\tau_{1}))=\lambda_{1}-\frac{c}{x}>0.$$
+
+Combining this with (41) and using the strict monotonicity of ∆1(p1(·); ·), we can conclude that there is a unique K ∈ [K1, K(τ1)) such that ∆1(p1(K); K) = 0 and p1(K) ∈ [π0, 1).
+
+Step 4: For the pair (ˆp, K) *satisfying* (40), pˆ is decreasing in λx *and increasing in* c.
+
+The proof of this step is analogous to that of Step 5 in the proof of Proposition 10, and hence omitted.
+
+## B.3.3 Comparative Statics For Pˆ
+
+Proposition 12. *Consider* Λ
++(c), Λ
+−(c), and pˆ identified in Proposition 9 to *Proposition 11.*
+Then,
+(i) pˆ ≤ pˆM =c λx , where the inequality is strict if and only if p > π ˆ 1.
+
+(ii) Λ
++(c) and Λ
+−(c) are decreasing in λx and increasing in c;
+(iii) pˆ is continuously increasing in λx *and continuously decreasing in* c.
+
+Proof. Part (i) follows from Proposition 9 in the case pˆ ≤ π1, where pˆ =c λx . To deal with the case *p > π* ˆ 1, rewrite ∆(ˆp) = 0 as
+
+$$\hat{p}\lambda-\frac{c}{x}=-\lambda\hat{p}\left[V(1)-V(\hat{p}_{1})-(1-\hat{p})V^{\prime}(\hat{p})\right].$$
+′(ˆp)] . (42)
+From the proofs of Proposition 10 and Proposition 11, we know that for p ≥ pˆ, V (p) = V (p; K)
+for some *K > K*(τ ). Thus, by Lemma 4-(v), V is strictly concave, which implies that the expression inside the square bracket in (42) is strictly positive, so p <ˆc λx .
+
+$$\left(42\right)$$
+
+For Part (ii), the monotonicity of Λ
++(c) is immediate from its definition while the monotonicity of Λ
+−(c) follows from Step 5 in the proof of Proposition 10.
+
+For Part (iii), let us focus on establishing the comparative statics with λx since doing so with c is analogous. To do so, consider any λ2x2 > λ1x1. Let π0i, π1i and pˆi denote the values of π0, π1 and pˆ, respectively, under λixi, i = 1, 2. Note that π01 = π02 and π11 > π12.
+
+The desired result pˆ1 < pˆ2 follows immediately from Proposition 9 to Proposition 11 if λ2x2 > λ1x1 ≥ Λ
++(c) or if Λ
++(c) > λ2x2 > λ1x1 > Λ
+−(c) or if λ1 < λ2 ≤ Λ
+−(c). In the case λ1x1 < Λ
++(c) ≤ λ2x2, we have pˆ1 > π11 > π12 ≥ pˆ2 as desired. In the case λ1x1 ≤ Λ
+−(c) < λ2x2 < Λ
++(c), we have pˆ1 ≥ π01 = π02 > pˆ2.
+
+## B.4 Existence Of Solution For Hjb Equation
+
+Given the value function obtained so far for the range [ˆp, 1], we can extend it to the interval
+[0, pˆ] by solving (12) with the boundary condition V (ˆp−) = V (ˆp+). Specifically, in the case pˆ ≥ π0, (12) has a solution given in Lemma 9-(i): that is, V (p) = 0 for p ≤ pˆ. In the other two cases where *p < π* ˆ 0, (12) has a unique solution given in (35).
+
+The proof of Theorem 1 then follows from proving that the policy function y(p) = 1{p≥pˆ}
+is optimal under the exteneded value function: Proposition 13. Given the value function V *constructed so far, the policy function* y(p) =
+1{p≥pˆ} is optimal. Proof. Establishing the optimality of the policy function y(p) = 1{p≥pˆ} amounts to showing
+∆(p) ≥ (≤)0 for p ≥ (≤)ˆp. The proof of this result proceeds in a few steps. To begin, we reproduce (21) and (23):
+
+$$\Delta^{\prime}(p)=\begin{cases}\dfrac{\Delta(p)}{p}+\dfrac{p(1-p)\lambda(r+\rho_{L}+\rho_{H})}{h(p)}\left[\sigma(p)-V^{\prime}(p)\right]&\text{for$p\leq\hat{p}$}\\ \left(\dfrac{h(p)}{g(p)}\right)\left(\dfrac{\Delta(p)}{p}\right)+\dfrac{p(1-p)\lambda(r+\rho_{L}+\rho_{H})}{g(p)}\left[\sigma(p)-V^{\prime}(p)\right]&\text{for$p\geq\hat{p}$}.\end{cases}\tag{43}$$
+
+Step 1: If ∆(p) ≥ 0 at p = max{π0, pˆ}*, then* ∆(p) ≥ 0, ∀p ≥ max{*p, π* ˆ 0}.
+
+Note that g(p) < 0 and h(p) ≤ 0 for p ≥ max{*p, π* ˆ 0}. Hence, since V
+′(p) ≥ 0, (44) implies that ∆′(p) > 0 whenever ∆(p) ≥ 0.
+
+19 If ∆(p) ≥ 0 at p = max{π0, pˆ}, this should imply that
+∆(p) ≥ 0 for all p > max{π0, pˆ}.
+
+19That V
+′(p) ≥ 0 can be easily verified using the results from Proposition 9 to Proposition 11.
+
+Step 2: With *p > π* ˆ 0, ∆(p) ≤ (≥)0 for p < (>)ˆp.
+
+In this case, we have max{*p, π* ˆ 0} = ˆp, so ∆(p) = 0 at p = max{*p, π* ˆ 0}, which implies by Step 1 that ∆(p) ≥ 0, ∀p ≥ pˆ.
+
+To show that ∆(p) ≤ 0 for p ≤ pˆ, note that V
+′(p) = 0 for all p ≤ pˆ, and that *h(ˆp)* < 0 and g(ˆp) < 0. Consequently, by (43), (44), and ∆(ˆp) = 0,
+
+$$\Delta^{\prime}(\hat{p}_{-})=\frac{\hat{p}(1-\hat{p})\lambda(r+\rho_{L}+\rho_{H})}{h(\hat{p})}\sigma(\hat{p})>0,$$
+
+and
+
+$$\Delta^{\prime}(\hat{p}_{+})=\frac{\hat{p}(1-\hat{p})\lambda(r+\rho_{L}+\rho_{H})}{g(\hat{p})}\sigma(\hat{p})>0.$$
+
+This means that there exists ε > 0 such that for p ∈ (ˆp−ε, pˆ), ∆(p) < 0, and for p ∈ (ˆp, pˆ+ε),
+∆(p) > 0.
+
+If ∆(p) > 0 for any p < pˆ, we must have pˇ ∈ [p, pˆ] such that ∆′(ˇp) < 0 and ∆(ˇp) = 0. But we have
+
+$$\Delta^{\prime}(\bar{p})=\frac{\bar{p}(1-\bar{p})\lambda(r+\rho_{L}+\rho_{H})}{h(\bar{p})}\sigma(\bar{p})>0,$$
+
+a contradiction.
+
+Step 3: With pˆ ∈ (π1, π0), ∆(p) ≥ 0 for p ≥ pˆ.
+
+The result will follow from Step 1 once we prove ∆(p) ≥ 0 for p ∈ [ˆ*p, π*0]. Let us thus fix any p ∈ [ˆ*p, π*0]. Rewrite (44) for the part of p ≥ pˆ as
+
+$$\Delta^{\prime}(p)=\left(\frac{h(p)}{g(p)}\right)\left(\frac{\Delta(p)}{p}\right)-\frac{\delta(p)}{g(p)p},\tag{45}$$
+
+where
+
+$$\delta(p):=p^{2}(1-p)\lambda(r+\alpha)V^{\prime}(p)-\frac{c}{x}h(p)$$
+
+with α := ρL + ρH. Differentiating this, we get
+
+$$\delta^{\prime}(p)=(2p-3p^{2})\lambda(r+\alpha)V^{\prime}(p)+\frac{c\alpha}{x}+p^{2}(1-p)\lambda(r+\alpha)V^{\prime\prime}(p).$$
+′′(p). (46)
+Let us use (22) to obtain V
+$$\prime\prime(p)={\frac{(r+\alpha)V^{\prime}(p)-{\frac{c}{p}}-{\frac{\Delta(p)x}{p}}}{g(p)}}$$
+g(p)and substitute this into (46) to obtain
+$$\delta^{\prime}(p)=(2p-3p^{2})\lambda(r+\alpha)V^{\prime}(p)+\frac{c\alpha}{x}+p^{2}(1-p)\lambda(r+\alpha)\frac{(r+\alpha)V^{\prime}(p)-\frac{c}{p}-\frac{\Delta(p)x}{p}}{g(p)}$$
+$$(46)$$
+$$55$$
+=(2p − 3p 2)λ(r + α)V ′(p) + cα x − p(1 − p)λ(r + α) ∆(p)x g(p) − p(1 − p)λ(r + α) c g(p) + p 2(1 − p)λ(r + α) 2V ′(p) g(p)
+=(2p − 3p
+2)λ(r + α)V
+′(p) + cα
+x
+− p(1 − p)λ(r + α)
+∆(p)x
+g(p)
+− p(1 − p)λ(r + α)
+c
+g(p)
++ (r + α)
+p
+2(1 − p)λ(r + α)V
+′(p) −
+c
+x
+h(p)
+g(p)
++ (r + α)
+ch(p)
+xg(p)
+=(2p − 3p
+2)λ(r + α)V
+′(p) + cα
+x
+− p(1 − p)λ(r + α)
+∆(p)x
+g(p)
++ (r + α)
+δ(p)
+g(p)
++
+c(r + α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) − p
+2λ(r + α)V
+′(p)
++
+cα
+x
+− p(1 − p)λ(r + α)
+∆(p)x
+g(p)
++ (r + α)
+δ(p)
+g(p)
++
+c(r + α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −
+p
+2(1 − p)λ(r + α)V
+′(p) − h(p)
+c
+x
+1 − p
+−h(p)c
+(1 − p)x
++
+cα
+x
+− p(1 − p)λ(r + α)
+∆(p)x
+g(p)
++ (r + α)
+δ(p)
+g(p)
++
+c(r + α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −δ(p)
+1 − p
+−h(p)c
+(1 − p)x
++
+cα
+x
+− p(1 − *p)λ(r* + α)
+∆(p)x
+g(p)
++ (r + α)
+δ(p)
+g(p)
++
+c(r + α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −δ(p)
+1 − p
+−
+cα
+x
++
+ρHc
+(1 − p)x
++
+cα
+x
+− p(1 − p)λ(r + α)
+∆(p)x
+g(p)
++ (r + α)
+δ(p)
+g(p)
++
+c(r + α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) − δ(p)
+1
+1 − p
+−
+r + α
+g(p)
++ρHc
+(1 − p)x
+− p(1 − *p)λ(r* + α)
+∆(p)x
+g(p)
++
+c(r + α)
+x
+. (47)
+By Proposition 10, we have ∆(ˆp) = 0 and V
+′(ˆp) = σ(ˆp) ≥ 0 or equivalently *δ(ˆp*) = 0. It
+thus follows that δ
+′(ˆp+) > 0.
+
+Thus, using (45) with ∆(ˆp+) = ∆′(ˆp+) = δ(ˆp+) = 0, we obtain
+
+$$\Delta^{\prime\prime}(\hat{p}_{+})=-\frac{\delta^{\prime}(\hat{p}_{+})}{g(\hat{p})\hat{p}}>0,$$
+
+from which it follows that ∆(p
+′) > 0 for all p
+′ ∈ (ˆp, pˆ+ ε], for some ε > 0. We now prove the 56 following claim:
+Claim 4. If ∆(p
+′′) < 0 for some p
+′′ ∈ [ˆ*p, π*0], then there exists pˇ ∈ (ˆ*p, p*′′) such that ∆(ˇp) ≥ 0, δ(ˇp) = 0 and δ
+′(ˇp) ≤ 0 Proof. Let p0 = sup{p
+′ ∈ (ˆp + *ε, p*′′) : ∆(p) > 0, ∀*p < p*′}. Then, we must have ∆(p0) ≤ 0.
+
+Given this, it cannot be the case that δ(p) > 0, ∀p ∈ [ˆ*p, p*0], since it would imply that whenever
+∆(p) = 0, we have ∆′(p) > 0 by (45) and g(p) < 0, which in turn implies ∆(p0) > 0. Thus, we must have some p1 ∈ (ˆ*p, p*0] with δ(p1) ≤ 0. Since δ(ˆp+) > 0, this implies that there must be some pˇ ∈ (ˆ*p, p*1] such that *δ(ˇp*) = 0 and δ
+′(ˇp) ≤ 0.
+
+Suppose for contradiction that ∆(p
+′′) < 0 for some p
+′′ ∈ [ˆ*p, π*0]. By the above claim, one can find pˇ ∈ (ˆ*p, p*′′) that ∆(ˇp) ≥ 0, *δ(ˇp*) = 0 and δ
+′(ˇp) ≤ 0. Substituting this into (47) with p = ˇp, we obtain
+
+$$\delta^{\prime}(\tilde{p})=2\tilde{p}(1-\tilde{p})\lambda(r+\alpha)V^{\prime}(\tilde{p})+\frac{\rho_{H}c}{(1-p)x}-\tilde{p}(1-\tilde{p})\lambda(r+\alpha)\frac{\Delta(\tilde{p})x}{g(\tilde{p})}+\frac{c(r+\alpha)}{(1-p)x}>0,$$  since $V^{\prime}(\tilde{p})\geq0$, $\Delta(\tilde{p})\geq0$, and $g(\tilde{p})<0$. This contradicts $\delta^{\prime}(\tilde{p})\leq0$.  
+_Step 4: With $\hat{p}\in(\pi_{1},\pi_{0})$, $\Delta(p)\leq0$ for $p\leq\hat{p}$._  Let us first rewrite (43) as 
+$$\Delta^{\prime}(p)=\frac{\Delta(p)}{p}-\frac{\delta(p)}{p h(p)}.$$
+
+We obtain
+
+δ
+′(p) =(2p − 3p
+2)λ(r + α)V
+′(p) + cα
+x
++ p
+2(1 − p)(r + α)
+2V
+′(p)
+h(p)
+=(2p − 3p
+2)λ(r + α)V
+′(p) + (r + α)
+h(p)
+p
+2(1 − p)(r + α)λV ′(p) −
+c
+x
+h(p)
++
+c(r + 2α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −
+p
+2(1 − p)λ(r + α)V
+′(p) −
+c
+x
+h(p)
+1 − p
+−c
+(1 − p)x
+h(p)
++
+(r + α)
+h(p)
+δ(p) + c(r + 2α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −δ(p)
+1 − p
+−
+cα
+x
++
+ρHc
+(1 − p)x
++
+(r + α)
+h(p)
+δ(p) + c(r + 2α)
+x
+=2p(1 − p)λ(r + α)V
+′(p) −δ(p)
+1 − p
++
+ρHc
+(1 − p)x
++
+(r + α)
+h(p)
+δ(p) + c(r + α)
+x
+. (48)
+57 Then, since V
+′(ˆp) ≥ 0 and δ(ˆp) = 0, we obtain δ
+′(ˆp−) > 0. Using this, one can follow an argument analogous to that in Step 3 to show that ∆(p) ≤ 0, ∀p ≤ pˆ.
+
+Step 5: With pˆ ≤ π1, ∆(p) ≤ 0 for p ≤ pˆ.
+
+In this case, pˆ = ˆpM ≤ p by Proposition 9 and Lemma 8, so we have for any p < pˆ,
+
+$$\sigma(p)-V^{\prime}(p)>\sigma(\underline{{{p}}})-V^{\prime}(\hat{p})=\sigma(\underline{{{p}}})-\frac{\lambda x}{r+\rho_{L}+\rho_{H}}=0,$$
+
+where the inequality follows from the fact that V
+′is strictly increasing (by Lemma 11) while σ is decreasing. Thus, by (43), we conclude that for any p < pˆ, ∆′(p) > 0 whenever ∆(p) = 0.
+
+Given that ∆(ˆp) = 0, this observation implies that ∆(p) ≤ 0 for all p ≤ pˆ.
+
+Step 6: With pˆ ≤ π1, ∆(p) ≥ 0 for p ≥ pˆ.
+
+The result follows immediately from (31) and the fact that pˆ = ˆpM =c
+
+$${\frac{c}{\lambda x}}.$$
+
+## C Analysis For Section 4.2
+
+Let Φ(p) denote the cumulative distribution of p. To identify Φ, we invoke an *balance equation*. As explained, the system spends a significant amount of time at pˆ, so there is probability mass at pˆ. Let *m(ˆp*) := Φ(ˆp) denote that mass. We expect that Φ admits density at p > pˆ, denoted by ϕ(p).
+
+To begin, suppose that the belief falls from pˆ + *dp(>* pˆ) to pˆ during a small time length dt. The "invariance" at pˆ requires that
+
+$$i+d p)-\Phi(\hat{p})](1-\lambda x$$
+$\downarrow\uparrow$  . 
+m(ˆp)z(ˆp)*λxdt* = [Φ(ˆp + dp) − Φ(ˆp)](1 − *λxdt*) + *o(dt*).
+
+The LHS represents the outflow of mass which occurs with prob *zxλdt* during dt. The RHS
+represents the inflow of mass into pˆ. Since the instantaneous rate of belief change is *f(p,* 1) < 0, it follows from (1) that the magnitude of the belief change *dp >* 0 is:
+
+ $\sharp)+o(dt)$. 
+$\mathbf{v}$
+$$d p=-f(p,1)d t+o(d t).$$
+Substituting this, the equation simplifies to:
+
+$$m(\hat{p})z(\hat{p})\lambda x=-\phi(\hat{p})f(\hat{p},1).$$
+m(ˆp)z(ˆp)λx = −*ϕ(ˆp*)f(ˆp, 1). (49)
+$$(49)$$
+$5\Omega$. 
+To determine ϕ(p) for each p > pˆ, let us consider an interval (*p, p*′). The balance equation can be then written as:
+[Φ(p
+′) − Φ(*p)]λxdt* + [Φ(p + dp) − Φ(p)](1 − *λxdt*) = [Φ(p
+′ + dp) − Φ(p
+′)](1 − *λxdt*) + *o(dt*).
+
+The explanation is straightforward. Arguing as before, we can simplify this to:
+
+$$[\Phi(p^{\prime})-\Phi(p)]\lambda x=-\phi(p^{\prime})f(p^{\prime},1)+\phi(p)f(p,1).$$
+
+By dividing both sides by p
+′ − p and letting it go to zero, we get
+
+$$\phi(p)\lambda x=-\phi^{\prime}(p)f(p,1)-\phi(p)\frac{\partial f(p,1)}{\partial p}.$$
+
+So we have
+
+$$\phi^{\prime}(p)f(p,1)=-\phi(p)\left(\lambda x+\frac{\partial f(p,1)}{\partial p}\right)=\phi(p)\left(\rho_{L}+\rho_{H}-2p\lambda x\right).$$
+
+This ODE has a solution:
+
+$$\phi(p)=\phi(\hat{p})\exp\left(\int_{\hat{p}}^{p}r(s)ds\right),\tag{50}$$
+
+where r(s) = ρL+ρH−2pλx f(p,1) .
+
+Lemma 14. For pˆ ∈ (π0, π1)*, there exist* ϕ(ˆp) > 0 and m(ˆp) ∈ (0, 1) *that satisfy* (49) and
+(50). Proof. Observe first that
+
+$$1-m({\hat{p}})=\Phi(1)-\Phi({\hat{p}})=\int_{{\hat{p}}}^{1}\phi(p)d p=\phi({\hat{p}})\int_{{\hat{p}}}^{1}\exp\left(\int_{{\hat{p}}}^{p}r(s)d s\right)d p,$$
+$$\left(51\right)$$
+$$\left(52\right)$$
+
+where the last equality follows from (50). Substitute *m(ˆp*) = −
+ϕ(ˆp)f(ˆp,1)
+z(ˆp)λx from (49) to express
+(51) as
+
+$$\phi(\hat{p})\left[\int_{\hat{p}}^{1}\exp\left(\int_{\hat{p}}^{p}r(s)d s\right)d p-\frac{f(\hat{p},1)}{z(\hat{p})\lambda x}\right]=1.$$
+
+Since the expression in the square brackets is positive, one can find *ϕ(ˆp*) > 0 satisfying this 59 equation. Then, (51) implies *m(ˆp)* < 1 while *m(ˆp*) = −
+ϕ(ˆp)f(ˆp,1)
+z(ˆp)λx > 0 since *f(ˆp,* 1) < 0.
+
+## C.1 Proof Of Lemma 2
+
+Note first that *z(ˆp*) is continuously decreasing in pˆ. Let *ψ(ˆp*) := R 1 pˆ
+exp R p pˆ
+r(s)dsdp. Using this and (52), we obtain
+
+$$\phi(\hat{p})=\frac{1}{\psi(\hat{p})-\frac{f(\hat{p},1)}{z(\hat{p})\lambda x}},$$  yield
+which can be plugged into (51) to yield
+
+$$1-m(\hat{p})=\frac{\psi(\hat{p})}{\psi(\hat{p})-\frac{f(\hat{p},1)}{z(\hat{p})\lambda x}}=\frac{1}{1+\left(\frac{1}{z(\hat{p})\lambda x}\right)\left(\frac{-f(\hat{p},1)}{\psi(\hat{p})}\right)},$$
+ # 0). Since $\bigg(\frac{1}{z(\hat{p})\lambda x}\bigg)$ is  . 
+which is continuous in pˆ ∈ (π1, π0). Since 1 z(ˆp)λx is increasing in pˆ, it suffices to show that
+−f(ˆp,1)
+ψ(ˆp)
+is also increasing in pˆ, since it will imply 1 − *m(ˆp*) is decreasing as desired. For this, observe that ψ
+′(ˆp) = −1 − r(ˆp)*ψ(ˆp*) so
+
+$$\frac{d}{d\hat{p}}\left(\frac{-f(\hat{p},1)}{\psi(\hat{p})}\right)=\frac{-f^{\prime}(\hat{p},1)\psi(\hat{p})+f(\hat{p},1)\psi^{\prime}(\hat{p})}{\psi(\hat{p})^{2}}$$ $$=\frac{-f^{\prime}(\hat{p},1)\psi(\hat{p})+f(\hat{p},1)(-r(\hat{p})\psi(\hat{p})-1)}{\psi(\hat{p})^{2}}$$ $$=\frac{-f^{\prime}(\hat{p},1)\psi(\hat{p})-(\rho_{L}+\rho_{H}-2p\lambda x)\psi(\hat{p})-f(\hat{p},1)}{\psi(\hat{p})^{2}}$$ $$=\frac{\lambda x\psi(\hat{p})-f(\hat{p},1)}{\psi(\hat{p})^{2}}>0.$$
+
+As pˆ → π1, we have z(ˆp) → 1. Then, by (49), we must have m(ˆp) → 0 since f(ˆp, 1) → 0.
+
+Since ypˆ(p) = 1 for all p > pˆ, this implies Ep[ypˆ(p)] → 1 as pˆ → π1.
+
+As pˆ → π0, we have z(ˆp) → 0 by definition of z(ˆp). Then, by (49), we have *ϕ(ˆp*) → 0, which implies by (50) that ϕ(p) → 0, ∀p > pˆ. This means that the entire mass be put on pˆ,
+i.e., m(ˆp) → 1, which implies Ep[ypˆ(p)] → 0 as pˆ → π0.
+
+## D Proof Of Proposition 8
+
+First of all, the PM's equilibrium payoff under NP is equal to min{c,π0,λ}
+r.
+
+Let us analyze the case of OP to construct an equilibrium that yields the same payoff for PM as under NP. Given the criminal's response x(p), the PM's problem is to solve
+
+$$r L(p)=\operatorname*{min}_{y}\left\{p\lambda x(p)(1-y)+c y+p\lambda x(p)y\left[L(1)-L(p)\right]\right\}$$
+$$+\left(\rho_{L}(1-p)-\rho_{H}p-p(1-p)\lambda x(p)y\right)L^{\prime}(p)\Biggr\}.\qquad(53)$$
+
+Lemma 1 can be easily extended to the case in which the criminal's response depends on p.
+
+Thus, solving (54) is equivalent to solving
+
+$$rV(p)=\max_{y}\bigg{\{}\left(p\lambda x(p)-c\right)y+p\lambda x(p)y\left[V(1)-V(p)\right]\\ +\left(\rho_{L}(1-p)-\rho\mu p-p(1-p)\lambda x(p)y\right)V^{\prime}(p)\bigg{\}}.\tag{54}$$
+$$\left(55\right)$$
+
+We look for an equilibrium in which PM employs a cutoff policy according to which y(p) is positive if and only if p ≥ pˆ for some pˆ. Given the criminals' behavior, neither y(p) ∈ (0, yˆ)
+nor y(p) > yˆ can be optimal for any belief p ≥ pˆ. Thus, it must be that y(p) = ˆy1{p≥pˆ}. Then, the criminals' response x(p) should be given such that PM finds it optimal to choose y = 0 if p < pˆ and choose any y ∈ [0, 1] if p ≥ pˆ. This requires that, by differentiating the maximand in (54) with y, we have
+
+$$(p\lambda x(p)-c)+p\lambda x(p)\left[V(1)-V(p)-(1-p)V^{\prime}(p)\right]\leq(=)0{\mathrm{~(if~}}p\geq{\hat{p}}).$$
+
+Consider the following strategy for PM and criminals: with pˆ =
+c λ
+, y(p) = ˆy1{p≥pˆ} while x(p) = 1 if p < pˆ and x(p) = c pλ if p ≥ pˆ. Plugging this into (54), we obtain V (p) = 0, ∀p ∈
+[0, 1]. Given V (p) and x(p), the LHS of (55) is zero if p ≥ pˆ and negative otherwise, as desired.
+
+It is straightforward to see that the criminals' response to the PM's policy is also optimal at each p ∈ [0, 1].
+
+To evaluate the PM's total loss in the long run, consider first the case with pˆ =
+c λ ≥ π0. In this case, the long-run belief absorbs into π0 for sure. Since π0 ≤ pˆ, x(π0) = 1 and y(π0) = 0.
+
+Thus, at p = π0, (53) becomes
+
+$$r L(\pi_{0})=\pi_{0}\lambda+\left(\rho_{L}(1-\pi_{0})-\rho_{H}\pi_{0}\right)L^{\prime}(\pi_{0})=\pi_{0}\lambda$$
+
+or L(π0) = π0λ r
+.
+
+Consider next the case with pˆ =
+c λ < π0. In this case, the belief cycles within the interval
+[max{*p, π* ˆ 1}, 1]. Recall that for p ≥ pˆ, any y ∈ [0, 1] is optimal for PM while x(p) = c pλ. Thus, for any p ≥ pˆ, we can plug x(p) = c pλ and y = 0 into (53) to obtain
+
+$$r L(p)=c+\left(\rho_{L}(1-p)-\rho_{H}p\right)L^{\prime}(p).$$
+
+It is straightforward to see that this ODE has a (unique) solution, L(p) = c r for all p ≥ pˆ. In sum, we have proven that PM's (expected) total loss is equal to min{c,π0λ}
+r.
+
+Note that the PM's policy under OP is also her myopic best response. Thus, the equilibrium we just described for OP constitutes an equilibrium for GP as well, completing the proof.

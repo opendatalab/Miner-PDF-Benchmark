@@ -1,0 +1,1166 @@
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-01.jpg?height=481&width=1348&top_left_y=159&top_left_x=253)
+
+1. $66+33-18$ 应先算( ) 法, 再算( ) )法, 结果是 ( $\quad$ )。
+2. 扬扬和帆帆比赛踢婑子, 扬扬分别踢了 $38,31 、 25$ 下, 帆帆分别踢了 29 、 $30 、 36$ 下，(2) ) 踢得多。
+3. 王叔叔帮食堂买了 85 袋苹果, 吃了 46 袋后又买了 28 袋, 现在有( )袋苹果。
+4. 在 $\bigcirc$ 里填上“ >” “<”或“ =”。
+
+$$
+\begin{array}{ll}
+23+14-17 \bigcirc 82-15-16 & 24+32+15 \bigcirc 96-17-9 \\
+85-32-15 \bigcirc 48+9+27 & 44+10+28 \bigcirc 78+14-16
+\end{array}
+$$
+
+5. 在( ) 里填上合适的数。
+
+$$
+\begin{array}{ll}
+30+20+(\quad)=70 & 27+\left({ }^{3}\right)+40=95 \\
+97-50-(\quad)=25 & ()-25-35=29
+\end{array}
+$$
+
+1. 下面得数是 68 的算式是 $(\bigcirc)$ 。
+(1) $44+50-28$
+(2) $49+47-28$
+(3) $100-25-16$
+2. $76+15-22$ 与 $76+22-15$ 的结果相比, ( ( ) )
+
+(1) $76+15-22$ 的结果大 (2) $76+22-15$ 的结果大 (3)一样大
+
+3. 最小的三位数减去最大的两位数, 再加上最大的一位数, 结果是 $(\bigcirc)$ 。
+(1) 99
+(2) 10
+(3) 100
+4. 苹果有 38 个, 梨比苹果多 5 个, 苹果和梨共有多少个? 正确的列式是 (C)。
+(1) $38+5$
+(2) $38-5+38$
+(3) $38+5+38$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-01.jpg?height=86&width=1175&top_left_y=440&top_left_x=1800)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-01.jpg?height=119&width=1144&top_left_y=659&top_left_x=1826)
+
+|  | 二 $(1)$ 班 | 二 $(2)$ 班 | 二 $(3)$ 班 | 合计 |
+| :--- | :---: | :---: | :---: | :---: |
+| 《儿童报》 | 26 份 | 32 份 | 37 份 | $(\mathbf{)})$ 份 |
+| 《小画报》 | 33 份 | $($ )份 | 24 份 | 90 份 |
+| 《故事报》 | 44 份 | 23 份 | $(\quad)$ 份 | 96 份 |
+
+1. 不计算, 将结果接近 50 的画“ $O$ ”, 接近 100 的画“ $\triangle$ ”。(6 分) $48+43+3(\Delta) \quad 23-16+92(\quad) \quad 36+24-9(\bigcirc)$
+$42+48-38(\bigcirc) \quad 64-28+13(\bigcirc) \quad 17+18+19(\bigcirc)$
+2. 接力赛。(8 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-01.jpg?height=216&width=1140&top_left_y=1559&top_left_x=1854)
+
+3. 用坚式计算。(12 分)
+$45+23-19=$
+$90-27-39=$
+$16+58-34=$
+$100-38+26=\quad 52+37-30=\quad 42-22+55=$
+
+$\begin{array}{r}12082 \\ -\quad 38+26 \\ \hline\end{array}$
+
+3. 两人一共得了多少颗星星? (4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-02.jpg?height=98&width=544&top_left_y=232&top_left_x=2203)
+
+扬扬 帆帆
+
+4. 下面的计算对吗? 对的画“ $V$ ”, 错的画“ $X$ ”并改正。(6 分)
+(1) 45 改正:
+$+27$
+(2)
+$\begin{array}{r}93 \text { 改正: } \\ -58 \\ \hline 45 \\ +16 \\ \hline 51\end{array}$
+5. 二年级同学一起去参观博物馆。(4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-02.jpg?height=149&width=663&top_left_y=1006&top_left_x=638)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-02.jpg?height=38&width=353&top_left_y=1182&top_left_x=357)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-02.jpg?height=51&width=472&top_left_y=1242&top_left_x=351)
+
+2. 旅行团花 100 元想各租一辆下面的观光车,还剩多少元? (4 分)
+
+$$
+\begin{aligned}
+& \text { 租一辆大观 } \\
+& \text { 光车68元。 }
+\end{aligned}
+$$
+
+5. 为了保护鸟类, 实验小学在学校的树上挂了一些人工鸟巢。昨天人工鸟巢里有 6 只小岛离开, 今天又有 18 只小鸟飞人,现在人工鸟巢里有 42 只小岛。(4 分)
+6. 灰兔拔了 32 个罗卜,白兔拔了 49 个,黑兔拔的比白兔和灰兔拔的总数少 25 个。黑兔拔了多少个? (4 分)
+
+地在空格里填数,使横行、坚行、斜行三个数相加的和都是 75 。
+
+| 28 |  |  |
+| :--- | :--- | :--- |
+|  | 25 |  |
+| 26 |  |  |
+
+
+| {BS 数学$\cdot$二年级$\cdot$上册 <br> 第一単元过关检测卷} |  |  |  |  |  |  |  |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  |  |  |  |  |  |  |  |
+| 题号 | - | $=$ | 三 | 四 | 五 | 附加题 | 总分 |
+| 得分 |  |  |  |  |  |  |  |
+
+1. 人民币的单位有 ( 乙)、( )、( )。
+2. 在( )里填上合适的人民币单位。
+
+$$
+\begin{aligned}
+& \text { 一双8约90(C)。 一支大约10( )。 }
+\end{aligned}
+$$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-03.jpg?height=102&width=1029&top_left_y=931&top_left_x=340)
+
+3. 写出下面的总钱数。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-03.jpg?height=544&width=1203&top_left_y=1093&top_left_x=300)
+
+4. 我会换零钱。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-03.jpg?height=168&width=1140&top_left_y=1685&top_left_x=336)
+
+5. 在 $\bigcirc$ 里填上“>”“<"或“=”。
+
+9 角 8 分 $\bigcirc 1$ 元 9 角 10 分 $\bigcirc 1$ 元 3 元7角 $\bigcirc 3$ 元 7 分
+
+18 元 $\bigcirc$ 元1角 4 角 $\bigcirc$ 3角 5 分 16 元 $\bigcirc 10$ 元6角
+6. 在( ) 里填上合适的数。
+
+6 分 +8 分 $=(-)$ 分
+
+6 元 8 角 -4 元 $=(2)$ 元 $(\quad)$ 角
+
+9 角 -7 分 $=(\quad)$ 分
+
+7 角 2 分 +6 元 2 角 $=(\quad)$ 元 $(\quad)$ 角 $(2)$ 分
+
+7. 梦琪买了一个通, 付了 4 张不同的人民币刚好够。她付了
+
+$$
+(\quad) \text { 元、( }) \text { 元、( ) 元、( ) 元各 } 1 \text { 张。 }
+$$
+
+1. 5 个 一共是 ( $\quad$ )。
+(1) 2 元
+(2) 50 角
+(3) 2 角 5 分
+2. 一支铅笔 8 角钱,扬扬用一张政四买了两支,应找回 $(\bigcirc)$ 钱。
+(1) 2 角
+(2) 4 角
+(3) 8 角
+3. 下面的玩具,浩博各买了 1 个, 他应付 ( $\bigcirc$ ) 元。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-03.jpg?height=209&width=487&top_left_y=1129&top_left_x=2236)
+(1) 25 元 9 角
+(2) 26 元 9 角
+(3) 26 元 8 角
+
+4. 与 6 角 5 分相等的钱数是 $(O)$ 。
+(1) 6 元
+(2) 65 分
+(3) 60 分
+5. 一个 $80^{3} 35$ 元, 付一张 ${ }^{50} 8$, 找回(@)张 ${ }^{2} \mathrm{~B}^{2}$ 。
+
+(1) 1
+
+(2) 2
+
+(3) 3
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-03.jpg?height=238&width=408&top_left_y=1761&top_left_x=1914)
+
+1. 8.3 我想买 (2) 号上衣和(4)号裤子故这 (5)
+2. 
+
+(13)我想买(1)号上衣。
+
+3. 
+
+(1.5 我买的是(3)号上衣
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=128&width=110&top_left_y=170&top_left_x=787)
+
+ar
+
+고옹
+
+-58
+
+주요요
+
+1. 
+
+(18) ₹-8.
+
+$$
+\begin{aligned}
+& \text { 买这架飞机我付了 } 4 \text { 张 } 8 \\
+& \text { 钱回比 } 5 \text { 元少。 }
+\end{aligned}
+$$
+
+| 68 元 | 78 元 | 88 元 |
+| :--- | :--- | :--- |
+|  |  |  |
+
+1. 用 14 元正好可以买下面哪两种物品? (5 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=162&width=1062&top_left_y=1127&top_left_x=436)
+2. (10 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=156&width=394&top_left_y=170&top_left_x=1990)
+
+25 元
+
+6 元
+
+## $\rightarrow$ <br> 49 元
+
+(1) 梓营支付 100 元, 找回 51 元, 她买的是哪一个玩具? (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=59&width=426&top_left_y=468&top_left_x=1909)
+
+(2) 请你再提出一个用加法解决的数学问题, 并尝试解答。(5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=64&width=196&top_left_y=744&top_left_x=1909)
+
+$49+25=24:(2)$
+
+4. 梦琪能买到这本书吗? 她应该怎样付钱? 售货员怎样找零钱? (5 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=170&width=518&top_left_y=1152&top_left_x=2002)
+
+我买一本故事书,
+
+售货员
+
+4 元
+
+梦琪
+2. 玩具小螃蟹比地球仪便宜多少钱? (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=204&width=441&top_left_y=1701&top_left_x=745)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-04.jpg?height=68&width=1267&top_left_y=1705&top_left_x=1820)
+子可以怎样付钱？哪种付钱方法最简便呢?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=481&width=1350&top_left_y=155&top_left_x=252)
+
+1. 数一数, 填一填。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=171&width=591&top_left_y=765&top_left_x=674)
+
+横着看,每行有( ） 片 , 有 ( ）行,一共有( $1 \quad$ ) 片 。
+
+坚着看, 每列有 ( ) 片 , 有 ( ) 列,一共有 ( ）片 。
+
+2. 小猫想吃到小鱼, 应先向( ) 走( ) 格, 再向( )走( ) 格, 再向 (一) 走 ( ) 格, 再向 (a) 走 (2) 格,最后向( ) 走( ) 格就可以了。(年
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=276&width=276&top_left_y=1112&top_left_x=1325)
+
+3. 在乘法算式 $5 \times 2=10$ 中, ( ) 和 ( ) 是乘数, 10 是( )。
+
+$$
+8+8=(\quad) \times(\quad 6+6+6=(\quad) \times(\quad)
+$$
+
+$(\quad) \times(\quad)=2+2+2+2+2 \quad 5+5+5+5+(\quad)=7 \times 5$
+
+5. 一只青蛙 4 条腿, 2 只青蛙 ( ) 条腿, 4 只青蛙( ) 条腿。
+6. 乘法的意义是求几个相同加数的和的简便运算。
+7. 是轴对称图形。
+8. 加法算式都可以改写成乘法算式。
+9. $8+8,8 \times 2,2 \times 8$ 都表示( $\bigcirc)$ 。
+(1) 2 个 8 相乘
+(2) 2 个 8 相加
+(3) 8 个 2 相加
+10. 用和硬纸片做陀螺, 硬纸片() 做成的陀螺转得更稳。
+(1)
+(2) $\square$
+
+(3)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=97&width=166&top_left_y=700&top_left_x=2749)
+
+3. 下列算式不能表示 “ 3 个 3 ”的是 $(\bigcirc)$ 。
+(1) $3 \times 3$
+(2) $3+3+3$
+(3) $4 \times 3$
+4. 试一试,填一填。
+5. $5 \times 4$ 只能表示 5 个 4 。
+6. “ 3 个 2 ” 和 “ 2 个 3 ” 的意思相同。
+7. 一共多少罐可乐? 可列式为（））。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=106&width=450&top_left_y=1053&top_left_x=1965)
+
+(1) $6 \times 6$
+
+(2) $2 \times 6$
+(3) $6+2$
+
+5. 每张课桌坐 2 名同学, 7 张课桌可以坐 (O) 名同学。
+(1) 9
+(2) 14
+
+(3) 15
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=234&width=352&top_left_y=1907&top_left_x=1802)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=384&width=177&top_left_y=1424&top_left_x=1774)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-05.jpg?height=242&width=583&top_left_y=1903&top_left_x=2209)
+
+(2) 图中一共有多少名学生去春游? (5 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=112&width=1204&top_left_y=220&top_left_x=296)
+
+.. 5 个 5 相加
+
+$\because 4$ 个 3 相加
+
+.. 3 个 6 相加
+
+3
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=104&width=748&top_left_y=591&top_left_x=748)
+
+1. (i) (i) (ii) (i) (i)
+
+草加法算式:
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=89&width=676&top_left_y=885&top_left_x=340)$\qquad$ $\qquad$
+2.
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=153&width=553&top_left_y=995&top_left_x=340)
+
+加法算式: $\qquad$
+乘法算式:
+
+1. 3 只小猫去钓鱼, 它们钓到的鱼的条数相同, 它们一共钓了多少条鱼? (4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=157&width=893&top_left_y=1308&top_left_x=510)
+
+2. 同学们去春游。(9 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=123&width=1119&top_left_y=1699&top_left_x=406)
+
+(1) 4 辆车一共有多少个车轮? (4 分)
+3. 所有的汽车只能前进或倒退, 想一想, (3)号汽车怎样才能到达出口?
+
+(5 分)
+
+|  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- |
+| (1) |  |  |  |  |
+| (3) | 5 |  |  |  |
+|  |  | 5 |  |  |
+| 2 |  | (4) |  |  |
+
+4. 美丽荷塘。(10 分)
+
+（1）一共有几朵荷花?（5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=205&width=326&top_left_y=1050&top_left_x=2576)
+
+(2) 请你再提出一个乘法问题,并尝试解答。(5 分)
+
+照样子, 能剪出( ) 个小纸人。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-06.jpg?height=187&width=629&top_left_y=1846&top_left_x=2101)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-07.jpg?height=484&width=1348&top_left_y=162&top_left_x=245)
+
+1. 把口决补充完整。
+
+$$
+\begin{aligned}
+& \text { 三五 }(-2) \quad\left(\quad \text { )六二十四 二 }\left(x^{2}\right)\right. \text { 十八 } \\
+& \text { 五 }(x) \text { 三十五 } \\
+& \text { 二 }(\quad) \text { 得八 } \\
+& \text { 三( } \quad \text { 二十一 }
+\end{aligned}
+$$
+
+2. 一个乘数是 5 , 另一个乘数是 9 , 积是 ( ), 所用的口诀是 (
+3. 在 $\bigcirc$ 里填上“ " ”" “<或“ =”。
+$2 \times 8 \bigcirc 3 \times 5$
+$5 \times 2 \bigcirc 6 \times 3$
+$5 \times 6 \bigcirc 4 \times 7$
+$4 \times 9 \bigcirc 5 \times 8$
+$6 \times 1 \bigcirc 6+1$
+$2 \times 8 \bigcirc 3 \times 7$
+4. 根据口诀“二八十六”写出两道乘法算式是 (
+
+)和(
+
+$$
+) 。
+$$
+
+5. 4 乘 6 的积是 (2), 再加上 8 是 ( $\quad$ )。
+6. 找规律填数。
+
+(1) $18,16,(\quad), 12,(\quad),(\quad)$ 。
+
+$(2)(\quad),(\quad), 9,12,(\quad), 18$
+
+(3) $4,(\quad), 12,(\quad),(2)$ 。
+
+7. 在( )里填上合适的数。
+(2) $\times 6=12$
+$5 \times(\quad)=25$
+$9 \times(\quad)=27$
+
+$4 \times(\quad)=32$
+
+$20=(\quad) \times 5$
+
+$3 \times(\quad)=12$
+
+8. 3 个 7 相加是 ( ) , 再加上 1 个 7 是 ( )。
+9. 二(1)班第一组有 6 套桌椅, 每套桌椅可以坐 2 人, 第一组有 ( ) 人。
+10. 与 $3 \times 5$ 结果不相同的是 $(\bigcirc)$ 。
+(1) $5+5+5$
+(2) $5 \times 3$
+(3) $5+3$
+11. 下面 ( ) 算式不可以用乘法口诀“三六十八”计算。
+(1) $3+6$
+(2) $3 \times 6$
+(3) $6+6+6$
+12. 如果 $\triangle+\Delta+\triangle+\triangle+\triangle=15$, 那么 $\triangle=(\bigcirc)$ 。
+(1) 3
+(2) 4
+(3) 5
+13. 扬扬看一本书, 从第 1 页开始依次往后看,每天看 5 页,看了 4 天。第 5 天她应从第 $(\bigcirc)$ 页开始看起。
+(1) 10
+(2) 20
+(3) 21
+14. 下面问题不可以用 “ $2 \times 6$ ”解决的是 ( $($ )
+
+(1) 棒棒糖每个售价 2 元, 我买了 6 个,一共花了多少元?
+
+(2) 合唱队每排站 6 个学生, 2 排站几个学生?
+
+(3) 星期日帆帆做了 6 页口算题,周一又做了 2 页,一共做了多少页?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-07.jpg?height=396&width=1146&top_left_y=950&top_left_x=1787)
+
+$2 \times 3=$
+
+$5 \times 6=$
+
+$4 \times 6=$
+
+$4 \times 8=$
+
+$5 \times 2=$
+
+$3 \times 9=$
+
+$1 \times 4=$
+
+$2 \times 8=$
+
+$5 \times 5=$
+
+$4 \times 7=$
+
+$3 \times 6=$
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-07.jpg?height=480&width=998&top_left_y=1660&top_left_x=1784)
+
+3. 一共运了多少袋玉米? (4 分)
+一共运了多少货玉来? (4 我每次运5袋
+玉米, 运了次。
+4. 
+
+## 0 aring
+
+(1) 3 个人一共有几只手?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=110&width=377&top_left_y=468&top_left_x=407)
+口决: $\qquad$
+(2) 6 只手有几根手指?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=106&width=472&top_left_y=474&top_left_x=989)
+口决: $\qquad$
+2. 一共有多少颗樱桃?
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=166&width=1104&top_left_y=755&top_left_x=334)
+
+口诀: $\qquad$
+
+1. 有多少人在划船? (4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=140&width=1187&top_left_y=1087&top_left_x=376)
+
+4. (8 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=208&width=1153&top_left_y=466&top_left_x=1839)
+
+(1) 明宇买了 4 个, 他花了多少元? (4 分)
+
+(2) 扬扬买了 2 盒国和 1 个, 一共要付多少元? (4 分)
+
+2. 小朋友们站队做操, 正好站了 5 排, 每排 7 人, 一共有多少个小朋友?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-08.jpg?height=290&width=289&top_left_y=1573&top_left_x=2271)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-09.jpg?height=280&width=1310&top_left_y=162&top_left_x=255)
+
+| 题号 | - | $=$ | 三 | 四 | 五 | 六 | 附加题 | 总分 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 得分 |  |  |  |  |  |  |  |  |
+
+1. 写出下面的总钱数。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-09.jpg?height=272&width=387&top_left_y=753&top_left_x=334)
+2. . 电风扇扇叶的转动是(
+
+)现象;
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-09.jpg?height=90&width=464&top_left_y=763&top_left_x=1044) <br> ".}现象。
+3. $3 \times 6$ 表示( 3 )个( ) 相加或( )个( ) 相加, 计算时用到的口诀是 ( $=4$ ), 积是 ( $>$ )。
+
+4. 在 $\bigcirc$ 里填上“>”“<"或“ =”。 3 元 5 角 $\bigcirc 35$ 角 1 元 $\bigcirc 10$ 角 $14 \bigcirc 66-21-30$ ${ }_{21-7} \bigcirc 4 \times 7 \quad 14+6 \bigcirc 5 \times 5 \quad 63-17+38 \bigcirc 52+39-23$
+5. 一把玩具手枪 29 元,一架玩具飞机的价格比它贵 36 元, 买一架玩具飞机至少要带( ) 张遇。
+6. 一个羽毛球 4 元, 王老师买了 4 个羽毛球,一共应付 ( ) 元; 如果王老师付给售货员 20 元,应找回( ) 元。
+7. 文具店里原来有 55 个文具盒, 卖出 38 个, 又进货 20 个,现在有 (3) 个。
+8. $9+9+9$ 表示 9 个 3 相加。
+9. 在计算 $98-20+30$ 时,先算加法更简便。
+10. $8 \times 5=5 \times 8$
+11. 1 张 10 元的人民币可以换 10 张 1 元或 2 张 5 元。
+12. 一句乘法口诀一定能写出两个乘法算式。
+13. 下面字母对折后能重合的是 ( $($ ) 。
+(1) $Q$
+(2) $\mathrm{H}$
+(3) $\mathrm{S}$
+14. 积是 18 的算式是 ( ) 。
+(1) $9+9$
+(2) $9 \times 2$
+(3) $6+6+6$
+15. 帆帆拿 ${ }^{50} Q^{8}$ 买玩具汽车, 下面说法错误的是 $(\bigcirc)$ 。
+
+(1) 帆帆的钱只够买 1 辆玩具汽车
+
+(2) 再付 9 角,正好找回 5 元
+
+(3) 应找回 13 元 1 角
+
+4. 下面选项中, 做平移运动的是 $(\bigcirc)$
+
+(1)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-09.jpg?height=132&width=153&top_left_y=1114&top_left_x=1897)
+
+(2)
+
+(3)
+
+5. 第一个加数是 30 , 第二个加数是 27 , 第三个加数与第一个加数相同, 求这三个加数的和, 列式是 ( $\bigcirc)$ 。
+(1) $30+27$
+(2) $30+27+27$
+(3) $30+27+30$
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-09.jpg?height=392&width=1164&top_left_y=1500&top_left_x=1794)
+6. 直接写出得数。(12 分)
+
+| $2 \times 3=$ | $3 \times 5=$ | $6 \times 4=$ | $3 \times 8=$ |
+| :--- | :--- | :--- | :--- |
+| $5 \times 5=$ | $5 \times 6=$ | $15-8=$ | $3+8=$ |
+
+3. 购物。(12 分)
+$2+6=$
+$12-9=$
+$7 \times 3=$
+$5 \times 7=$
+4. 用坚式计算。(9 分)
+
+$15+27+35=$
+
+$91-25-36=$
+
+$52+18-45=$
+
+3. 看图列式计算。(8 分)
+1) 一共有多少只鸭子?
+(2)一共有多少个马?
+2
+$2 \pi$
+
+加法算式: $\qquad$
+加法算式:
+
+乘法算式: $\qquad$
+乘法算式:
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-10.jpg?height=268&width=1123&top_left_y=206&top_left_x=1905)
+
+(1) 买一台小风扇和一盏台灯, 一共需要多少元? 可以怎样付钱? (4 分)
+
+(2) 帆帆买了一件上衣和一张桌子,付了 100 元,应找回多少元? (4 分)
+
+1. 扬扬一个星期正好看完一本《数学家的故事》。这本书一共有多少页?
+
+(4 分)我每天看4页。
+
+(3) 用“ $4 \times 7$ ”可以解决什么问题?（4 分）
+
+2. 一共摘了 50 个西瓜。(4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-10.jpg?height=174&width=659&top_left_y=1631&top_left_x=640)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=464&width=1350&top_left_y=155&top_left_x=252)
+
+1. 量比较长的物体的长度, 可以用 ( ) 作单位; 量比较短的物体的长度,可以用 (2) ) 作单位。
+2. 在( )里填上“厘米”或“米”。
+(1) 帆帆的身高是 135 ( 1.) 。
+(2) 牙膏盒长约 $15($ )
+(3)一栋楼高约 15 ( ) 。
+(4)门高约 $2\left({ }^{2}\right)$ 。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=93&width=625&top_left_y=1021&top_left_x=291)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=94&width=1119&top_left_y=1114&top_left_x=342)
+70 厘米 $\bigcirc 1$ 米 80 厘米 $\bigcirc 8$ 米 6 米 $\bigcirc 5$ 米 70 厘米
+
+4. 直尺上从刻度 3 到刻度 10 是 ( ) 厘米, 从刻度 8 到刻度 $(-)$ 是 5 厘米。
+5. 算一算。
+
+80 厘米 -26 厘米 $=(\quad)$ 厘米 45 厘米 +38 厘米 $=(\quad$ 厘米 1 米 -65 厘米 $=(\quad$ 厘米 6 米 -100 厘米 $=(\quad)$ 米
+
+6. 一根长 1 米的铁丝, 用去 25 厘米, 还剩( 2 ) 厘米。
+7. 帆帆用一把 20 厘米长的尺子测量物体。
+
+(1) 量了 1 次,尺子还剩 2 厘米,数学书宽 ( ) 厘米。
+
+(2)量了 3 次,尺子还剩 5 厘米,书包宽( ) 厘米。
+
+1. 操场的长大约是 100 厘米。
+2. 100 厘米长的木棒比 1 米长的铁丝短一些。
+3. 比 80 米短 20 厘米的是 60 米。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=77&width=923&top_left_y=170&top_left_x=1792)
+
+5. 用直尺测量物体时应把直尺最左端与物体的一端对齐。
+6. 扬扬一步长约是 $53(\bigcirc)$ )
+(1) 米
+(2) 厘米
+(3) 拃
+7. 在一条 1 米的赛道上, 一只虫子已经爬了 85 厘米, 它再爬 (○) 厘米就到终点了。
+(1) 15
+(2) 5
+(3) 150
+8. 李阿姨家在 8 楼,离地面有 $(\bigcirc)$ 高。
+(1) 21 米
+(2) 21 厘米
+(3) 210 厘米
+9. 帆帆妈妈身高 1 米 60 厘米, 比帆帆高 40 厘米, 帆帆高 ( )。
+(1) 100 厘米
+(2) 120 米
+(3) 120 厘米
+10. 下面使用直尺测量的方法正确的是 ( ) )。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=89&width=336&top_left_y=1087&top_left_x=1839)
+(2) 10
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=98&width=314&top_left_y=1082&top_left_x=2620)
+
+1. 在比 1 米高的物体下面的 ( ) 里画 “ $\checkmark$ ”, 比 1 米矮的物体下面的 ( $)$ 里画“ $\times ” 。(4$ 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=175&width=166&top_left_y=1435&top_left_x=1839)
+
+( )
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=170&width=115&top_left_y=1433&top_left_x=2207)
+
+( $/$ )
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=140&width=107&top_left_y=1461&top_left_x=2549)
+
+$(\infty)$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-11.jpg?height=196&width=166&top_left_y=1403&top_left_x=2826)
+
+$(1 /)$
+2. 排一排。(8 分)
+
+(1) 按从小到大的顺序排列。
+12 厘米
+2 厘米
+21 厘米
+32 厘米
+
+(2) 按从大到小的顺序排序。
+11 厘米
+4 厘米
+1 米
+17 米
+
+1. 量一量, 填一填。(5 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-12.jpg?height=358&width=1128&top_left_y=276&top_left_x=340)
+2. 画一条长 5 厘米的线。(3 分)
+3. 画一条比 11 厘米短 5 厘米的线。(4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-12.jpg?height=170&width=1012&top_left_y=1212&top_left_x=447)
+
+1. (C) 和( ) 一样长, 都是 ( ) 厘米。(3 分)
+2. 木棍比 50 厘米短 () 厘米。(2 分)
+3. 请你再提出一个数学问题, 再尝试解答。(5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-12.jpg?height=64&width=893&top_left_y=1565&top_left_x=344)
+
+2. 小蚂蚁回家一共要走多少米? (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-12.jpg?height=251&width=595&top_left_y=232&top_left_x=2173)
+3. 1 支铅笔用去 3 厘米,剩下的比用去的长 12 厘米,剩下的铅笔有多长? 这支铅笔原来有多长? (5 分)
+
+4. 将一根绳子对折 2 次后, 长约 9 米, 这根绳子原来长多少米? (5 分)
+
+在一条小路上每隔 3 米种一棵树, 两端都要种, 一共种了 5 棵树。这条小路有多长?
+
+1. (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-12.jpg?height=174&width=506&top_left_y=1895&top_left_x=1091)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-13.jpg?height=476&width=1348&top_left_y=162&top_left_x=253)
+
+1. $16 \div 4=(\quad)$, 被除数是 $(\quad)$, 除数是 ( ) , 商是 $(\quad)$, 读作 (
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-13.jpg?height=80&width=787&top_left_y=836&top_left_x=270)
+
+一共有 ( ) 个方, 如果每份有 3 个, 能分成( ) 份。
+
+3. 根据乘法口诀“四七二十八”写出两道除法算式是( $)$ 和 (
+4. 
+
+(1) 每个筐里装 3 个路, 需要( ) 个筐。
+
+(2) 如果有 2 个筐, 平均每个筐装( ) 个 7 (1) 。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-13.jpg?height=76&width=196&top_left_y=1493&top_left_x=289)
+
+400
+
+000000000000
+
+(1) 的个数是的( ) 倍。
+
+(2) $\bigcirc$ 的个数是 的( ) 倍。
+
+6. 在 $\bigcirc$ 里填上 “ >”“ “ ”或“ =”。
+$27 \div 3 \bigcirc 10 \div 2$
+$36 \div 4 \bigcirc 12 \div 2$
+$40 \div 5 \bigcirc 40-5$
+$18 \div 2 \bigcirc 2 \times 4$
+$36 \div 4 \bigcirc 36-4$
+$2 \times 2 \bigcirc 16 \div 4$
+7. 45 个同学排队,每队排 9 人, 可以排 ( ) 排, 列式是 (a) ; 如果每排 5 人, 可以排 ( ) 排, 列式为 ( 4 )。
+8. 妈妈把 12 颗糖分给扬扬和帆帆,扬扬和帆帆一定分别得到 6 颗糖。
+9. $25 \div 5$ 这个算式的除数和商都是 5 。
+10. 把 8 支铅笔平均分成 4 份, 求每份是多少, 用除法计算。
+11. 把 9 个苹果平均分成 3 份, 每份有 3 个, 列式为 $3 \times 3=9$ 。
+12. 一块橡皮 2 元,一支钢笔 12 元, 钢笔的单价是橡皮的 6 倍。
+13. 商是 7 的算式是 ( $\odot$ )。
+(1) $7 \div 7$
+(2) $14-7$
+(3) $14 \div 2$
+14. 草莓的数量是苹果的 3 倍。苹果有 7 个, 草莓有 $(\bigcirc)$ 颗。
+(1) 21
+(2) 4
+(3) 10
+15. 计算“ $32 \div 4$ ”时, 要用 ( $($ ) 帮助我们求商。
+(1) 加法
+(2) 减法
+(3) 乘法口诀
+16. 字母 $Q$ 的个数是字母 $O$ 的 2 倍, 下面表示正确的是 $(O)$ 。
+(1) QQQQQQ 0000
+(2) $Q Q \quad 0$
+(3) QQQ 000000
+17. 把 20 个苹果平均分给 $(\bigcirc)$ 个人, 没有剩余。
+(1) 3
+(2) 4
+(3) 6
+18. 直接写出得数。(8 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-13.jpg?height=137&width=1128&top_left_y=1547&top_left_x=1830)
+
+2. 看图列式计算。(12 分)
+
+(2)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-13.jpg?height=209&width=582&top_left_y=1741&top_left_x=2473)
+孙悟空大闹天宫后从蟠桃园带回来 28 个仙桃, 要平均分给他的 5 个猴子猴孙。请用两种方法分一分, 把分的过程记录下来,并填空。
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-14.jpg?height=500&width=1136&top_left_y=414&top_left_x=293)
+
+每只分到( ) 个, 还剩( ) 个。每只分到( ) 个, 还剩( ) 个。
+
+1. 画 $\bigcirc$ 的个数是 $\triangle$ 的 2 倍。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-14.jpg?height=85&width=268&top_left_y=1161&top_left_x=342)
+
+2. 画, 使 的个数是 的 3 倍。
+
+00000 $\qquad$
+
+1. 停车场停放了 18 辆小汽车, 如果每排停放 6 辆小汽车, 可以停放几排?
+2. 28 元可以买几顶帽子? (5 分)
+3. 裙子有 8 件, 裤子的件数是裙子的 3 倍, 裤子有多少件? (5 分)
+4. 梓营和 15 个小伙伴去乘车, 刚好坐满了 4 辆同样的车, 每辆车坐了多少人? (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-14.jpg?height=172&width=763&top_left_y=1045&top_left_x=2336)
+
+帆帆有 15 张卡片, 扬扬有 9 张卡片。扬扬给帆帆多少张后, 帆帆的卡片数量就是扬扬的 3 倍? $18 \div 6=2(2+2)$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-14.jpg?height=81&width=341&top_left_y=1805&top_left_x=344)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-15.jpg?height=460&width=1344&top_left_y=157&top_left_x=251)
+
+1. 把下列口决补充完整
+
+九九 ( ) 六七( $1-x$ ) 七九 ( $x-2$ )
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-15.jpg?height=69&width=1123&top_left_y=816&top_left_x=336)
+
+2. 一个乘数是 5 , 另一个乘数是 8 , 积是 ( ) , 所用的口诀是 (
+3. 在 $\bigcirc$ 里填上“ >”" “<”或“ =”。
+$8 \times 5 \bigcirc 5 \times 8$
+$7 \times 8 \bigcirc 9 \times 6$
+$7 \times 7 \bigcirc 6 \times 8$
+$4 \times 7 \bigcirc 5 \times 6$
+$5 \times 9 \bigcirc 9 \times 6$
+$6 \times 7 \bigcirc 3 \times 9$
+4. 想一想,填一填。
+
+$$
+\begin{array}{ll}
+8 \times 5-8=8 \times(\quad) & 6 \times 8=6 \times(\quad)+6 \times 3 \\
+2 \times 7+7=(\quad) \times 7 & 9 \times 7=9 \times 2+9 \times(\quad)
+\end{array}
+$$
+
+5. 从 “ $6,54,9,48$ ” 中选出几个数, 组成两道乘法算式。(2 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-15.jpg?height=98&width=848&top_left_y=1524&top_left_x=340)
+6. 扬扬有 6 盒饼干,每盒有 8 块,扬扬一共有 (2) 块饼干。
+7. 找规律填数。
+
+$(1) 7,14,21,(\quad),(\infty),(\quad)$ 。
+
+$(2) 9,18,27,(\quad),(\quad),(\quad)$ 。
+
+1. 3 个 8 相加的和是 $3+8=11$ 。
+2. 计算 $7 \times 9$ 与 $9 \times 7$ 时, 用的是同一句乘法口诀。
+3. 根据 “七七四十九” 这句口诀只能写出一道乘法算式。
+4. $6+6+6+6+6+6=6 \times 6=12$
+5. 每盒彩笔有 8 支, 4 盒彩笔一共有 12 支。
+6. 积不是 24 的算式是 ( $\bigcirc)$ 。
+(1) $4 \times 6$
+(2) $12+12$
+(3) $3 \times 8$
+7. 与 $6 \times 6+6$ 的相等的算式是 ( ()$)$ 。
+(1) $6 \times 7$
+(2) $3 \times 6$
+(3) $6+6+6$
+8. 算式“ $4 \times 9$ ”可以解决哪个问题?（）
+
+(1) 妈妈买了 4 本书, 又买了 9 本书。妈妈一共买了多少本书?
+
+(2) 一排摆 4 盆花,摆 9 排。一共需要多少盆花?
+
+(3) 一支钢笔 4 元, 一个足球的价格是一支钢笔的 9 倍。买一支钢笔和一个足球一共需要多少元?
+
+4. $\bigcirc+\bigcirc+\bigcirc+\bigcirc=28, \Delta+\Delta+\triangle=24, \bigcirc+\Delta=(\bigcirc)$ 。
+(1) 15
+(2) 56
+(3) 72
+5. 一支钢笔 7 元, 买 7 支钢笔,付 50 元 ( $($ ) 。
+(1) 不够
+(2) 够
+(3) 不一定够
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-15.jpg?height=504&width=1170&top_left_y=1359&top_left_x=1798)
+
+| $7 \times 9=$ | $4 \times 9=$ | $3 \times 9=$ |
+| :---: | :---: | :---: |
+| $6 \times 8=$ | $7 \times 3=$ | $5 \times 9=$ |
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-15.jpg?height=301&width=243&top_left_y=1559&top_left_x=2749)
+
+1. 直接写出得数。(4 分)
+2. 看图列式计算,并写出乘法口诀。(8 分)
+(1) 一共有多少把雨企?
+(2) 一共有多少颗钻石?
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-16.jpg?height=362&width=1034&top_left_y=282&top_left_x=404)
+
+口决:口决:
+3. 在每个图中的 $\bigcirc$ 里填上相同的数, 使它们相加的和等于图形中间的数。
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-16.jpg?height=298&width=716&top_left_y=880&top_left_x=406)
+
+(10 分)
+
+1. 一共要多少钱? (4 分)
+
+$$
+\text { 每个皮球5元。 }
+$$
+
+000000000
+
+2. 摆 6 个这样的图形需要多少根木棒? (4 分)
+3. (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-16.jpg?height=314&width=791&top_left_y=162&top_left_x=1960)
+
+4. 帆帆每天写 9 个毛笔字, 扬扬每天写 7 个毛笔字。帆帆一星期比扬扬多写多少个毛笔字? (5 分)
+5. 二(1) 班的同学计划去旅游, 全班同学乘坐 1 辆大巴车和 2 辆小汽车, 刚好坐满。二(1) 班有多少名同学? (5 分)
+
+$$
+\begin{aligned}
+& \text { 每辆车坐的人数 } \\
+& \text { 是小汽车的9倍。 }
+\end{aligned}
+$$
+
+同学们排成方队做操, 从前、后、左、右四个方向数, 扬扬都排第 5 , 一共有多少人做操?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-17.jpg?height=450&width=1352&top_left_y=162&top_left_x=247)
+
+1. 计算 $42 \div 6$ 和 $42 \div 7$ 时, 都要用口诀 ( $20 \div$ )。
+2. 24 是 3 的 ( ) 倍, ( ) 的 5 倍是 40 。
+3. 在 ( ) 里填上合适的数。
+
+$$
+\begin{aligned}
+& 63 \div(\quad)=9 \quad 4 \times(\quad)=36 \\
+& 21 \div(\quad)=7 \quad(\quad) \times 8=72 \\
+& (\quad) \div 9=7
+\end{aligned}
+$$
+
+4. 在 $\bigcirc$ 里填上 $">"$ " < ”或“ =”。
+$48 \div 8 \bigcirc$
+$28 \div 4 \bigcirc$
+$25 \div 5 \bigcirc 36 \div 9$
+$6 \times 6 \bigcirc 56 \div 7$
+$64 \div 8 \bigcirc 2 \times 4$
+$28 \div 4 \bigcirc 36 \div 6$
+5. ( ) 里最大能填几?
+
+$$
+\begin{array}{lll}
+(\quad) \times 8<36 & 4 \times(\quad)<29 & 34>5 \times(\quad) \\
+(\quad) \times 9<28 & 3 \times(\quad)<25 & 7 \times(\quad)<55
+\end{array}
+$$
+
+6. 被除数是 27 , 除数和商的和是 12 , 那么除数是 ( ), 商是 ( )。
+7. 找规律填空。
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-17.jpg?height=182&width=1064&top_left_y=1644&top_left_x=336)
+8. 老师买来 24 本故事书, 如果每个小朋友分 4 本, 可以分给 ( ) 个小朋友; 如果平均分给 3 个小朋友, 每个小朋友分 ( ) 本。
+9. 把 45 个苹果平均分给 9 个小朋友, 每个小朋友分得 6 个苹果。
+10. 一个数的 9 倍是 18 , 这个数是 9 。
+11. 从 36 里面连续减去 9 , 减 4 次结果是 0 。
+12. 除数与商都是 8 ,被除数是 64 。
+13. $54 \div 9$ 和 $54 \div 6$ 结果不同,所用的乘法口决也不同。
+14. 下面用同一句口决求出结果的算式有 $(\bigcirc)$ 道。
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-17.jpg?height=133&width=962&top_left_y=474&top_left_x=1837)
+(1) 4
+(2) 3
+(3) 2
+
+2. 下面算式用到的口诀不是 “三八二十四”的是 ( $\bigcirc)$ 。
+(1) $3 \times 8=24$
+(2) $24 \div 3=8$
+(3) $24 \div 6=4$
+3. 把 72 本故事书平均分给扬扬和她的 8 个小朋友, 每人能分到几本书? 列式正确的是 ( $\bigcirc)$ 。
+(1) $72 \div 8=9$
+(2) $72 \div 9=8$
+(3) $72+8=80$
+4. $64 \div 8>(\bigcirc))>36 \div 6$
+(1) $42 \div 7$
+(2) $49 \div 7$
+(3) $32 \div 4$
+5. 第一根铁丝长 45 厘米, 第二根铁丝长 9 厘米, 第一根铁丝的长度是第二根的几倍? 列式正确的是 ( $\quad$ )。
+(1) $45-9$
+(2) $45 \div 9$
+(3) $45+9$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-17.jpg?height=455&width=1161&top_left_y=1354&top_left_x=1792)
+
+1. 看谁先到家。(8 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-17.jpg?height=231&width=1205&top_left_y=1930&top_left_x=1834)
+
+2. 将算式按得数从大到小的顺序排列起来。(6 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-18.jpg?height=472&width=1248&top_left_y=232&top_left_x=332)
+
+| 可以买的食品 | 饼干 | 巧克力 | 蛋糕 | 棒棒糖 |
+| :---: | :---: | :---: | :---: | :---: |
+| 能买多少 | $(\quad)$ 袋 | $($ ) 盒 | $($ ) 块 | $($ ) 个 |
+
+1. 扬扬做了 32 个蜻蜓标本, 她做的蜻蜓标本的个数是帆帆的 4 倍, 帆帆做了多少个蜻蛼标本? (4 分)
+2. 烘焙的乐趣。(9 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-18.jpg?height=170&width=213&top_left_y=1395&top_left_x=540)
+
+我做36块小熊饼干,尝了一块,剩下的平均分给了5个小伙伴梓营
+
+(1) 用上面的模具, 梓荃做了几次才做完? (4 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-18.jpg?height=114&width=468&top_left_y=1644&top_left_x=412)
+
+(2)每个小伙伴分了几块小熊饼干? (5 分)
+3. 购物。(10 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-18.jpg?height=183&width=1024&top_left_y=215&top_left_x=1963)
+
+(1)扬扬用 40 元钱买了同一种商品, 正好花完, 她可能买了什么? 买了什么? (4 分)
+
+(2) 请你分别提出一个用乘法解决的问题和一个用除法解决的问题。
+
+超市正在促销图书。初夏一共买了几本书?
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-18.jpg?height=161&width=603&top_left_y=1697&top_left_x=2114)
+
+8 元/本
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=472&width=1361&top_left_y=147&top_left_x=234)
+
+1. 36 是 4 的 ( ) 倍, 5 的 8 倍是( )。
+2. 写出每组的总钱数。
+
+| ![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=269&width=1129&top_left_y=814&top_left_x=358) |  |
+| :---: | :---: |
+|  |  |
+|  |  |
+|  |  |
+
+3. 用 3 根木棒可以挸一个, 摆 9 个这样的》要用( ) 根木棒。
+4. 在括号里填上合适的长度单位。(填“厘米”或“米”)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=247&width=1203&top_left_y=1250&top_left_x=334)
+
+5. 在 $\bigcirc$ 里填上“ >”“ “<”或“ =”。
+$32 \div 8 \bigcirc 28 \div 7$
+$36 \div 9 \bigcirc 3 \times 2$
+5 元 8 角 $\bigcirc 7$ 元
+$6 \times 6 \bigcirc 7 \times 5$
+
+. 在( )里填上合适的数。
+
+1 米 $=(2)$ 厘米 5 元 3 角 +3 元 7 角 $=(D)$ 元
+
+50 角 $=(\quad)$ 元
+
+8 米 -20 厘米 $=($ ) 米 $)$ 厘米
+
+7. ( )里最大能填几?
+
+(a) $\times 5<40 \quad(\quad) \times 6<46$
+
+$4 \times(5)<25$
+
+(a) $\times 6<13$
+
+$\begin{array}{ll}7 \times(\quad) & <17 \\ 8 \times(\quad) & <64\end{array}$
+
+1. $3 \times 9$ 和 $9 \times 3$ 都用口诀“三九二十七”计算。
+2. 用一根长 30 米的绳子, 可以剪成 5 根 6 米长的绳子。
+3. 一扇门高约 2 厘米。
+4. 1 张 10 元可以换两张 5 角。
+5. 计算 $54-18+20$ 时, 可以先口算出 $18+20=38$, 再计算 $54-38=16$
+6. 下面的情境与 “转陀螺” 相似的是 (O) 。
+(1)
+(2)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=137&width=251&top_left_y=799&top_left_x=2307)
+(3)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=119&width=119&top_left_y=812&top_left_x=2879)
+
+2. 现有甲、乙、丙三根铁丝, 甲长 6 米, 乙长 6 厘米, 丙长 60 厘米, ( $)$ )最短。
+(1) 甲
+(2) 乙
+(3) 丙
+3. 算式“ $5 \times 3$ ”可以表示下面图( $\bigcirc$ ) 中花朵的数量。
+(1)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=188&width=284&top_left_y=1241&top_left_x=1891)
+(2)
+0.00
+0.0 .0
+0.0 .0
+(3)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=178&width=276&top_left_y=1242&top_left_x=2677)
+
+4. 9 朵鲜花,平均插在 3 个花瓶里,每瓶有几朵? 正确的列式是 $(O)$ 。
+(1) $9 \times 3$
+(2) $9-3$
+(3) $9 \div 3$
+5. $\triangle+\Delta+\triangle=27, \bigcirc+\bigcirc+\bigcirc+\bigcirc+\bigcirc+\bigcirc=30$, 那么 $\triangle \times \bigcirc=(\bigcirc)$ 。
+(1) 45
+(2) 15
+(3) 54
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-19.jpg?height=364&width=1186&top_left_y=1777&top_left_x=1804)
+6. 直接写出得数。(8 分)
+
+$4 \times 5=\quad 21 \div 7=$
+
+$30 \div 6=\quad 35 \div 7=$
+
+$6 \times 9=$
+
+$45 \div 5=$
+
+2. 用坚式计算。(9 分)
+
+$57+23+16=$
+
+$90-28+14=$
+
+$18 \div 9=$
+
+$48 \div 8=$
+
+1. 画一条比 9 厘米短 5 厘米的线。(2 分)
+2. 画 $\triangle$,使 $\triangle$ 是 $O$ 的 3 倍。(3 分)
+
+00
+
+3. 画弥,使 $\triangle$ 是的的 4 倍。(3 分) $\triangle \triangle \triangle \triangle \triangle \triangle \triangle \triangle$
+4. (10 分)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-20.jpg?height=198&width=714&top_left_y=1399&top_left_x=476)
+
+可乐4元
+
+(1) 扬扬有 48 元, 买哪种正好可以买 8 个? (5 分)
+
+(2) 请你提出一个有关倍数的数学问题, 并试着解答。(5 分)
+
+2. (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-20.jpg?height=161&width=145&top_left_y=162&top_left_x=1939)
+
+42 人乘坐这样的8辆车, 够吗?
+
+限乘 5 人
+
+3. 扬扬用 100 元买哪两件玩具剩的钱最多? 剩多少钱? (5 分)
+
+$$
+\begin{aligned}
+& 380 \\
+& 36 \text { 元 }
+\end{aligned}
+$$
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-20.jpg?height=200&width=508&top_left_y=670&top_left_x=2384)
+
+4. 小鹿被困在了迷宫中, 小动物们怎样移动, 才能让小鹿到达出口? (5 分)
+
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-20.jpg?height=404&width=302&top_left_y=1125&top_left_x=2792)
+
+有一捆绳子长 12 米 80 厘米, 梓萱有一盒长 3 米的卷尺, 她最少量几下才能量出绳子的长度? (绳子不能折)
+![](https://cdn.mathpix.com/cropped/2024_04_30_03049dfd268e28c9fe31g-20.jpg?height=194&width=484&top_left_y=1654&top_left_x=2616)
+
+3米
+

@@ -1,0 +1,242 @@
+$\infty$
+
+# 第4讲 圆中的角 
+
+辅导老师：语文不好的苏丽老师
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-01.jpg?height=2274&width=3924&top_left_y=804&top_left_x=143)
+$\infty$
+
+# 第4讲 圆中的角 
+
+辅导老师：语文不好的苏丽老师
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-02.jpg?height=2274&width=3945&top_left_y=804&top_left_x=122)
+
+$$
+\text { - }
+$$
+
+## 下课后及时提交巩固鞜习
+
+前3讲巩固练习你完成了吗?
+
+快来完成这道拖拽题吧
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-04.jpg?height=291&width=471&top_left_y=1959&top_left_x=29)
+
+A.完成，S级满分干扰现
+
+$\square$ 5 Cot
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-05.jpg?height=2710&width=3702&top_left_y=358&top_left_x=248)
+
+1、2008年夏季奥运会在哪个城市举办的?
+
+## 答客: 北京
+
+2、世界杯足球比赛几年一次?
+
+## 答客: 四年
+
+3、负荆请罪讲的是关于廉颇和哪位丞相的故事?
+
+## 答客: 菖相如
+
+4、黄鼠狼给鸡拜年的下一句是?
+
+## 答案: 没安好川
+
+5、成语 “”敏而好学、不耻下问 “” 的出处?
+
+## 答絫: 《论语》
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-07.jpg?height=2370&width=4150&top_left_y=391&top_left_x=-2)
+帮数学
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-08.jpg?height=2819&width=4140&top_left_y=272&top_left_x=3)
+
+## 圆的基本概念
+
+与圆有关的概念
+
+## 圆与垂径定理
+
+## 垂径定理
+
+## 澡 1 .圆的基本概念
+
+## 圆的定必及表示方法
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-10.jpg?height=323&width=322&top_left_y=1097&top_left_x=442)
+
+圆的定义
+
+在同一平面内，线段 $O P$ 绕它固定的一个端点 $O$ 旋转一周，另一端点 $P$ 所经过的封闭曲线叫做圆，定点 $O$ 叫做圆心，线段 $O P$ 叫做圆的半径.
+
+圆的表示方法:
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-10.jpg?height=376&width=291&top_left_y=2181&top_left_x=3641)
+
+以 $O$ 为圆心的圆，记作 “ $\odot O$ ”，读作 “圆 $O$ ”
+
+## 況 1 .圆的基本相念队
+
+## 与圆有关的概念
+
+## 弦
+
+连接圆上任意两点的线段叫做弦. 如弦 $A C$.
+
+(2) 真径:经过圆心的弦叫做直径. 如直径 $A B$.
+
+弧:
+
+圆上任意两点间的部分叫做圆弧，简称弧.
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-11.jpg?height=862&width=920&top_left_y=1430&top_left_x=3131)
+
+以 $A, C$ 为端点的弧记作 $\overparen{A C}$ ，读作 “圆弧 $A C$ " 或 “弧 $A C "$.
+
+注：圆中有无数条弦，其中直径是圆中最长的弦.
+
+## 嗱 1 .圆的基本概念
+
+## ©. $\odot$ 点与圆的位置关系
+
+$$
+d<r
+$$
+
+(2) 点在圆上 (点B)
+
+$$
+d=r
+$$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-12.jpg?height=983&width=1280&top_left_y=1460&top_left_x=2443)
+
+3 点在圆外 (点C)
+
+$$
+d>r
+$$
+
+$\odot \circ$
+
+## 自我检测 1 (䋆11
+
+下列说法遥误的是 ( )
+
+A. 圆有无数条直径
+
+B. 连接圆上任意两点之间的线段叫弦
+
+C. 过圆心的线段是直径
+
+D. 能够重合的圆叫做等圆
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-13.jpg?height=989&width=989&top_left_y=1187&top_left_x=2277)
+
+## 自我检测
+
+在 $\triangle A B C$ 中, $\angle C=90^{\circ}, A C=B C=4 \mathrm{~cm}, D$ 是 $A B$ 的中点, 以 $C$ 为圆心, $4 \mathrm{~cm}$ 长为半径作圆, 则 $A, B, C, D$ 四点中, 在闻网有 $C$ )
+
+A. 4 个
+
+B. 3 个
+
+C. 2 个
+
+D. 1 个
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-14.jpg?height=1587&width=1496&top_left_y=962&top_left_x=1674)
+
+## 涗2.垂径定理 $P$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-15.jpg?height=1650&width=4076&top_left_y=978&top_left_x=67)
+
+## 澡2.垂径定理 $P$
+
+## 垂径定理的应用
+
+如图，垂径定理及其推论中的垂直，会想到直角三角形的勾股定理，
+
+则有 $A E^{2}+O E^{2}=O A^{2}$ ，即 $\left(\frac{a}{2}\right)^{2}+d^{2}=r^{2}$.
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-16.jpg?height=1047&width=862&top_left_y=1158&top_left_x=2858)
+
+【总结】
+
+半径 $O A$ ，弦长 $A B$ ，弦心距 $O E$ ，弓形高 $D E$这四个条件 “知二推二”.
+
+## 自我检测
+
+如图, 在 $\odot O$ 中, $C D$ 是 $\odot O$ 的直径, $A B \perp C D$ 于点 $E$, 若 $A B=8, C E=2$, 则 $\odot O$ 的半径为 17.
+
+A. $2 \sqrt{5}$
+
+B. $\sqrt{5}$
+
+C. 3
+
+$$
+4^{2}+x^{2}=(x+2)^{2}
+$$
+
+D. 5
+
+$$
+\begin{gathered}
+16+x^{2}=x^{2}+4 x+4 \\
+x=3 \\
+x+2=5
+\end{gathered}
+$$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-17.jpg?height=1037&width=1074&top_left_y=883&top_left_x=2657)
+
+## 自我检测
+
+如图， $C D$ 为 $\odot O$ 的直径，弦 $A B \perp C D$, 垂足为 $M$, 若 $A B=12$,
+
+$O M: M D=5: 8$, 则 $\odot O$ 的周长为 $(B)$
+
+A. $26 \pi$ $5 x 8 x$
+
+$2 \pi \gamma=$
+
+B. $13 \pi$
+
+C. $\frac{96 \pi}{5}$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-18.jpg?height=307&width=936&top_left_y=1232&top_left_x=1298)
+
+D. $\frac{39 \sqrt{10} \pi}{5}$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-18.jpg?height=1100&width=1200&top_left_y=925&top_left_x=2478)
+
+## 自我检测 <br> 【练 5 】
+
+如图, $\odot O$ 的弦 $A B=8, M$ 是 $A B$ 的中点, 且 $O M=3$, 则 $\odot O$ 的半径等于 $\subset$ )
+A. 3
+B. 4
+C. 5
+D. 6
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-19.jpg?height=1110&width=1106&top_left_y=714&top_left_x=2493)
+
+## 自我检测
+
+如图, 一条公路的转弯处是一段圆弧 $\overparen{A B}$, 点 $O$ 是这段弧所在圆的圆心， $A B=40 \mathrm{~m}$, 点 $C$ 是 $\overparen{A B}$ 的中点, 点 $D$ 是 $A B$ 的中点, 且 $C D=10 \mathrm{~m}$, 则这段弯路所在圆的半径为 $/$ )
+
+A. $25 \mathrm{~m}$
+
+B. $24 \mathrm{~m}$
+
+C. $30 \mathrm{~m}$
+
+D. $60 \mathrm{~m}$
+
+![](https://cdn.mathpix.com/cropped/2024_05_07_d1d1a15ff5d2c767f664g-20.jpg?height=1148&width=1243&top_left_y=1023&top_left_x=2446)
+

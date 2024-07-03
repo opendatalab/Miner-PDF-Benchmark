@@ -1,0 +1,408 @@
+# 2023 年美国数学奥林匹克试题解析 
+
+## 梁行健
+
+(湖南师范大学附属中学, 410006)
+
+指导教师: 汤礼达
+
+2023 年 USAMO 试题质量较高有有很好的训练价值, 其中第 1、4、5 题较容易, 很适合联赛训练; 第 $2 、 6$ 题有一定难度, 适合作为冬令营的中档题; 第 3 题兼具思维难度和复杂度, 很好地考察了学生的思维能力和处理细节的能力,可作为冬令营的压轴题. 笔者水平有限, 本文若有不当之处, 敬请批评指正.
+
+## I. 试 题
+
+1. 如图, 在锐角 $\triangle A B C$ 中, $M$ 是 $B C$ 的中点, $P$ 是 $C$ 在 $A M$ 上的投影. 设 $\triangle A B P$ 的外接圆交直线 $B C$ 于另一点 $Q, N$ 是 $A Q$ 的中点, 求证: $N B=N C$.
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-01.jpg?height=565&width=623&top_left_y=1571&top_left_x=722)
+
+2. 求所有的函数 $f: \mathbb{R}^{+} \rightarrow \mathbb{R}^{+}$, 使得对任意正实数 $x, y$, 均有
+
+$$
+f(x y+f(x))=x f(y)+2 .
+$$
+
+3. 设 $n$ 是奇数. 在一个 $n \times n$ 方格表中放入 $\frac{n^{2}-1}{2}$ 个互不重叠的 $1 \times 2$ 和 $2 \times 1$ 的多米诺, 恰有一格是空的, 称这些多米诺构成一个“极大图形”. 对于一
+
+修订日期: 2023-05-29.
+个极大图形, 我们可以滑动一个多米诺覆盖之前的空格, 得到一个新的极大图形和一个新的空格. 用 $k(C)$ 表示由极大图形 $C$ 通过若干次滑动可以得到的不同极大图形的个数. 求 $k(C)$ 的所有可能值.
+
+4. 给定正整数 $a$ 以及黑板上的一些正整数, $A, B$ 玩如下游戏. 轮到 $A$ 时,她将黑板上的某个数 $n$ 换为 $n+a$; 轮到 $B$ 时, 他将黑板上的某个偶数 $n$ 换为 $\frac{n}{2}$. $A$ 先开始, 之后两人轮流进行, 当 $B$ 无法操作时游戏结束.
+
+通过分析黑板上的数, $B$ 发现无论 $A$ 如何操作, 他都能使游戏结束. 求证:事实上, 无论 $A, B$ 如何操作, 游戏最终都会结束.
+
+5. 设整数 $n \geq 3$, 将 $1,2, \cdots, n^{2}$ 填入一个 $n \times n$ 的方格表中. 称一种填法是 “行好的”, 如果可以将各行中的数重排成一个等差数列. 类似定义 “列好的” 填法. 求所有的 $n$, 使得对任何一种行好的填法, 可以将每行中的数重排, 使之变为列好的填法.
+6. 如图, 在 $\triangle A B C$ 中, $I$ 是内心, $I_{A}, I_{B}, I_{C}$ 分别是 $A, B, C$ 所对的旁心. $D$是 $\triangle A B C$ 外接圆上一点, 它不在直线 $I I_{A}, I_{B} I_{C}, B C$ 上. 设 $\triangle D I I_{A}, \triangle D I_{B} I_{C}$的外接圆交于另一点 $F$, 直线 $D F, B C$ 交于点 $E$. 求证: $\angle B A D=\angle C A E$.
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-02.jpg?height=817&width=640&top_left_y=1425&top_left_x=708)
+
+## II. 解答与评注
+
+题 1 如图, 在锐角 $\triangle A B C$ 中, $M$ 是 $B C$ 的中点, $P$ 是 $C$ 在 $A M$ 上的投影.设 $\triangle A B P$ 的外接圆交直线 $B C$ 于另一点 $Q, N$ 是 $A Q$ 的中点, 求证: $N B=N C$.
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-03.jpg?height=597&width=642&top_left_y=290&top_left_x=707)
+
+证明 设 $P^{\prime}$ 为 $B$ 在 $A M$ 上的投影, $Q^{\prime}$ 为 $A$ 在 $B C$ 上的投影.
+
+由 $\angle A Q^{\prime} B=\angle A P^{\prime} B=90^{\circ}$ 知, $A, B, P^{\prime}, Q^{\prime}$ 共圆. 从而有
+
+$$
+\angle B Q^{\prime} P^{\prime}=\angle B A M=\angle P Q C,
+$$
+
+因此 $P Q / / P^{\prime} Q^{\prime}$.
+
+又 $B M=C M, B P^{\prime} / / C P$, 故 $P M=P^{\prime} M$, 从而 $Q M=Q^{\prime} M$.
+
+又因为 $N$ 为 $A Q$ 的中点, 故 $M N / / A Q^{\prime}$. 即 $M N \perp B C$, 从而 $N B=N C$.证毕!
+
+评注 这是一道很基础的几何题, 方法很常见.
+
+题 2 求所有的函数 $f: \mathbb{R}^{+} \rightarrow \mathbb{R}^{+}$, 使得对任意正实数 $x, y$, 均有
+
+$$
+f(x y+f(x))=x f(y)+2 .
+$$
+
+解 1 所求为 $f(x)=x+1$, 这个函数显然满足要求.
+
+下证: $f(x)=x+1$.
+
+首先, 任取 $0<x_{1}<x_{2}$, 对任意 $y>0$ 有:
+
+$$
+f\left(x_{1} y+f\left(x_{1}\right)\right)=x_{1} f(y)+2<x_{2} f(y)+2=f\left(x_{2} y+f\left(x_{2}\right)\right),
+$$
+
+所以 $x_{1} y+f\left(x_{1}\right) \neq x_{2} y+f\left(x_{2}\right)$, 即
+
+$$
+f\left(x_{1}\right)-f\left(x_{2}\right) \neq\left(x_{2}-x_{1}\right) y .
+$$
+
+由于 $\left(x_{2}-x_{1}\right) y$ 可取遍一切正实数, 故必有
+
+$$
+f\left(x_{1}\right) \leq f\left(x_{2}\right) .
+$$
+
+故 $f(x)$ 是单调不减的.
+因此对一切 $x_{0} \geq 0, \lim _{x \rightarrow x_{0}^{+}} f(x)$ 存在, 记之为 $g\left(x_{0}\right)$.
+
+任取 $x_{0} \geq 0, y \rightarrow 0^{+}$, 得:
+
+$$
+g(f(x))=x g(0)+2
+$$
+
+在上式中令 $x \rightarrow x_{0}^{+}$, 得:
+
+$$
+g\left(g\left(x_{0}\right)\right)=x_{0} g(0)+2 .
+$$
+
+特别地, 令 $x_{0}=0$, 有 $g(g(0))=2$, 从而 $g(0) \neq 0$.
+
+因此结合(2)知 $g(x)$ 为单射, 比较(1), (2)两式知 $f(x)=g(x)$ 对一切 $x>0$ 成立. 因此对任意 $x>0$, 有
+
+$$
+f(f(x))=x g(0)+2 .
+$$
+
+故 $f$ 也为单射.
+
+在原式中用 $f(x)$ 代替 $x$ 得: $f(f(f(x))+f(x) y)=f(x) f(y)+2$.
+
+交换 $x, y$, 利用 $f$ 为单射可知,
+
+$$
+f(f(x))+f(x) \cdot y=f(f(y))+f(y) \cdot x .
+$$
+
+由(3)可得
+
+$$
+g(0) x+f(x) \cdot y=g(0) \cdot y+f(y) \cdot x
+$$
+
+即
+
+$$
+x(f(y)-g(0))=y(f(x)-g(0)),
+$$
+
+故
+
+$$
+\frac{f(x)-g(0)}{x}=\frac{f(y)-g(0)}{y}
+$$
+
+所以存在 $a \in \mathbb{R}$, 使得 $f(x)=a x+g(0)$ 对任意正实数 $x$ 成立.
+
+代回原式, 得:
+
+$$
+a(x y+a x+g(0))+g(0)=x(a y+g(0))+2,
+$$
+
+即
+
+$$
+a^{2} x+(a+1) g(0)=g(0) x+2,
+$$
+
+得出
+
+$$
+a^{2}=g(0),(a+1) g(0)=2 \text {. }
+$$
+
+解得: $a=g(0)=1$, 故所求为 $f(x)=x+1$.
+解 2 同法一可知 $f(x)$ 单调不减.
+
+令 $x=1$, 得 $f(y+f(1))=f(y)+2$.
+
+令 $y=k f(1),\left(k \in \mathbb{Z}^{+}\right)$, 从而, 对任意 $n \in \mathbb{Z}^{+}$有
+
+$$
+f(n f(1))=f(f(1))+2(n-1) .
+$$
+
+由 $f$ 单调不减, 知
+
+$$
+2\left[\frac{x}{f(1)}\right]+C \leq f(x) \leq 2\left\lceil\frac{x}{f(1)}\right\rceil+C
+$$
+
+其中 $C=f(f(1))-2$. 设 $\frac{2}{f(1)}=k$, 则由上式可知 $f(x)=k x+O(1)$, 代回原式知
+
+$$
+k(x y+k x+O(1))+O(1)=x f(y)+2 .
+$$
+
+从而, 有
+
+$$
+x\left(k y+k^{2}-f(y)\right)=O(1) .
+$$
+
+固定 $y$, 令 $x \rightarrow+\infty$, 得
+
+$$
+f(y)=k y+k^{2} .
+$$
+
+故 $f$ 为一次函数, 下同法一.
+
+评注 这是一道有一定难度的函数方程, 两种方法都用到了一些分析思想.知道 $f$ 单调不减后, 就可以如法一设出 $g(x)$, 来解决定义域中没有 0 的这一困难(这一手法与 2020 年 IMO 预选题 A8 类似), 之后证明 $f(x)=g(x)$, 从而不难得出 $f$ 为线性函数. 法二很巧妙, 它先证明了 $f(x)$ 和一个线性函数之差在常数范围内, 以此为跳板证明 $f$ 为线性函数.
+
+题 $3 p$ 设 $n$ 是奇数. 在一个 $n \times n$ 方格表中放入 $\frac{n^{2}-1}{2}$ 个互不重叠的 $1 \times 2$和 $2 \times 1$ 的多米诺, 恰有一格是空的, 称这些多米诺构成一个“极大图形”. 对于一个极大图形, 我们可以滑动一个多米诺覆盖之前的空格, 得到一个新的极大图形和一个新的空格. 用 $k(C)$ 表示由极大图形 $C$ 通过若干次滑动可以得到的不同极大图形的个数. 求 $k(C)$ 的所有可能值.
+
+解 所求为 $1,2,3, \cdots,\left(\frac{n-1}{2}\right)^{2},\left(\frac{n+1}{2}\right)^{2}$.
+
+首先, 将方格表按如下方式染色:
+
+记第 $i$ 行第 $j$ 列的方格为 $(i, j)$, 若 $i, j$ 均为奇数, 则将 $(i, j)$ 染红, 若 $i, j$ 均为偶数, 则将 $(i, j)$ 染蓝, 否则将 $(i, j)$ 染白.
+
+由于每个 $1 \times 2$ 或 $2 \times 1$ 多米诺占据的方格颜色为一红一白或一蓝一白, 且红色、蓝色方格数加起来比白色方格多 1 个. 因此空格必为红色或蓝色.
+对任意的极大图形 $C$ 定义有向图 $G_{R}, G_{B}$ : 令 $G_{R}$ 以所有红格为顶点, $G_{B}$以所有蓝格为顶点, 令 $u$ 向 $v$ 连有向边当且仅当 $u 、 v$ 同为红色或蓝色, 且 $u$ 与 $v$ 所在的某一多米诺有公共边.
+
+下面将含 $u$ 的多米诺与边 $u \rightarrow v$ 相对应. 在 $G_{R}, G_{B}$ 的底图中, 考虑空格所在的连通分支. 设其顶点集为 $S$, 由于空格出度为 0 , 且每个顶点出度不大于 1 ,所以 $S$ 中有 $|S|-1$ 条边.
+
+故该连通分支是树, 进一步地, 考虑边的方向, 可知这是一棵以空格为根顶点的入流树.
+
+一次操作对 $G_{R}$ 和 $G_{B}$ 的影响是: 把一条指向空格的边取反向, 因此 $G_{R} 、 G_{B}$ 的底图不变, 可以变化方向的只有 $S$ 中的边.
+
+因此可以移动的只有由 $S$ 中的边对应的多米诺.
+
+又 $S$ 诱导出树, 故对空格的每一种可能的位置, 都有唯一的极大图形.
+
+因为可通过操作使空格移至其任一邻点所在格, 故空格可移至 $S$ 中任一方格.
+
+故空格可以到达的位置有且仅有 $S$ 中的方格, 因此
+
+$$
+k(C)=|S| .
+$$
+
+下证 $k(C)$ 的所有可能值为 $1,2, \cdots,\left(\frac{n-1}{2}\right)^{2},\left(\frac{n+1}{2}\right)^{2}$.
+
+先证 $k(C)$ 可取遍上述这些值.
+
+考虑图 1 中的 $C$.
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-06.jpg?height=623&width=623&top_left_y=1690&top_left_x=722)
+
+图 1
+
+易知在这个 $C$ 中, 空格为红色, 且 $G_{R}$ 是连通的, 故由 $(*)$ 知
+
+$$
+k(C)=\left|V\left(G_{R}\right)\right|=\left(\frac{n+1}{2}\right)^{2} .
+$$
+
+现在任取 $k \leq\left(\frac{n-1}{2}\right)^{2}$. 下面构造 $C$. 使得 $k(C)=k$.
+
+首先, 将所有蓝格按以下顺序排序: 把方格 $(2,2),(4,2), \cdots,(n-1,2),(n-$ $1,4),(n-3,4), \cdots,(2,4),(2,6),(4,6), \cdots,(n-1,6), \cdots$ 分别记为 $B_{1}, B_{2}, \cdots$,
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-07.jpg?height=80&width=1424&top_left_y=431&top_left_x=316)
+$\cdots \rightarrow B_{1}$. 考虑所有与这条链中某一方格有公共顶点的方格构成的集合. 易知这是一个圈和一些 $2 m \times 1$ 长方形 ( $m$ 不是固定的) 的无交并, 因此它可以用 $1 \times 2$多米诺覆盖. 将链内部的多米诺安排好后, 剩下的部分为一些 $2 \times t$ 长方形 $(t$ 不是固定的) 之并, 从而也可用 $1 \times 2$ 多米诺覆盖. 把这个区域覆盖即可完成构造. $n=7$ 时情形如图 2 所示.
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-07.jpg?height=1004&width=334&top_left_y=896&top_left_x=470)
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-07.jpg?height=988&width=328&top_left_y=908&top_left_x=866)
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-07.jpg?height=984&width=340&top_left_y=912&top_left_x=1258)
+
+图 2
+
+再证:
+
+$$
+k(C) \in\left[1,\left(\frac{n-1}{2}\right)^{2}\right] \cup\left\{\left(\frac{n+1}{2}\right)^{2}\right\}
+$$
+
+假设 $k(C) \in\left(\left(\frac{n-1}{2}\right)^{2},\left(\frac{n+1}{2}\right)^{2}\right)$, 则空格必为红格, 又 $G_{R}$ 不连通且有 $\left(\left(\frac{n+1}{2}\right)^{2}-1\right)$ 条边, 且 $\left|V\left(G_{R}\right)\right|=\left(\frac{n+1}{2}\right)^{2}$. 故 $G_{R}$ 中有圈.
+
+由每个顶点出度不大于 1 知, 它是有向圈, 把它记为 $A_{1} A_{2} \cdots A_{k}$, 设 $A_{i}$ 和 $A_{i+1}$ 之间有方格 $B_{i}\left(A_{k+1}=A_{1}\right)$, 考虑以 $A_{1} B_{1} A_{2} B_{2} \cdots A_{k} B_{k}$ 为边界的图形.下证该图形占据奇数个方格.
+通过用方格中心点代替方格, 可将图形视为格点图形. 易知这个格点多边形可划分为一些 $2 \times 2$ 正方形之并. 故其面积 $S$ 为偶数. 设图形内部和边界上共有 $t$ 个整点. 则由 Pick 定理知 $S=t-k-1$. 又易知 $2 \mid k$. 故 $2 \nmid t$.
+
+故原方格表中, 该图形占据奇数格.
+
+因此空格在图形内, 又空格不与 $A_{1}, \cdots, A_{k}$ 连通 (因为已证空格所在连通分支为树). 故空格不与边界上的红格连通, 从而 $k(C) \leq\left(\frac{n-3}{2}\right)^{2}$. 矛盾!
+
+因此, $k(C) \in\left[1,\left(\frac{n-1}{2}\right)^{2}\right] \cup\left\{\left(\frac{n+1}{2}\right)^{2}\right\}$, 故所求为
+
+$$
+1,2, \cdots,\left(\frac{n-1}{2}\right)^{2},\left(\frac{n+1}{2}\right)^{2}
+$$
+
+得证!
+
+评注 本题在思维上有一定难度, 可先从简单情形出发, 便可以得到很多信息, 比如每个空格位置唯一对应一种构型. 此时, 如果去思考空格如何变换位置,就可以想到本题中 $G_{R}, G_{B}$ 的定义, 之后使用图论的工具处理问题, 接下来只有证明空格必在有向圈内的步骤要用到几何性质. 但值得一提的是, 把上面这些想法(包括构造) 用技术化的语言表达清楚, 绝非易事.
+
+题 4 给定正整数 $a$ 以及黑板上的一些正整数, $A, B$ 玩如下游戏. 轮到 $A$ 时,她将黑板上的某个数 $n$ 换为 $n+a$; 轮到 $B$ 时, 他将黑板上的某个偶数 $n$ 换为 $\frac{n}{2}$. $A$ 先开始, 之后两人轮流进行, 当 $B$ 无法操作时游戏结束.
+
+通过分析黑板上的数, $B$ 发现无论 $A$ 如何操作, 他都能使游戏结束. 求证:事实上, 无论 $A, B$ 如何操作, 游戏最终都会结束.
+
+证明 若黑板上只有 1 个数, 则 $A$ 和 $B$ 的每步操作都是固定的, 结论成立.
+
+下设黑板上至少有 2 个数, 记 $a$ 含 2 的幂次为 $\alpha$, 我们证明黑板上的数均不被 $2^{\alpha}$ 整除.
+
+假设 (1) 不成立, 设黑板上的一个数 $n$ 被 $2^{\alpha}$ 整除, 令 $A$ 采取如下策略:
+
+若 $n$ 不被 $2^{\alpha+1}$ 整除, $A$ 就对 $n$ 操作, 其它情况下 $A$ 不对 $n$ 操作 $(n$ 被操作后仍记为 $n$ ).
+
+此时, 若某一时刻 $2^{\alpha+1} \nmid n$, 要么游戏刚开始, 要么 $n$ 本来被 $2^{\alpha+1}$ 整除, 但被 $B$ 操作后不被 $2^{\alpha+1}$ 整除, 两种情况下均有 $2^{\alpha} \mid n$. 因此 $A$ 可保证她操作后 $2^{\alpha+1} \mid n$, 这表明 $A$ 可保证她每次操作后, 所得数均被 $2^{\alpha+1}$ 整除, 这与 $B$ 可保证游戏结束矛盾!
+
+因此黑板上所有数均不被 $2^{\alpha}$ 整除, 故 $A$ 不能改变任何数含 2 的幂次, 又 $B$
+的操作会使所有数含 2 的幂次之和严格减少, 故游戏必结束. 证毕!
+
+评注 本题属于简单题. 由 $B$ 的操作方式可自然想到考虑 2 的幂次, 从而把条件转化为各数含 2 的幂次应满足的条件, 便顺利解决本题.
+
+题 5 设整数 $n \geq 3$, 将 $1,2, \cdots, n^{2}$ 填入一个 $n \times n$ 的方格表中. 称一种填法是“行好的”，如果可以将各行中的数重排成一个等差数列。类似定义“列好的”填法. 求所有的 $n$, 使得对任何一种行好的填法, 可以将每行中的数重排, 使之变为列好的填法。
+
+解 所求为所有素数.
+
+一方面, $n$ 为合数时, 存在不小于 2 的整数 $u, v$ 满足 $u v=n$.
+
+考虑一种行好的填法:
+
+每行构成一个公差为 $u$ 的等差数列, 每行的最小数从上至下依次为:
+
+$$
+\begin{array}{lcll}
+1, & 2, & \cdots, & u, \\
+u n+1, & u n+2, & \cdots, & u n+u, \\
+2 u n+1, & 2 u n+1, & \cdots, & 2 u n+u, \\
+& \cdots \cdots
+\end{array}
+$$
+
+假设对行中的数重排后, 该填法变成列好的填法, 考虑 2 所在的列, 易见 2 是这一列的最小数.
+
+设这一列的公差为 $d$. 由于最大数不大于 $n^{2}$, 故有
+
+$$
+\begin{aligned}
+2+(n-1) d \leq n^{2} & \Rightarrow d \leq \frac{n^{2}-2}{n-1}<\frac{n^{2}-1}{n-1}=n+1 . \\
+& \Rightarrow d \leq n .
+\end{aligned}
+$$
+
+又 2 和 $2+n$ 在同一行, 故 $d \neq n \Rightarrow d \leq n-1$.
+
+从而这一列中最小的 $(u+1)$ 个数均不大于
+
+$$
+2+u d=u n-u+2 \leq u n .
+$$
+
+它们都在最上面 $u$ 行中, 矛盾!
+
+故 $n$ 为合数不合要求.
+
+下证 $n$ 为素数满足要求.
+
+在模 $n$ 意义下考虑每个数, 由于 $n$ 为素数, 所以每一行中的数要么模 $n$ 全同余, 要么构成模 $n$ 的完系.
+
+由于方格表中有模 $n$ 余 1 , 余 $2, \cdots$, 余 $n$ 的整数各 $n$ 个, 故以下两种情况
+必居其一:
+
+$1^{\circ}$ 每一行都构成模 $n$ 的完系, 则可通过重排行中的数, 使得对每个 $1 \leq i \leq n$, 模 $n$ 余 $i$ 的数全在第 $i$ 列, 所得的填法是列好的;
+
+$2^{\circ}$ 每一行都模 $n$ 全同余, 则易知每行中的数组成的集合为
+
+$$
+\left\{1, n+1, \cdots, n^{2}-n+1\right\},\left\{2, n+2, \cdots, n^{2}-n+2\right\}, \cdots,\left\{n, 2 n, \cdots, n^{2}\right\} .
+$$
+
+只需让每行中的数从左到右依次递增即可得到列好的填法.
+
+因此 $n$ 为素数满足要求, 故所求为全体素数.
+
+评注 本题中, 猜出答案是最大的难点. 先考虑如何把 $1,2, \cdots, n^{2}$ 拆成 $n$ 个等差数列的并, 如果意识到 $n$ 为素数时可能性更少, 就更有可能猜出答案, 猜出答案后, 证明和构造都不困难。
+
+题 6 如图, 在 $\triangle A B C$ 中, $I$ 是内心, $I_{A}, I_{B}, I_{C}$ 分别是 $A, B, C$ 所对的旁心. $D$ 是 $\triangle A B C$ 外接圆上一点, 它不在直线 $I I_{A}, I_{B} I_{C}, B C$ 上. 设 $\triangle D I I_{A}, \triangle D I_{B} I_{C}$的外接圆交于另一点 $F$, 直线 $D F, B C$ 交于点 $E$. 求证: $\angle B A D=\angle C A E$.
+
+![](https://cdn.mathpix.com/cropped/2024_02_26_4e9ebad4ca0209199fc5g-10.jpg?height=794&width=646&top_left_y=1316&top_left_x=705)
+
+证明 考虑以 $A I$ 为对称轴的轴对称变换和以 $A B \cdot A C$ 为反演幂、 $A$ 为反演中心的反演变换, 记它们的复合变换为 $\varphi$, 则
+
+$$
+\begin{aligned}
+& \varphi(B)=C, \varphi(I)=I_{A}, \varphi\left(I_{B}\right)=I_{C}, \\
+& \varphi(\odot(A B C))=B C,
+\end{aligned}
+$$
+
+记 $\varphi(D)=E^{\prime}$, 则 $E^{\prime}$ 在 $B C$ 上, 且 $\angle B A D=\angle E^{\prime} A C$.
+
+只需证: $E^{\prime}=E$, 即 $E^{\prime}$ 在 $\odot\left(I D I_{A}\right)$ 和 $\odot\left(I_{B} D I_{C}\right)$ 的根轴上.
+设 $I E^{\prime}$ 另交 $\odot\left(I D I_{A}\right)$ 于 $P, I_{B} E^{\prime}$ 另交 $\odot\left(I_{B} D I_{C}\right)$ 于 $R$, 则有
+
+$$
+\begin{aligned}
+\measuredangle I E^{\prime} I_{A} & =\measuredangle I E^{\prime} A+\measuredangle A E^{\prime} I_{A} \\
+& =\measuredangle D I_{A} A+\measuredangle A I D \\
+& =\measuredangle I_{A} D I=\measuredangle I_{A} P I
+\end{aligned}
+$$
+
+故 $\triangle I_{A} E P$ 为等腰三角形.
+
+设 $E^{\prime} P$ 中点为 $Q$, 则 $\angle I_{A} Q I=90^{\circ}$, 所以 $Q$ 在 $\odot\left(I D I_{A}\right)$ 上.
+
+又 $\odot\left(I I_{A}\right)$ 过 $B, C$, 故有
+
+$$
+I E^{\prime} \cdot E^{\prime} P=2 I E^{\prime} \cdot E^{\prime} Q=2 B E^{\prime} \cdot E^{\prime} C .
+$$
+
+同理可得
+
+$$
+I_{B} E^{\prime} \cdot E^{\prime} R=2 B E^{\prime} \cdot E^{\prime} C
+$$
+
+从而 $E^{\prime}$ 到 $\odot\left(I D I_{A}\right) 、 \odot\left(I_{B} D I_{C}\right)$ 的幂相等, 故 $E^{\prime}$ 在 $D F$ 上 $\Rightarrow E^{\prime}=E$.
+
+证毕!
+
+评注 本题是一道中等难度的几何题, 取出点 $E^{\prime}$ 后, 问题转化为证明 $E^{\prime}$ 到 $\odot\left(I D I_{A}\right)$ 和 $\odot\left(I_{B} D I_{C}\right)$ 等幕. 此时, 只需观察到所求圆幂为 $-2 B E^{\prime} \cdot E^{\prime} C$ 即可.
+
