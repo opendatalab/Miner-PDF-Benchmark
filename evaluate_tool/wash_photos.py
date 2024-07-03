@@ -3,8 +3,12 @@ import re
 import htmltabletomd
 import os
 
-# 定义文件夹路径
-download_dir = './academic_literature/annotations'
+# 定义命令行参数解析
+def parse_args():
+    parser = argparse.ArgumentParser(description='Clean data in specified directory.')
+    parser.add_argument('-d', '--directory', type=str, default='./academic_literature/annotations',
+                        help='Directory path to clean data')
+    return parser.parse_args()
 
 def clean_markdown_images(content):
     pattern = re.compile(r'!\[[^\]]*\]\([^)]*\)', re.IGNORECASE)
@@ -90,4 +94,7 @@ def clean_data(download_dir):
 
 # 主程序
 if __name__ == '__main__':
-    clean_data(download_dir)
+    args = parse_args()
+    clean_data(args.directory)
+
+# python wash_photos.py -d /path/to/your/directory
