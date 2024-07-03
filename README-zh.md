@@ -139,7 +139,15 @@ python clean_photo.py --tool_name tool_name --download_dir ../datasets/
 cd evaluate_tool
 python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ --document_types <document_types> --results xx.json
 ```
+7. 新增分类打分
 
+请执行以下命令进行分类、计算分数, 其中 `-d`为您待评估的数据路径； `-f`为pdf文件的信息； `--tag`，`--language`，`--bool_scan`，`--bool_watermark`，`--bool_txt`为可以选择的信息参数； `--json_file`json为1-6运行后待筛选的原打分数据，jsonl为sift.py运行后产生的筛选后pdf文件的信息； 。
+```
+cd evaluate_tool
+python wash_photos.py -d directory
+python sift.py -f config.jsonl --tag academic_literature --language en --bool_scan --bool_watermark --bool_txt
+python filtration.py --json_file xx.json --jsonl_file xx.jsonl
+```
 # 使用示例
 
 使用评估工具对marker工具的学术文献类型进行评估，并生成结果文件。示例如下：

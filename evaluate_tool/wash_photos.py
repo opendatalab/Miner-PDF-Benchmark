@@ -2,6 +2,7 @@ import pypandoc
 import re
 import htmltabletomd
 import os
+import argparse
 
 # 定义命令行参数解析
 def parse_args():
