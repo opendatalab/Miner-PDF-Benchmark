@@ -54,7 +54,7 @@ def simple_bleu_score(candidate, reference):
     candidate_tokens = word_tokenize(candidate)
     reference_tokens = word_tokenize(reference)
     return sentence_bleu([reference_tokens], candidate_tokens,
-                         SmoothingFunction().method1)
+                         smoothing_function=SmoothingFunction().method1)
 
 
 class Scoring:
