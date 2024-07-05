@@ -156,6 +156,12 @@ python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --re
 ```
 Here [result.json](evaluate_tool/result.json) are the results: The result.json file contains scores for each PDF file, scores for the selected document_types, and the overall average score.
 
+# Known Issues
+- The influence of line breaks and spaces on edit distance is temporarily filtered out
+- The latex version of the formula is inconsistent, and the influence is temporarily ignored
+- Pandoc may fail to convert ocrmath and nogout to latex tables;
+- Nogout outputs mmd
+
 # Acknowledgments
 - [marker](https://github.com/VikParuchuri/marker?tab=readme-ov-file)
 
