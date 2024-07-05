@@ -151,6 +151,11 @@ python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --re
 ```
 结果文件见[result.json](evaluate_tool/result.json), 结果包含了每个PDF文件对应的分数，以及所选`document_types`的分数，以及整体平均分数。
 
+# 已知问题
+    - 换行和空格对编辑距离影响，暂时过滤掉
+    - 公式的latex版本不一致，暂时忽略影响
+    - pandoc转换ocrmath和nogout 到latex表格可能会失败
+    - nogout输出mmd, 暂作为md比较
 
 # 致谢
 - [marker](https://github.com/VikParuchuri/marker?tab=readme-ov-file)
