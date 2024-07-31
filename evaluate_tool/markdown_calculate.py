@@ -69,7 +69,7 @@ args = parser.parse_args()
 fw = open(args.results, 'w+', encoding='utf-8')
 
 
-def simple_bleu_score(candidate, reference):
+def simple_bleu_score(candidate: str, reference: str):
     """
     Calculating BLEU score
     """
@@ -91,7 +91,7 @@ class Scoring:
         self.score_dict = {}
         self.annotation_cnt = 0
 
-    def preprocess_string(self, input_str):
+    def preprocess_string(self, input_str: str):
         """
         Args:
             input_str: String to be processed
@@ -99,7 +99,7 @@ class Scoring:
         sub_enter = re.sub(r'\n+', '\n', input_str)
         return re.sub(r' {2}', ' ', sub_enter)
 
-    def calculate_similarity(self, annotation, actual, tool_name):
+    def calculate_similarity(self, annotation: str, actual: str, tool_name: str):
         """
         Calculate simscore
         """
@@ -172,7 +172,7 @@ class Scoring:
         print(f'Overall Average Marker Score: {average_sim_score}')
         fw.close()
 
-    def calculate_similarity_total(self, tool_name, document_types, data_dir):
+    def calculate_similarity_total(self, tool_name: str, document_types: str, data_dir: str):
         """
         write result
         """

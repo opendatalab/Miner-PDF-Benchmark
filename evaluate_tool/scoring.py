@@ -2,13 +2,14 @@
 Calculate simscore, refer to (https://github.com/VikParuchuri/marker?tab=readme-ov-file)
 """
 from statistics import mean
+from typing import List
 
 from rapidfuzz import fuzz
 
 CHUNK_MIN_CHARS = 25
 
 
-def chunk_text(text, chunk_len=500):
+def chunk_text(text: str, chunk_len=500) -> List[str]:
     """
     Chunk text into chunks of a given length.
     """
@@ -17,7 +18,7 @@ def chunk_text(text, chunk_len=500):
     return chunks
 
 
-def overlap_score(hypothesis_chunks, reference_chunks):
+def overlap_score(hypothesis_chunks: List[str], reference_chunks: List[str]) -> List[float]:
     """
     Compute an overlap score for each chunk in the hypothesis.
     """
@@ -40,7 +41,7 @@ def overlap_score(hypothesis_chunks, reference_chunks):
     return chunk_scores
 
 
-def score_text(hypothesis, reference):
+def score_text(hypothesis: str, reference: str) -> float:
     """
     Compute a score for the hypothesis text compared to the reference text.
     """

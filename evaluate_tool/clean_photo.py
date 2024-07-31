@@ -24,7 +24,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-def clean_markdown_images(content):
+def clean_markdown_images(content: str):
     """
     Clean up markdown pictures
     """
@@ -33,7 +33,7 @@ def clean_markdown_images(content):
     return cleaned_content
 
 
-def clean_ocrmath_photo(content):
+def clean_ocrmath_photo(content: str):
     """
     Clean up latex pictures
     """
@@ -42,7 +42,7 @@ def clean_ocrmath_photo(content):
     return cleaned_content
 
 
-def convert_html_table_to_md(html_table):
+def convert_html_table_to_md(html_table: str):
     """
     Convert HTML table to Markdown table
     """
@@ -62,7 +62,7 @@ def convert_html_table_to_md(html_table):
     return md_table
 
 
-def convert_latext_to_md(content):
+def convert_latext_to_md(content: str):
     """
     Convert latex table to markdown table
     """
@@ -85,7 +85,7 @@ def convert_latext_to_md(content):
     return new_content
 
 
-def convert_htmltale_to_md(content):
+def convert_htmltale_to_md(content: str):
     """
     Convert htmltable to markdown table
     """
@@ -105,7 +105,7 @@ def convert_htmltale_to_md(content):
     return new_content
 
 
-def clean_data(prod_type, data_dir):
+def clean_data(prod_type: str, data_dir: str):
     """
     Cleaning the data
     """
