@@ -46,4 +46,4 @@ BLEU分数是一个介于0到1之间的值，较高的BLEU分数通常表示更�
 [Papineni, K., Roukos, S., Ward, T., Zhu, W.J.: Bleu: a method for automatic
 evaluation of machine translation. In: Proceedings of the 40th annual meeting of
 the Association for Computational Linguistics. pp. 311–318 (2002)]
-https://aclanthology.org/P02-1040.pdf 
+https://aclanthology.org/P02-1040.pdf

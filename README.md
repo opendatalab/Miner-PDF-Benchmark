@@ -20,11 +20,11 @@ MPB 验证集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 
 # 统计信息
 <div style="display: flex;">
-    <img src="./docs/images/PDF_files.png" width="350" height="200" /> 
+    <img src="./docs/images/PDF_files.png" width="350" height="200" />
     <img src="./docs/images/PDF_pages.png" width="350" height="200" />
 </div>
 <div style="display: flex;">
-    <img src="./docs/images/PDF_type.png" width="350" height="200" /> 
+    <img src="./docs/images/PDF_type.png" width="350" height="200" />
     <img src="./docs/images/md_language.png" width="350" height="200" />
 </div>
 
@@ -73,7 +73,7 @@ python -m pip install -r requirements.txt
     - academic_literature/
       - annotations/
         - academic_literature_xx.md
-      - pdf/ 
+      - pdf/
     - atlas/
       - annotations/
         - atlas_xx.md
@@ -99,7 +99,7 @@ python clean_photo.py --tool_name annotations --download_dir ../datasets
         - academic_literature_xx.md
       - tool_name/
         - academic_literature_xx.md
-      - pdf/ 
+      - pdf/
     - atlas/
       - tool_name/
         - atlas_xx.md
@@ -123,7 +123,7 @@ python markdown_calculate.py --tool_name tool_name --download_dir ../datasets/ -
 cd evaluate_tool
 python clean_photo.py --tool_name annotations --download_dir ../datasets/
 python clean_photo.py --tool_name marker --download_dir ../datasets/
-python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --results result.json --document_types academic_literature 
+python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --results result.json --document_types academic_literature
 ```
 结果文件见生成的 [result.json](./evaluate_tool/result.json), 该文件包含了每个 PDF 文件对应的分数，以及所选`document_types`的分数，以及整体平均分数。
 # 局限性
@@ -141,4 +141,3 @@ python markdown_calculate.py --tool_name marker --download_dir ../datasets/ --re
 本项目仍在完善中，并在内部项目中验证使用，未来我们将逐步完善验证集、评测指标等，并在完善后开放验证集下载，欢迎社区开发者参与讨论和贡献。
 # 致谢
 - [marker](https://github.com/VikParuchuri/marker)
-

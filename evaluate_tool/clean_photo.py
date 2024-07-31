@@ -8,18 +8,18 @@ import re
 import htmltabletomd
 import pypandoc
 
-parser = argparse.ArgumentParser(description="get tool name, download_dir")
+parser = argparse.ArgumentParser(description='get tool name, download_dir')
 parser.add_argument(
-    "--tool_name",
+    '--tool_name',
     type=str,
     required=True,
-    help="input tool name",
+    help='input tool name',
 )
 parser.add_argument(
-    "--download_dir",
+    '--download_dir',
     type=str,
     required=True,
-    help="input download dir",
+    help='input download dir',
 )
 args = parser.parse_args()
 
@@ -31,6 +31,7 @@ def clean_markdown_images(content):
     pattern = re.compile(r'!\[[^]]*]\([^)]*\)', re.IGNORECASE)
     cleaned_content = pattern.sub('', content)
     return cleaned_content
+
 
 def clean_ocrmath_photo(content):
     """
@@ -68,12 +69,11 @@ def convert_latext_to_md(content):
     tables = re.findall(r'\\begin\{tabular}(.*?)\\end\{tabular}', content, re.DOTALL)
     placeholders = []
     for table in tables:
-        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"
-        replace_str = f"\\begin{{tabular}}{table}cl\\end{{tabular}}"
+        placeholder = f'<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->'
+        replace_str = f'\\begin{{tabular}}{table}cl\\end{{tabular}}'
         content = content.replace(replace_str, placeholder)
         try:
-            pypandoc.convert_text(replace_str, format="latex", to="md",
-                                  outputfile="output.md", encoding="utf-8")
+            pypandoc.convert_text(replace_str, format='latex', to='md', outputfile='output.md', encoding='utf-8')
         except ValueError:
             markdown_string = replace_str
         else:
@@ -92,8 +92,8 @@ def convert_htmltale_to_md(content):
     tables = re.findall(r'<table>(.*?)</table>', content, re.DOTALL)
     placeholders = []
     for table in tables:
-        placeholder = f"<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->"
-        content = content.replace(f"<table>{table}</table>", placeholder)
+        placeholder = f'<!-- TABLE_PLACEHOLDER_{len(placeholders)} -->'
+        content = content.replace(f'<table>{table}</table>', placeholder)
         try:
             convert_table = htmltabletomd.convert_table(table)
         except ValueError:
@@ -109,11 +109,21 @@ def clean_data(prod_type, data_dir):
     """
     Cleaning the data
     """
-    file_type = ["academic_literature", "atlas", "courseware", "colorful_textbook",
-                 "historical_document", "note", "ordinary_book", "ordinary_exam_paper",
-                 "ordinary_textbook", "research_report", "special_exam_paper"]
+    file_type = [
+        'academic_literature',
+        'atlas',
+        'courseware',
+        'colorful_textbook',
+        'historical_document',
+        'note',
+        'ordinary_book',
+        'ordinary_exam_paper',
+        'ordinary_textbook',
+        'research_report',
+        'special_exam_paper',
+    ]
     for filetype in file_type:
-        tgt_dir = os.path.join(data_dir, filetype, prod_type, "cleaned")
+        tgt_dir = os.path.join(data_dir, filetype, prod_type, 'cleaned')
         if not os.path.exists(tgt_dir):
             os.makedirs(tgt_dir)
         source_dir = os.path.join(data_dir, filetype, prod_type)
@@ -121,7 +131,7 @@ def clean_data(prod_type, data_dir):
         for filename in filenames:
             if filename.endswith('.md'):
                 input_file = os.path.join(source_dir, filename)
-                output_file = os.path.join(tgt_dir, "cleaned_" + filename)
+                output_file = os.path.join(tgt_dir, 'cleaned_' + filename)
                 with open(input_file, 'r', encoding='utf-8') as fr:
                     content = fr.read()
                     new_content = convert_htmltale_to_md(content)
