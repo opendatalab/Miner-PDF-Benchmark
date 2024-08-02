@@ -2,22 +2,23 @@
 Calculate simscore, refer to (https://github.com/VikParuchuri/marker?tab=readme-ov-file)
 """
 from statistics import mean
+from typing import List
 
 from rapidfuzz import fuzz
 
 CHUNK_MIN_CHARS = 25
 
 
-def chunk_text(text, chunk_len=500):
+def chunk_text(text: str, chunk_len=500) -> List[str]:
     """
     Chunk text into chunks of a given length.
     """
-    chunks = [text[i:i + chunk_len] for i in range(0, len(text), chunk_len)]
+    chunks = [text[i : i + chunk_len] for i in range(0, len(text), chunk_len)]
     chunks = [c for c in chunks if c.strip() and len(c) > CHUNK_MIN_CHARS]
     return chunks
 
 
-def overlap_score(hypothesis_chunks, reference_chunks):
+def overlap_score(hypothesis_chunks: List[str], reference_chunks: List[str]) -> List[float]:
     """
     Compute an overlap score for each chunk in the hypothesis.
     """
@@ -29,7 +30,6 @@ def overlap_score(hypothesis_chunks, reference_chunks):
     chunk_scores = []
     for i, hyp_chunk in enumerate(hypothesis_chunks):
         max_score = 0
-        total_len = 0
         i_offset = int(i * length_modifier)
         chunk_range = range(max(0, i_offset - search_distance), min(len(reference_chunks), i_offset + search_distance))
         for j in chunk_range:
@@ -37,12 +37,11 @@ def overlap_score(hypothesis_chunks, reference_chunks):
             score = fuzz.ratio(hyp_chunk, ref_chunk, score_cutoff=30) / 100
             if score > max_score:
                 max_score = score
-                total_len = len(ref_chunk)
         chunk_scores.append(max_score)
     return chunk_scores
 
 
-def score_text(hypothesis, reference):
+def score_text(hypothesis: str, reference: str) -> float:
     """
     Compute a score for the hypothesis text compared to the reference text.
     """

@@ -1,6 +1,6 @@
-## Extraction Rate 
+## Extraction Rate
 
-The Extraction Rate (ER) is the ratio of the number of Markdown (.md) files successfully generated from PDF files to the total number of PDF files. 
+The Extraction Rate (ER) is the ratio of the number of Markdown (.md) files successfully generated from PDF files to the total number of PDF files.
 
 $$ \text{ER} = \frac{\text{hypothesiscnt}}{\text{referencecnt}} $$
 
@@ -45,11 +45,11 @@ Where:
 It is a method for measuring the differences between two strings. It is defined as the minimum number of single-character editing operations required to transform one string into another. These editing operations include insertions, deletions, and substitutions of characters.
 
 - **Usage:**
-  
+
 To mitigate the impact of line breaks and spaces on the score, we calculate the edit distance between two strings after preprocessing.
 
 - **Reference:**
-  
+
 [Levenshtein, V.I., et al.: Binary codes capable of correcting deletions, insertions,
 and reversals. In: Soviet physics doklady. vol. 10, pp. 707–710. Soviet Union (1966)]
 http://www.lrec-conf.org/proceedings/lrec2006/pdf/168_pdf.pdf
@@ -61,12 +61,12 @@ http://www.lrec-conf.org/proceedings/lrec2006/pdf/168_pdf.pdf
 The BLEU score is a value that ranges from 0 to 1, with higher BLEU scores typically indicating better translation quality.
 
 - **Usage:**
-  
+
 We calculate the sentence_bleu of two strings after tokenization with nltk, using method1 as the smoothing_function.
 
 - **Reference:**
-  
+
 [Papineni, K., Roukos, S., Ward, T., Zhu, W.J.: Bleu: a method for automatic
 evaluation of machine translation. In: Proceedings of the 40th annual meeting of
 the Association for Computational Linguistics. pp. 311–318 (2002)]
-https://aclanthology.org/P02-1040.pdf 
+https://aclanthology.org/P02-1040.pdf
