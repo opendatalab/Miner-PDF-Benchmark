@@ -20,12 +20,12 @@ MPB 验证集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 
 # 统计信息
 <div style="display: flex;">
-    <img src="./docs/images/PDF_files.png" width="175" height="100" /> 
-    <img src="./docs/images/PDF_pages.png" width="175" height="100" />
+    <img src="./docs/images/PDF_files.png" width="350" height="200" /> 
+    <img src="./docs/images/PDF_pages.png" width="350" height="200" />
 </div>
 <div style="display: flex;">
-    <img src="./docs/images/PDF_type.png" width="175" height="100" /> 
-    <img src="./docs/images/md_language.png" width="175" height="100" />
+    <img src="./docs/images/PDF_type.png" width="350" height="200" /> 
+    <img src="./docs/images/md_language.png" width="350" height="200" />
 </div>
 
 # 验证集构建方法
