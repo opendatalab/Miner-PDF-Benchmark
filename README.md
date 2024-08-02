@@ -52,6 +52,15 @@ MPB 验证集来源于多种渠道，包括 arXiv、Sci-Hub、教科书、试卷
 
 经过人工标注后
 ![图片](./docs/images/after_label_2.png)
+
+文档3（公式）：
+
+人工标注前
+![图片](./docs/images/before_label_3_1.png)
+![图片](./docs/images/before_label_3_2.png)
+
+经过人工标注后
+![图片](./docs/images/after_label_3.png)
 # 指标
 当前我们验证集参考其他抽取工具中使用到的3个评估指标（bleu 和 edit distance 来自[nogout](https://arxiv.org/pdf/2308.13418v1)、similarity 来自[marker](https://github.com/VikParuchuri/marker)）进行评价。我们观察到部分工具在一些 PDF 数据上有抽取 Markdown 文档失败的情况，如工具处理超时导致抽取失败，或者工具 OOM 导致抽取失败的等情况。所以我们增加了一个抽取率指标，定义是：成功生成 Markdown 文件的数量与总PDF文件数的占比，但该指标不会检查生成 Markdown 的内容是否异常。这个指标主要用来衡量抽取工具在验证集数据上抽取 Markdown 文档的成功率。
 # 使用方法
