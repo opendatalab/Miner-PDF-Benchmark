@@ -1,0 +1,7 @@
+assign:
+  strategy:
+    random
+  scedule:
+    '*/1 * * * *'
+  assignees:
+    - e06084
