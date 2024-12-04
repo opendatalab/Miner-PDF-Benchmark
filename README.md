@@ -1,4 +1,5 @@
 # Update
+[2024/12] 本仓库不再维护，请使用我们新的数据集[OmniDocBench](https://github.com/opendatalab/OmniDocBench)
 [2024/08] Repo update: code format and add limitations
 # 简介
 MPB（Miner-PDF-Benchmark）目标是面向大模型数据场景的端到端PDF文档理解验证集。它包含350个PDF文件和8410页PDF，包括书籍、教材、学术文献、PPT转PDF、试卷等11种类型的验证集。
